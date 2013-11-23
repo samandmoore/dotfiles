@@ -42,7 +42,7 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 [[ -s /opt/boxen/env.sh ]] && . /opt/boxen/env.sh
 
 # If possible, add tab completion for many more commands
-[[ -s ~/.git-completion.bash ]] && . ~/.git-completion.bash
+[[ -s ~/.git-completion ]] && . ~/.git-completion
 brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
 [[ -s $brewery/etc/autojump.sh ]]    && . $brewery/etc/autojump.sh
