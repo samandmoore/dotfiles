@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DOTS="$PWD"
 
 ln -sF $DOTS/bash_profile ~/.bash_profile
