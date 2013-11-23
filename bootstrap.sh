@@ -2,25 +2,25 @@
 
 DOTS="$PWD"
 
-ln -sFv $DOTS/bash_profile ~/.bash_profile
-ln -sFv $DOTS/bash_prompt ~/.bash_prompt
-ln -sFv $DOTS/bashrc ~/.bashrc
-ln -sFv $DOTS/aliases ~/.aliases
-ln -sFv $DOTS/exports ~/.exports
-ln -sFv $DOTS/functions ~/.functions
-ln -sFv $DOTS/profile ~/.profile
+ln -sFvh $DOTS/bash_profile ~/.bash_profile
+ln -sFvh $DOTS/bash_prompt ~/.bash_prompt
+ln -sFvh $DOTS/bashrc ~/.bashrc
+ln -sFvh $DOTS/aliases ~/.aliases
+ln -sFvh $DOTS/exports ~/.exports
+ln -sFvh $DOTS/functions ~/.functions
+ln -sFvh $DOTS/profile ~/.profile
 
-ln -sFv $DOTS/vimrc ~/.vimrc
-ln -sFv $DOTS/gvimrc ~/.gvimrc
+ln -sFvh $DOTS/vimrc ~/.vimrc
+ln -sFvh $DOTS/gvimrc ~/.gvimrc
 
-ln -sFv $DOTS/gitconfig ~/.gitconfig
-ln -sFv $DOTS/githelpers ~/.githelpers
-ln -sFv $DOTS/hushlogin ~/.hushlogin
+ln -sFvh $DOTS/gitconfig ~/.gitconfig
+ln -sFvh $DOTS/githelpers ~/.githelpers
+ln -sFvh $DOTS/hushlogin ~/.hushlogin
 
-ln -sFv $DOTS/vim ~/.vim
-#ln -sFv $DOTS/bin ~/bin
+ln -sFvh $DOTS/vim ~/.vim
+#ln -sFvh $DOTS/bin ~/bin
 
 #BIN_FILES=$DOTS/bin/.*
 #for binfile in $BIN_FILES; do
-#    ln -sFv $DOTS/$binfile ~/bin/$binfile
+#    ln -sFvh $DOTS/$binfile ~/bin/$binfile
 #done
