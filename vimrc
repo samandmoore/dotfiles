@@ -146,18 +146,23 @@ imap <C-w> <C-o>w
 imap <C-b> <C-o>b
 imap <C-^> <C-o>^
 imap <C-$> <C-o>$
-" tab navigation like other apps
-nmap <C-S-TAB> :tabprevious<CR>
-nmap <C-TAB> :tabnext<CR>
-map <C-S-TAB> :tabprevious<CR>
+" tab navigation like a boss
+nmap th :tabprevious<CR>
+nmap tl :tabnext<CR>
 map <C-TAB> :tabnext<CR>
 " NERDTree toggle
 map <F2> :NERDTreeToggle<CR>
 " easier esc and save
 "imap <C-[> <ESC>:w!<CR>
-"nnoremap <Leader>s :w<CR>
+nnoremap <leader>s :w<CR>
 " insert lines without going into insert mode
-"nnoremap <Leader>O O<ESC>
-"nnoremap <Leader>o o<ESC>
+"nnoremap <leader>O O<ESC>
+"nnoremap <leader>o o<ESC>
 " Ack like a boss
-nnoremap <Leader>f :Ack --smart-case<space>
+nnoremap <leader>f :Ack --smart-case<space>
+" ctrlp keymaps
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+" faster command entry
+nnoremap ; :
+
