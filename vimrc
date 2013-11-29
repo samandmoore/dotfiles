@@ -1,6 +1,7 @@
 " Make vim more useful
 set nocompatible
 set term=xterm-256color
+colorscheme molokai
 
 " required for vundle!
 filetype off
@@ -165,4 +166,9 @@ nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 " faster command entry
 nnoremap ; :
-
+" create a new file and open in a new tab
+" http://vimcasts.org/e/14
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<CR>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
