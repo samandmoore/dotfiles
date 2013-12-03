@@ -9,6 +9,7 @@ ln -sFvh $DOTS/aliases ~/.aliases
 ln -sFvh $DOTS/exports ~/.exports
 ln -sFvh $DOTS/functions ~/.functions
 ln -sFvh $DOTS/profile ~/.profile
+ln -sFvh $DOTS/screenrc ~/.screenrc
 
 ln -sFvh $DOTS/vimrc ~/.vimrc
 ln -sFvh $DOTS/gvimrc ~/.gvimrc
