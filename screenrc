@@ -1,2 +1,10 @@
 # Disable the startup message
 startup_message off
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{= .W}%-w%{..r}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+# turn on playful messages with nethack-style flair
+nethack on
+defscrollback 5000
