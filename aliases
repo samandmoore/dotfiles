@@ -129,6 +129,10 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
+
+# git helpers that don't really work as git aliases
+alias trash='git reset --hard HEAD && git clean -df'
+
 # betterment tomcat stuff
 alias tomrun="~/my/toolbox/tomcat-6.0.18/bin/catalina.sh run"
 alias tomdebug="~/my/toolbox/tomcat-6.0.18/bin/catalina.sh jpda run"
