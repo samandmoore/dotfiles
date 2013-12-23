@@ -22,6 +22,7 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdcommenter'
 
 " required for vundle
 filetype plugin indent on
