@@ -43,7 +43,7 @@ let g:lightline = {
       \ }
   \ }
 
-set wildignore+=*/node_modules/*,*.png,.DS_Store,.rspec,Gemfile.lock,*/.bundle/*,*/.git/*,*/.sass-cache/*,*/.tmp/*,*/.gradle/*,*/build/*
+set wildignore+=*/node_modules/*,*.png,.DS_Store,.rspec,Gemfile.lock,*/.bundle/*,*/.git/*,*/.sass-cache/*,*/.tmp/*,*/.gradle/*,*/build/*,*/tmp/*,*/bin/*
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
