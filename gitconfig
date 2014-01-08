@@ -26,6 +26,7 @@
     co = checkout
     l = "!. ~/.githelpers && pretty_git_log"
     r = !git l -20
+    aa = "!git add -A ."
     ci = commit -v
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
