@@ -30,6 +30,7 @@
     ci = commit -v
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
+    sup = "!. ~/.githelpers && current_pulls_into_here"
 [apply]
     # Detect whitespace errors when applying a patch
     # whitespace = fix
