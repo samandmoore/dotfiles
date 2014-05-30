@@ -1,6 +1,3 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$PATH:$HOME/bin"
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -46,3 +43,7 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
 [[ -s $brewery/etc/autojump.sh ]]    && . $brewery/etc/autojump.sh
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
+
