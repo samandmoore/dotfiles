@@ -44,6 +44,8 @@ brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
 [[ -s $brewery/etc/autojump.sh ]]    && . $brewery/etc/autojump.sh
 
+# add auto-completion for aws cli
+which aws > /dev/null && complete -C aws_completer aws
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
-

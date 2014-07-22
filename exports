@@ -31,3 +31,5 @@ export CATALINA_OPTS="-server -Xms512m -Xmx2048m -XX:MaxPermSize=512m"
 export JAVA_HOME=/Library/Java/Home
 [[ -d $JAVA_HOME/bin ]] && export PATH=$JAVA_HOME/bin:$PATH
 
+# for golang
+export GOPATH=$HOME/go
