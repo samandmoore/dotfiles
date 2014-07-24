@@ -1,6 +1,4 @@
 [alias]
-    # View the SHA, description, and history graph of the latest 20 commits
-    l = log --pretty=oneline -n 20 --graph
     # View the current working tree status using the short format
     s = status -s
     # Show the diff between the latest commit and the current state
@@ -24,13 +22,18 @@
     # Interactive rebase with the given number of latest commits
     reb = "!r() { git rebase -i HEAD~$1; }; r"
     co = checkout
-    l = "!. ~/.githelpers && pretty_git_log"
+    # View the SHA, description, and history graph of the latest 20 commits
+    # l = log --pretty=oneline -n 20 --graph
+    # PRETTY - View the SHA, description, and history graph of the latest 20 commits
+    l = "!. ~/.githelpers && pretty_git_log -n 20"
     r = !git l -20
     aa = "!git add -A ."
+    # verbose commit
     ci = commit -v
+    # Amend last commit
+    ac = !git ci --amend
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
-    sup = "!. ~/.githelpers && current_pulls_into_here"
 [apply]
     # Detect whitespace errors when applying a patch
     # whitespace = fix
