@@ -17,7 +17,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'itchyny/lightline.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-expand-region'
-Bundle 'mileszs/ack.vim.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
@@ -173,3 +172,6 @@ nmap <leader>ew :e <C-R>=expand('%:h').'/'<CR>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
+
+" custom tab widths per filetype
+autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss setlocal shiftwidth=2 tabstop=2
