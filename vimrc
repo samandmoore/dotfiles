@@ -23,6 +23,7 @@ Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'vim-ruby/vim-ruby'
 
 " required for vundle
 filetype plugin indent on
