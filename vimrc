@@ -4,9 +4,6 @@
 " use vim not vi
 set nocompatible
 
-" configure shell
-set term=xterm-256color
-
 " Plugin config
 " =============
 " setup Vundle for package management
@@ -38,7 +35,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 " comment and uncomment lines quickly
 Plugin 'scrooloose/nerdcommenter'
-" fast multi-cursor editing 
+" fast multi-cursor editing
 Plugin 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plugin 'Raimondi/delimitMate'
@@ -158,6 +155,10 @@ set wildignore+=*vim/backups*
 " tell ycm where the python is or it will crash all the time
 let g:ycm_path_to_python_interpreter = '/opt/boxen/pyenv/shims/python'
 
+" lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " Custom commands
 " ===============
@@ -177,3 +178,7 @@ nnoremap ; :
 nmap <leader>ew :e <C-R>=expand('%:h').'/'<CR>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
+
+" automatically strip whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
