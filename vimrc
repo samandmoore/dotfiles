@@ -48,6 +48,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'skwp/vim-rspec'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
 
 " Done configuring vundle
 call vundle#end()
@@ -61,7 +65,7 @@ syntax on
 syntax enable
 set t_Co=256
 set noshowmode
-
+colorscheme molokai
 
 " General Config
 " ==============
