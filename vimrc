@@ -1,32 +1,64 @@
-" Make vim more useful
+" Setup vim
+" =========
+
+" use vim not vi
 set nocompatible
+
+" configure shell
 set term=xterm-256color
-colorscheme molokai
 
-" required for vundle!
+" Plugin config
+" =============
+" setup Vundle for package management
+
+" turn off filetype temporarily for vundle configuration
 filetype off
-
-" vundle config
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'itchyny/lightline.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'terryma/vim-expand-region'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'gmarik/Vundle.vim'
 
-" required for vundle
+" Themes
+"Plugin 'altercation/vim-colors-solarized'
+
+" git helpers, mostly useful for :GBlame
+Plugin 'tpope/vim-fugitive'
+" sexy stylish status line
+Plugin 'itchyny/lightline.vim'
+" shows git changes to the left of line numbers
+Plugin 'airblade/vim-gitgutter'
+" expand selections using + and -
+Plugin 'terryma/vim-expand-region'
+" semi-useful directory tree via F2
+Plugin 'scrooloose/nerdtree.git'
+" fuzzy search across all files in directory
+Plugin 'kien/ctrlp.vim'
+" smart search within all files
+Plugin 'mileszs/ack.vim'
+" comment and uncomment lines quickly
+Plugin 'scrooloose/nerdcommenter'
+" fast multi-cursor editing 
+Plugin 'terryma/vim-multiple-cursors'
+" subl-like smart completion of braces
+Plugin 'Raimondi/delimitMate'
+" Gives smart completions for Javascript
+Plugin 'marijnh/tern_for_vim'
+" awesome auto-complete, when it works
+Plugin 'Valloric/YouCompleteMe'
+
+" Syntax
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'elzr/vim-json'
+Plugin 'vim-ruby/vim-ruby'
+
+" Done configuring vundle
+call vundle#end()
+" re-enable filetypes now that vundle is configured
 filetype plugin indent on
+
+" tell ycm where the python is or it will crash all the time
+let g:ycm_path_to_python_interpreter = '/opt/boxen/pyenv/shims/python'
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -44,12 +76,15 @@ let g:lightline = {
       \ }
   \ }
 
-set wildignore+=*/node_modules/*,*.png,.DS_Store,.rspec,Gemfile.lock,*/.bundle/*,*/.git/*,*/.sass-cache/*,*/.tmp/*,*/.gradle/*,*/build/*,*/tmp/*,*/bin/*
+" set colors to hot themez
+colorscheme molokai
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
+set wildmode=longest,list,full
+set wildignore+=*/node_modules/*,*.png,.DS_Store,Gemfile.lock,*/.bundle/*,*/.git/*,*/.sass-cache/*,*/.tmp/*,*/.gradle/*,*/build/*,*/tmp/*,*/bin/*
 " Allow cursor keys in insert mode
 set esckeys
 " Allow backspace in insert mode
@@ -60,7 +95,9 @@ set ttyfast
 set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
-" Change mapleader
+" auto reload files changed outside of vim
+set autoread
+" Change leader
 let mapleader=","
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
@@ -79,6 +116,10 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
+syntax enable
+set t_Co=256
+" let lightline handle status
+set noshowmode
 " Highlight current line
 set cursorline
 " Make tabs as wide as four spaces
@@ -90,6 +131,8 @@ set shiftwidth=4
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
+" don't wrap lines
+set nowrap
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -116,6 +159,10 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
+" open vertical splits right of current window
+set splitright
+" open horizontal splits below current window
+set splitbelow
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 " Autocomplete is the thing we want
