@@ -40,7 +40,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plugin 'Raimondi/delimitMate'
 " Gives smart completions for Javascript
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 " awesome auto-complete, when it works
 Plugin 'Valloric/YouCompleteMe'
 
