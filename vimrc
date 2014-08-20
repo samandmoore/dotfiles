@@ -186,3 +186,8 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 
 " automatically strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Custom Formatting by filetype
+" =============================
+" Ruby
+autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss setlocal shiftwidth=2 tabstop=2
