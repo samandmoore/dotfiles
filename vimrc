@@ -184,6 +184,9 @@ nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 
+" NERDTree keymaps
+nnoremap <F2> :NERDTreeToggle<CR>
+
 " automatically strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 

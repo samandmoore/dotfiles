@@ -4,5 +4,9 @@
 --ignore-dir=build
 --ignore-dir=.idea
 --ignore-dir=node_modules
+--ignore-dir=bower_components
+--ignore-dir=libs
+--ignore-dir=.sass-cache
+--ignore-dir=test/lib
 
 --type-set=json=.json
