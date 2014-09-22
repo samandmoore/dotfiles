@@ -174,6 +174,7 @@ nnoremap <leader>s :w<CR>
 " ctrlp keymaps
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <F3> :CtrlPClearCache<CR>
 " faster command entry
 nnoremap ; :
 
