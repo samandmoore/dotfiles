@@ -194,4 +194,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Custom Formatting by filetype
 " =============================
 " Ruby
-autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss,*.jbuilder setlocal shiftwidth=2 tabstop=2
