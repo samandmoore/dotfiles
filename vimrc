@@ -43,6 +43,8 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'marijnh/tern_for_vim'
 " awesome auto-complete, when it works
 Plugin 'Valloric/YouCompleteMe'
+" useful unix commands, move, remove, find, locate
+Plugin 'tpope/vim-eunuch'
 
 " Syntax
 Plugin 'jelera/vim-javascript-syntax'
