@@ -45,6 +45,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
+Plugin 'ReekenX/vim-rename2'
 
 " Syntax
 Plugin 'jelera/vim-javascript-syntax'
