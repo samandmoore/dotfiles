@@ -11,3 +11,5 @@ nmap <C-S-TAB> :tabprevious<CR>
 nmap <C-TAB> :tabnext<CR>
 map <C-S-TAB> :tabprevious<CR>
 map <C-TAB> :tabnext<CR>
+
+set lines=999 columns=9999
