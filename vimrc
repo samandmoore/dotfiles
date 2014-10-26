@@ -188,6 +188,10 @@ nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 
+" remain in visual block mode after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 " NERDTree keymaps
 nnoremap <F2> :NERDTreeToggle<CR>
 
