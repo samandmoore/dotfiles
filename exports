@@ -23,13 +23,3 @@ export GREP_OPTIONS="--color=auto"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# tomcat options to avoid heapspace hell
-export CATALINA_OPTS="-server -Xms512m -Xmx2048m -XX:MaxPermSize=512m"
-
-# explicitly state where to find teh javaz
-export JAVA_HOME=/Library/Java/Home
-[[ -d $JAVA_HOME/bin ]] && export PATH=$JAVA_HOME/bin:$PATH
-
-# for golang
-export GOPATH=$HOME/go
