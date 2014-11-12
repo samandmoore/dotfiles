@@ -8,9 +8,11 @@
 --ignore-dir=libs
 --ignore-dir=.sass-cache
 --ignore-dir=test/lib
+--ignore-dir=styles/css
 
 --ignore-file=ext:class
---ignore-file=ext:.min.css
---ignore-file=ext:.min.js
+--ignore-file=ext:min.css
+--ignore-file=ext:min.js
+--ignore-file=ext:css
 
 --type-set=json=.json
