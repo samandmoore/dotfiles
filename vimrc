@@ -55,6 +55,7 @@ Plugin 'skwp/vim-rspec'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " Done configuring vundle
 call vundle#end()
