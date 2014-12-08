@@ -49,3 +49,6 @@ which aws > /dev/null && complete -C aws_completer aws
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
