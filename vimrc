@@ -39,6 +39,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plugin 'Raimondi/delimitMate'
+" snips
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " Gives smart completions for Javascript
 "Plugin 'marijnh/tern_for_vim'
 " awesome auto-complete, when it works
