@@ -35,6 +35,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # Autocomplete Grunt commands
 which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
+# Source boxen, if it's there
+[[ -s /opt/boxen/env.sh ]] && . /opt/boxen/env.sh
+
 # If possible, add tab completion for many more commands
 [[ -s ~/.git-completion ]] && . ~/.git-completion
 brewery=`brew --prefix`
