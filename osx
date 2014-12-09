@@ -42,13 +42,17 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Set fn keys to behave as fn keys
 defaults write -g com.apple.keyboard.fnState -boolean true
 
+# disable notification center
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+# to restore, run: launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-	"Terminal"; do
+	"Terminal" "NotificationCenter"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
