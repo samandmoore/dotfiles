@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Defaults for Mac OS X
 # More defaults config here
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
@@ -30,3 +32,12 @@ defaults write com.apple.dock mineffect -string "scale"
 
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Set fn keys to behave as fn keys
+defaults write -g com.apple.keyboard.fnState -boolean true
