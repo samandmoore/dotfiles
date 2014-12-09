@@ -35,9 +35,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # Autocomplete Grunt commands
 which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
-# source boxen, if it's there
-[[ -s /opt/boxen/env.sh ]] && . /opt/boxen/env.sh
-
 # If possible, add tab completion for many more commands
 [[ -s ~/.git-completion ]] && . ~/.git-completion
 brewery=`brew --prefix`
@@ -47,8 +44,3 @@ brewery=`brew --prefix`
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws
 
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
