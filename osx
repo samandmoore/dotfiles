@@ -11,6 +11,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -59,6 +62,7 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write -g com.apple.keyboard.fnState -boolean true
 
 # disable notification center
+defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 # to restore, run: launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
