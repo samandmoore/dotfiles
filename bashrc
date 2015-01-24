@@ -47,3 +47,5 @@ brewery=`brew --prefix`
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

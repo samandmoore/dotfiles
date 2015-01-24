@@ -104,7 +104,8 @@ set noerrorbells
 " disable visual bells
 set visualbell t_vb=
 " don’t show the intro message when starting Vim
-set shortmess=atI
+" don't show "ATTENTION" warnings
+set shortmess=atIA
 " use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Centralize backups, swapfiles and undo history
