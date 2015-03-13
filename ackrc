@@ -1,6 +1,8 @@
 --smart-case
 --color
 
+--ignore-dir=out
+--ignore-dir=coverage
 --ignore-dir=log
 --ignore-dir=logs
 --ignore-dir=build
