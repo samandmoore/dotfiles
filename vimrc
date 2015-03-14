@@ -175,6 +175,10 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
+" nerdtree
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapOpenSplit = 's'
+
 " Custom commands
 " ===============
 " tab navigation like a boss
