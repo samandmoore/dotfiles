@@ -53,7 +53,9 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
 
 " Syntax
-Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'skwp/vim-rspec'
