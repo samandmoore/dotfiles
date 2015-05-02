@@ -32,7 +32,7 @@ Plugin 'scrooloose/nerdtree.git'
 " fuzzy search across all files in directory
 Plugin 'kien/ctrlp.vim'
 " smart search within all files
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 " comment and uncomment lines quickly
 Plugin 'scrooloose/nerdcommenter'
 " fast multi-cursor editing
@@ -46,8 +46,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " Gives smart completions for Javascript
 "Plugin 'marijnh/tern_for_vim'
-" awesome auto-complete, when it works
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
@@ -162,15 +161,41 @@ set wildignore=.DS_Store,*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*/.bundle/*,*/.git/*
 set wildignore+=*/.sass-cache/*,*/tmp/*
 set wildignore+=*/.tmp/*,*/.gradle/*,*/build/*
-set wildignore+=*vim/backups*
+set wildignore+=*vim/backups*,argfile*,*/out/*
 
 
 " Plugin config
 " =============
 
-" YouCompleteMe
-" tell ycm where the python is or it will crash all the time
-let g:ycm_path_to_python_interpreter = '/opt/boxen/pyenv/shims/python'
+" Neocomplete
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+" ag search
+" bind K to grep word under cursor
+nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
+nnoremap <leader>f :Ag<space>
 
 " lightline
 let g:lightline = {
@@ -181,6 +206,15 @@ let g:lightline = {
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapOpenSplit = 's'
 
+" CtrlP
+" use ag for file listing
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" ag is fast enough that CtrlP doesn't need to cache
+let g:ctrlp_use_caching = 0
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <F3> :CtrlPClearCache<CR>
+
 " Custom commands
 " ===============
 " tab navigation like a boss
@@ -188,10 +222,6 @@ nmap th :tabprevious<CR>
 nmap tl :tabnext<CR>
 " faster saving
 nnoremap <leader>s :w<CR>
-" ctrlp keymaps
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <F3> :CtrlPClearCache<CR>
 " faster command entry
 nnoremap ; :
 
