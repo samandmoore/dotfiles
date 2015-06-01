@@ -205,6 +205,10 @@ let g:lightline = {
 " nerdtree
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapOpenSplit = 's'
+nnoremap <leader>tt :NERDTreeToggle<CR>
+nnoremap <leader>tf :NERDTreeFind<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeFind<CR>
 
 " CtrlP
 " use ag for file listing
@@ -213,7 +217,6 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <F3> :CtrlPClearCache<CR>
 
 " Custom commands
 " ===============
@@ -235,9 +238,6 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 " remain in visual block mode after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
-
-" NERDTree keymaps
-nnoremap <F2> :NERDTreeToggle<CR>
 
 " automatically strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
