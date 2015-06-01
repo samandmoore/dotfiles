@@ -247,3 +247,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Ruby
 autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss,*.jbuilder setlocal shiftwidth=2 tabstop=2
 autocmd FileType jbuilder setlocal shiftwidth=2 tabstop=2
+autocmd FileType yml setlocal shiftwidth=2 tabstop=2
