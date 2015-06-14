@@ -1,29 +1,6 @@
-# Simple calculator
-function calc() {
-    local result=""
-    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-    #                       └─ default (when `--mathlib` is used) is 20
-    #
-    if [[ "$result" == *.* ]]; then
-        # improve the output for decimal numbers
-        printf "$result" |
-        sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-            -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-            -e 's/0*$//;s/\.$//'   # remove trailing zeros
-    else
-        printf "$result"
-    fi
-    printf "\n"
-}
-
 # Create a new directory and enter it
 function mkd() {
     mkdir -p "$@" && cd "$@"
-}
-
-# Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -94,15 +71,6 @@ function server() {
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-    local port="${1:-4000}"
-    local ip=$(ipconfig getifaddr en1)
-    sleep 1 && open "http://${ip}:${port}/" &
-    php -S "${ip}:${port}"
-}
-
 # Compare original and gzipped file size
 function gz() {
     local origsize=$(wc -c < "$1")
@@ -110,16 +78,6 @@ function gz() {
     local ratio=$(echo "$gzipsize * 100/ $origsize" | bc -l)
     printf "orig: %d bytes\n" "$origsize"
     printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
-}
-
-# Syntax-highlight JSON strings or files
-# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
-function json() {
-    if [ -t 0 ]; then # argument
-        python -mjson.tool <<< "$*" | pygmentize -l javascript
-    else # pipe
-        python -mjson.tool | pygmentize -l javascript
-    fi
 }
 
 # All the dig info
