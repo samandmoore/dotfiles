@@ -4,7 +4,7 @@ export EDITOR="vim"
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:erasedups
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
@@ -23,7 +23,3 @@ export GREP_OPTIONS="--color=auto"
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-

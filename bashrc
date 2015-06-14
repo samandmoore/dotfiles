@@ -29,14 +29,8 @@ done
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
-
 # Autocomplete Grunt commands
 which grunt > /dev/null && eval "$(grunt --completion=bash)"
-
-# Source boxen, if it's there
-[[ -s /opt/boxen/env.sh ]] && . /opt/boxen/env.sh
 
 # If possible, add tab completion for many more commands
 [[ -s ~/.git-completion ]] && . ~/.git-completion
@@ -46,6 +40,3 @@ brewery=`brew --prefix`
 
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
