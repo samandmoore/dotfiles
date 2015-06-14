@@ -110,11 +110,12 @@ set shortmess=atIA
 " use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Centralize backups, swapfiles and undo history
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+silent !mkdir ~/.vim/swaps > /dev/null 2>&1
+silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-if exists("&undodir")
-  set undodir=~/.vim/undo
-endif
+set undodir=~/.vim/undo
 
 
 " Mouse Config
