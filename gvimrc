@@ -1,8 +1,9 @@
 " Use the excellent Railscat theme by Jeff Kreeftmeijer (gVim-only)
 " Use 13pt Menlo
-set guifont=Menlo:h13
+"set guifont=Menlo:h13
+set guifont=Source\ Code\ Pro:h13
 " Better line-height
-set linespace=8
+set linespace=6
 " hide scrollbars
 
 " Enable ESC to clear highlighting after search
