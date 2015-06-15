@@ -22,5 +22,6 @@ ln -sFvh $DOTS/vim ~/.vim
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
     echo 'installing vundle for vim magic'
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 fi
 
