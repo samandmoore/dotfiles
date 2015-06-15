@@ -65,8 +65,8 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write -g com.apple.keyboard.fnState -boolean true
 
 # disable notification center
-defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+# defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 # to restore, run: launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 # Finder: show all filename extensions
