@@ -163,6 +163,7 @@ set wildignore+=*/.bundle/*,*/.git/*
 set wildignore+=*/.sass-cache/*,*/tmp/*
 set wildignore+=*/.tmp/*,*/.gradle/*,*/build/*
 set wildignore+=*vim/backups*,argfile*,*/out/*
+set wildignore+=*coverage/*
 
 
 " Plugin config
@@ -206,8 +207,6 @@ let g:lightline = {
 " nerdtree
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapOpenSplit = 's'
-nnoremap <leader>tt :NERDTreeToggle<CR>
-nnoremap <leader>tf :NERDTreeFind<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeFind<CR>
 
