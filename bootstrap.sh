@@ -17,6 +17,8 @@ ln -sFvh $DOTS/gitconfig ~/.gitconfig
 ln -sFvh $DOTS/githelpers ~/.githelpers
 ln -sFvh $DOTS/hushlogin ~/.hushlogin
 
+ln -sFvh $DOTS/agignore ~/.agignore
+
 ln -sFvh $DOTS/vim ~/.vim
 
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
