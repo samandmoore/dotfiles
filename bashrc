@@ -36,7 +36,10 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 [[ -s ~/.git-completion ]] && . ~/.git-completion
 brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
-[[ -s $brewery/etc/autojump.sh ]]    && . $brewery/etc/autojump.sh
+[[ -s $brewery/etc/autojump.sh ]] && . $brewery/etc/autojump.sh
+
+# Autocomplete for AWS pem files in ~/.ssh/aws
+complete -F _GetOptPEM shaws
 
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws

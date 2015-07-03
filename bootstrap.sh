@@ -27,3 +27,4 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
     vim +PluginInstall +qall
 fi
 
+ln -sFvh $DOTS/bin ~/bin
