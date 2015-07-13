@@ -33,7 +33,6 @@ complete -W "NSGlobalDomain" defaults
 which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
 # If possible, add tab completion for many more commands
-[[ -s ~/.git-completion ]] && . ~/.git-completion
 brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
 [[ -s $brewery/etc/autojump.sh ]] && . $brewery/etc/autojump.sh
