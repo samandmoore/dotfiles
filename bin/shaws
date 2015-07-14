@@ -30,3 +30,6 @@ else
     echo "ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile ec2-user@$server_ip $@"
     ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile ec2-user@$server_ip $@
 fi
+
+# remove the host after you're done
+sed -ie -e"/$server_ip/d" ~/.ssh/known_hosts
