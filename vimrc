@@ -50,6 +50,7 @@ Plugin 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
+Plugin 'thoughtbot/vim-rspec'
 
 " Syntax
 "Plugin 'jelera/vim-javascript-syntax'
@@ -57,7 +58,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'skwp/vim-rspec'
+"Plugin 'skwp/vim-rspec'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
@@ -217,6 +218,13 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>t :CtrlPTag<CR>
+
+" Vim RSpec
+let g:rspec_runner = 'os_x_iterm'
+"map <Leader>t :call RunCurrentSpecFile()<CR>
+"map <Leader>t :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
 
 " Custom commands
 " ===============
