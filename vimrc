@@ -32,7 +32,7 @@ Plugin 'scrooloose/nerdtree.git'
 " useful buffer manager
 Plugin 'jeetsukumaran/vim-buffergator'
 " fuzzy search across all files in directory
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " smart search within all files
 Plugin 'rking/ag.vim'
 " comment and uncomment lines quickly
