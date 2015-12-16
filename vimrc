@@ -212,8 +212,10 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeFind<CR>
 
 " buffergator
+let g:buffergator_suppress_keymaps = 1
 nnoremap [b :BuffergatorMruCyclePrev<CR>
 nnoremap ]b :BuffergatorMruCycleNext<CR>
+nnoremap <leader>b :BuffergatorToggle<CR>
 
 " CtrlP
 " use ag for file listing
