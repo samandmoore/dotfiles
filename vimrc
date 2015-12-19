@@ -16,17 +16,12 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Themes
-"Plugin 'altercation/vim-colors-solarized'
-
 " git helpers, mostly useful for :GBlame
 Plugin 'tpope/vim-fugitive'
-" sexy stylish status line
-Plugin 'itchyny/lightline.vim'
 " shows git changes to the left of line numbers
 Plugin 'airblade/vim-gitgutter'
-" expand selections using + and -
-Plugin 'terryma/vim-expand-region'
+" sexy stylish status line
+Plugin 'itchyny/lightline.vim'
 " semi-useful directory tree via F2
 Plugin 'scrooloose/nerdtree.git'
 " useful buffer manager
@@ -42,26 +37,24 @@ Plugin 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plugin 'Raimondi/delimitMate'
 " snips
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-" Gives smart completions for Javascript
-"Plugin 'marijnh/tern_for_vim'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
 Plugin 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
 
 " Syntax
-"Plugin 'jelera/vim-javascript-syntax'
+Plugin 'tpope/vim-endwise'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'editorconfig/editorconfig-vim'
 

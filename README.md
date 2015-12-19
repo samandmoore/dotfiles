@@ -9,5 +9,11 @@ using typeface: "Source Code Pro"
     "font_size": 14
 ```
 
-##### IntelliJ
-drop .ttf files in /Library/Java/Home/jre/lib/fonts/
+Local customizations supported
+----------------------------
+
+* `~/.aliases.local`
+* `~/.gitconfig.local`
+* `~/.gvimrc.local`
+* `~/.vimrc.local`
+* `~/.vimrc.bundles.local`
