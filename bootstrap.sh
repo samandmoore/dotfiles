@@ -11,6 +11,7 @@ ln -sFvh $DOTS/functions ~/.functions
 ln -sFvh $DOTS/screenrc ~/.screenrc
 
 ln -sFvh $DOTS/vimrc ~/.vimrc
+ln -sFvh $DOTS/vimrc.bundles ~/.vimrc.bundles
 ln -sFvh $DOTS/gvimrc ~/.gvimrc
 
 ln -sFvh $DOTS/gitconfig ~/.gitconfig
