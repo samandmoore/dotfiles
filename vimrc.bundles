@@ -49,6 +49,9 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'editorconfig/editorconfig-vim'
 
+" Colorschemes
+Plugin 'flazz/vim-colorschemes'
+
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
