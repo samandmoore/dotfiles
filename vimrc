@@ -76,13 +76,13 @@ set viminfo='100,f1  " Save up to 100 marks, enable capital marks
 
 " Indentation and Display
 " =======================
-" We want to replace tabs with spaces and have 4 space width indentation
+" We want to replace tabs with spaces and have 2 space width indentation
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 set nowrap
 " Show "invisible" characters
