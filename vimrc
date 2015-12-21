@@ -198,13 +198,6 @@ vnoremap > >gv
 " automatically strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Custom Formatting by filetype
-" =============================
-" Ruby
-autocmd BufRead,BufNewFile *.rb,*.rake,Rakefile,Gemfile,*.scss,*.jbuilder,*.yml setlocal shiftwidth=2 tabstop=2
-autocmd FileType jbuilder setlocal shiftwidth=2 tabstop=2
-autocmd FileType yml setlocal shiftwidth=2 tabstop=2
-
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
