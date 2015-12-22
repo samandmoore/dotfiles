@@ -42,3 +42,6 @@ complete -F _GetOptPEM shaws
 
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
