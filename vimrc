@@ -18,6 +18,9 @@ syntax on
 syntax enable
 set t_Co=256
 set noshowmode
+" colorscheme settings
+let g:hybrid_use_Xresources = 1
+set background=dark
 colorscheme molokai
 
 " General Config
@@ -148,7 +151,7 @@ let g:lightline = {
 
 " nerdtree
 let g:NERDTreeMapOpenVSplit = 'v'
-let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenSplit = 'x'
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeFind<CR>
 
@@ -173,16 +176,25 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+" use ctrlp-matcher for better matches
+let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
+
+" vim rspec
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+map <Leader>r :call RunNearestSpec()<CR>
+
+" tslime
+let g:tslime_always_current_window = 1
+
 
 " Custom commands
 " ===============
-" tab navigation like a boss
-nmap th :tabprevious<CR>
-nmap tl :tabnext<CR>
 " faster saving
 nnoremap <leader>s :w<CR>
 " faster command entry
 nnoremap ; :
+" disable highlight
+noremap <silent> <leader><cr> :noh<cr>
 
 " create a new file and open in a new tab
 " http://vimcasts.org/e/14

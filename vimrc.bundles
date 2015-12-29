@@ -6,12 +6,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " sexy stylish status line
 Plug 'itchyny/lightline.vim'
+" tmux <-> vim swapping
+Plug 'christoomey/vim-tmux-navigator'
 " semi-useful directory tree via F2
 Plug 'scrooloose/nerdtree'
 " useful buffer manager
 Plug 'jeetsukumaran/vim-buffergator'
 " fuzzy search across all files in directory
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
 " smart search within all files
 Plug 'rking/ag.vim'
 " comment and uncomment lines quickly
@@ -20,15 +23,15 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plug 'Raimondi/delimitMate'
-" snips
-"Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'tomtom/tlib_vim'
-"Plug 'garbas/vim-snipmate'
-"Plug 'honza/vim-snippets'
+" typing autocomplete using lua
 Plug 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
+" rspec
+Plug 'thoughtbot/vim-rspec'
+" tmux command runner
+Plug 'jgdavey/tslime.vim'
 
 " Syntax
 Plug 'tpope/vim-endwise'

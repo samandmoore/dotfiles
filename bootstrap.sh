@@ -22,6 +22,8 @@ ln -sFvh $DOTS/agignore ~/.agignore
 
 ln -sFvh $DOTS/vim ~/.vim
 
+ln -sFvh $DOTS/tmux.conf ~/.tmux.conf
+
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
     echo 'installing vim-plug for vim magic'
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

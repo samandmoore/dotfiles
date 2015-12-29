@@ -1,2 +1,3 @@
 brew install macvim --with-cscope --with-lua --with-features=huge --with-luajit --with-override-system-vim
 brew install the_silver_searcher
+brew install tmux
