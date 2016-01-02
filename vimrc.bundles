@@ -18,7 +18,7 @@ Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qun
 " smart search within all files
 Plug 'rking/ag.vim'
 " comment and uncomment lines quickly
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 " fast multi-cursor editing
 Plug 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces

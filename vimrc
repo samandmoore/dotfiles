@@ -139,11 +139,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 
-" ag search
-" bind K to grep word under cursor
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
-nnoremap <leader>f :Ag<space>
-
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -161,10 +156,6 @@ nnoremap [b :BuffergatorMruCyclePrev<CR>
 nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
-" CtrlP
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
@@ -181,10 +172,42 @@ let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 
 " vim rspec
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-map <Leader>r :call RunNearestSpec()<CR>
+map <Leader>R :call RunNearestSpec()<CR>
 
 " tslime
 let g:tslime_always_current_window = 1
+
+
+" helper functions
+" ===============
+" from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("Ag \"" . l:pattern . "\" " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+" end helper functions
 
 
 " Custom commands
@@ -194,7 +217,8 @@ nnoremap <leader>s :w<CR>
 " faster command entry
 nnoremap ; :
 " disable highlight
-noremap <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader>c :noh<CR>
+noremap <silent> <leader><CR> :noh<CR>
 
 " create a new file and open in a new tab
 " http://vimcasts.org/e/14
@@ -206,6 +230,27 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 " remain in visual block mode after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" ag search
+" bind K to grep word under cursor
+nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
+nnoremap <leader>f :Ag<space>
+" When you grep, display your results in cope by doing:
+map <leader>co :botright cope<CR>
+map <leader>cc :ccl<CR>
+" To go to the next search result do:
+map <leader>n :cn<CR>
+" To go to the previous search results do:
+map <leader>p :cp<CR>
+
+" search forward / backward for selected text
+" vnoremap <silent> <leader>n :call VisualSelection('f')<CR>
+" vnoremap <silent> <leader>p :call VisualSelection('b')<CR>
+" When you press gv you Ag after the selected text
+vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
 
 " automatically strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
