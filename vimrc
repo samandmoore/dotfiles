@@ -236,12 +236,12 @@ vnoremap > >gv
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
 nnoremap <leader>f :Ag<space>
 " When you grep, display your results in cope by doing:
-map <leader>co :botright cope<CR>
-map <leader>cc :ccl<CR>
+map <silent> <leader>co :botright cope<CR>
+map <silent> <leader>cc :ccl<CR>
 " To go to the next search result do:
-map <leader>n :cn<CR>
+map <silent> <leader>n :cn<CR>
 " To go to the previous search results do:
-map <leader>p :cp<CR>
+map <silent> <leader>p :cp<CR>
 
 " search forward / backward for selected text
 " vnoremap <silent> <leader>n :call VisualSelection('f')<CR>
