@@ -217,7 +217,6 @@ nnoremap <leader>s :w<CR>
 " faster command entry
 nnoremap ; :
 " disable highlight
-noremap <silent> <leader>c :noh<CR>
 noremap <silent> <leader><CR> :noh<CR>
 
 " create a new file and open in a new tab
