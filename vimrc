@@ -194,14 +194,10 @@ function! VisualSelection(direction) range
     let l:pattern = escape(@", '\\/.*$^~[]')
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
+    if a:direction == 'gv'
         call CmdLine("Ag \"" . l:pattern . "\" " )
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
     endif
 
     let @/ = l:pattern
@@ -242,9 +238,6 @@ map <silent> <leader>n :cn<CR>
 " To go to the previous search results do:
 map <silent> <leader>p :cp<CR>
 
-" search forward / backward for selected text
-" vnoremap <silent> <leader>n :call VisualSelection('f')<CR>
-" vnoremap <silent> <leader>p :call VisualSelection('b')<CR>
 " When you press gv you Ag after the selected text
 vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
 " When you press <leader>r you can search and replace the selected text
