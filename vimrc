@@ -19,7 +19,7 @@ syntax enable
 set t_Co=256
 set noshowmode
 " colorscheme settings
-let g:hybrid_use_Xresources = 1
+let g:hybrid_use_Xresources = 1 " use xresources when using hybrid colorscheme
 set background=dark
 colorscheme molokai
 
@@ -169,6 +169,7 @@ if executable('ag')
 endif
 " use ctrlp-matcher for better matches
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
+let g:ctrlp_working_path_mode = 'rw'
 
 " vim rspec
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
