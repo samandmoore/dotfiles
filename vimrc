@@ -18,10 +18,12 @@ syntax on
 syntax enable
 set t_Co=256
 set noshowmode
-" colorscheme settings
-let g:hybrid_use_Xresources = 1 " use xresources when using hybrid colorscheme
 set background=dark
+" colorscheme settings
 colorscheme molokai
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" colorscheme solarized
 
 " General Config
 " ==============
