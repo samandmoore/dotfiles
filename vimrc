@@ -180,7 +180,6 @@ map <Leader>R :call RunNearestSpec()<CR>
 " tslime
 let g:tslime_always_current_window = 1
 
-
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
@@ -248,7 +247,9 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 
 " automatically strip whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * if index(leave_trailing_white_space, &ft) < 0 | :%s/\s\+$//e
+" except in markdown
+let leave_trailing_white_space = ['md', 'markdown']
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
