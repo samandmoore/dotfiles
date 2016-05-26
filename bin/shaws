@@ -27,8 +27,8 @@ if [[ $server_ip =~ @ ]]; then
     echo "ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile $server_ip $@"
     ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile $server_ip $@
 else
-    echo "ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile ec2-user@$server_ip $@"
-    ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile ec2-user@$server_ip $@
+    echo "ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile smoore@$server_ip $@"
+    ssh -oStrictHostKeyChecking=no -i $PEMDIR/$pemfile smoore@$server_ip $@
 fi
 
 # remove the host after you're done
