@@ -4,6 +4,9 @@
 " use vim not vi
 set nocompatible
 
+" where is ruby?
+let g:ruby_path = '/opt/boxen/rbenv/shims'
+
 " Plugin config
 " =============
 " setup Vundle for package management
@@ -171,12 +174,7 @@ endif
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 let g:ctrlp_working_path_mode = 'rw'
 
-" vim rspec
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-map <Leader>R :call RunNearestSpec()<CR>
-
-" tslime
-let g:tslime_always_current_window = 1
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " helper functions
 " ===============

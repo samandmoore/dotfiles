@@ -28,10 +28,6 @@ Plug 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
-" rspec
-Plug 'thoughtbot/vim-rspec'
-" tmux command runner
-Plug 'jgdavey/tslime.vim'
 
 " Syntax
 Plug 'tpope/vim-endwise'
