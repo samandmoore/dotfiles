@@ -29,9 +29,6 @@ done
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# Autocomplete Grunt commands
-which grunt > /dev/null && eval "$(grunt --completion=bash)"
-
 # If possible, add tab completion for many more commands
 brewery=`brew --prefix`
 [[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
@@ -42,6 +39,3 @@ complete -F _GetOptPEM shaws
 
 # add auto-completion for aws cli
 which aws > /dev/null && complete -C aws_completer aws
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
