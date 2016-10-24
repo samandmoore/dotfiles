@@ -159,16 +159,17 @@ nnoremap [b :BuffergatorMruCyclePrev<CR>
 nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" Use ripgrep https://github.com/BurntSushi/ripgrep
+if executable('rg')
+  " Use Rg over Grep
+  set grepprg=rg\ --no-heading\ --vimgrep
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s -l --color=never --files'
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+  let g:ackprg = 'rg --vimgrep --smart-case'
 endif
 " use ctrlp-matcher for better matches
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
@@ -193,7 +194,7 @@ function! VisualSelection(direction) range
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
     if a:direction == 'gv'
-        call CmdLine("Ag \"" . l:pattern . "\" " )
+        call CmdLine("Ack \"" . l:pattern . "\" " )
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     endif
@@ -224,10 +225,10 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" ag search
+" Ack search
 " bind K to grep word under cursor
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
-nnoremap <leader>f :Ag<space>
+nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>
+nnoremap <leader>f :Ack<space>
 " When you grep, display your results in cope by doing:
 map <silent> <leader>co :botright cope<CR>
 map <silent> <leader>cc :ccl<CR>
@@ -236,7 +237,7 @@ map <silent> <leader>n :cn<CR>
 " To go to the previous search results do:
 map <silent> <leader>p :cp<CR>
 
-" When you press gv you Ag after the selected text
+" When you press gv you Ack after the selected text
 vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>

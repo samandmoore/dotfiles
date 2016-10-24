@@ -16,7 +16,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
 " smart search within all files
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 " comment and uncomment lines quickly
 Plug 'tpope/vim-commentary'
 " fast multi-cursor editing
