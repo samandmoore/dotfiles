@@ -29,6 +29,10 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
 
+" test runner stuff
+Plug 'janko-m/vim-test'
+Plug 'christoomey/vim-tmux-runner'
+
 " Syntax
 Plug 'tpope/vim-endwise'
 Plug 'pangloss/vim-javascript'
@@ -40,7 +44,7 @@ Plug 'tpope/vim-rake'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'

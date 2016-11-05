@@ -159,6 +159,11 @@ nnoremap [b :BuffergatorMruCyclePrev<CR>
 nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
+" vim-test
+let test#strategy = "vtr"
+nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>ta :TestFile<cr>
+
 " Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
   " Use Rg over Grep
@@ -176,6 +181,21 @@ let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 let g:ctrlp_working_path_mode = 'rw'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" it would be nice to be able to change to the right ruby dir then change back
+" but only when running ruby
+" function! LocateRubyTestRoot()
+"   let parts = split(expand('%:p'), "/")
+"   let test_dir_idx = index(parts, "spec")
+"   " check for "test" as well
+"   " check against -1
+"   let root_parts = parts[0:test_dir_idx-1]
+"   let cd = 'cd ' . shellescape(join(root_parts, "/"))
+"   echo cd
+"   " execute cd
+"   " run tests
+"   " execute 'cd -'
+" endfunction
 
 " helper functions
 " ===============
