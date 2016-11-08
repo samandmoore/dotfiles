@@ -19,14 +19,14 @@ endif
 " ==========
 syntax on
 syntax enable
-set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 set noshowmode
 set background=dark
 " colorscheme settings
 colorscheme molokai
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" colorscheme solarized
+" colorscheme seoul256
 
 " General Config
 " ==============
@@ -147,12 +147,6 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
-" nerdtree
-let g:NERDTreeMapOpenVSplit = 'v'
-let g:NERDTreeMapOpenSplit = 'x'
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :NERDTreeFind<CR>
-
 " buffergator
 let g:buffergator_suppress_keymaps = 1
 nnoremap [b :BuffergatorMruCyclePrev<CR>
@@ -160,7 +154,7 @@ nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
 " vim-test
-let test#strategy = "vtr"
+let test#strategy = "dispatch"
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>ta :TestFile<cr>
 

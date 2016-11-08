@@ -8,8 +8,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 " tmux <-> vim swapping
 Plug 'christoomey/vim-tmux-navigator'
-" semi-useful directory tree via F2
-Plug 'scrooloose/nerdtree'
+" even better netrw
+Plug 'tpope/vim-vinegar'
 " useful buffer manager
 Plug 'jeetsukumaran/vim-buffergator'
 " fuzzy search across all files in directory
@@ -32,6 +32,7 @@ Plug 'ReekenX/vim-rename2'
 " test runner stuff
 Plug 'janko-m/vim-test'
 Plug 'christoomey/vim-tmux-runner'
+Plug 'tpope/vim-dispatch'
 
 " Syntax
 Plug 'tpope/vim-endwise'
@@ -47,7 +48,8 @@ Plug 'mustache/vim-mustache-handlebars'
 " Plug 'editorconfig/editorconfig-vim'
 
 " Colorschemes
-Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
