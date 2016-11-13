@@ -17,6 +17,7 @@ ln -sFvh $DOTS/gvimrc ~/.gvimrc
 ln -sFvh $DOTS/gitconfig ~/.gitconfig
 ln -sFvh $DOTS/githelpers ~/.githelpers
 ln -sFvh $DOTS/hushlogin ~/.hushlogin
+ln -sFvh $DOTS/git_template ~/.git_template
 
 ln -sFvh $DOTS/agignore ~/.agignore
 
