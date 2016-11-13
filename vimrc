@@ -155,6 +155,7 @@ nnoremap <leader>b :BuffergatorToggle<CR>
 
 " vim-test
 let test#strategy = "dispatch"
+" let test#strategy = "vtr"
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>ta :TestFile<cr>
 
@@ -175,21 +176,6 @@ let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 let g:ctrlp_working_path_mode = 'rw'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" it would be nice to be able to change to the right ruby dir then change back
-" but only when running ruby
-" function! LocateRubyTestRoot()
-"   let parts = split(expand('%:p'), "/")
-"   let test_dir_idx = index(parts, "spec")
-"   " check for "test" as well
-"   " check against -1
-"   let root_parts = parts[0:test_dir_idx-1]
-"   let cd = 'cd ' . shellescape(join(root_parts, "/"))
-"   echo cd
-"   " execute cd
-"   " run tests
-"   " execute 'cd -'
-" endfunction
 
 " helper functions
 " ===============
@@ -256,6 +242,28 @@ vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
+" automagical directory changing for big repos and ruby testing
+function! s:SetVimTestRubyProjectRoot()
+  let parts = split(expand("%:p"), "/")
+  let test_dir_idx = index(parts, "spec")
+
+  if test_dir_idx < 0
+    let test_dir_idx = index(parts, "test")
+  endif
+
+  if test_dir_idx < 0
+    return
+  endif
+
+  let root_parts = parts[0:test_dir_idx-1]
+  let g:test#project_root = "/".join(root_parts, "/")
+endfunction
+
+function! s:ResetVimTestRubyProjectRoot()
+  unlet g:test#project_root
+endfunction
+autocmd BufEnter *_spec.rb,*_test.rb silent! call s:SetVimTestRubyProjectRoot()
+autocmd BufLeave *_spec.rb,*_test.rb silent! call s:ResetVimTestRubyProjectRoot()
 
 " automatically strip whitespace on save
 autocmd BufWritePre * if index(leave_trailing_white_space, &ft) < 0 | :%s/\s\+$//e
