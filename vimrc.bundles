@@ -39,13 +39,14 @@ Plug 'tpope/vim-endwise'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
+" this plugin is crazy slow with rbenv and jruby?
+" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
