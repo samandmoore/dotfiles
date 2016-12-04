@@ -39,6 +39,7 @@ Plug 'tpope/vim-endwise'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-ragtag'
 " this plugin is crazy slow with rbenv and jruby?
 " Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'

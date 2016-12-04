@@ -243,7 +243,7 @@ vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 " automagical directory changing for big repos and ruby testing
-function! s:SetVimTestRubyProjectRoot()
+function! s:setVimTestRubyProjectRoot()
   let parts = split(expand("%:p"), "/")
   let test_dir_idx = index(parts, "spec")
 
@@ -259,11 +259,11 @@ function! s:SetVimTestRubyProjectRoot()
   let g:test#project_root = "/".join(root_parts, "/")
 endfunction
 
-function! s:ResetVimTestRubyProjectRoot()
+function! s:resetVimTestRubyProjectRoot()
   unlet g:test#project_root
 endfunction
-autocmd BufEnter *_spec.rb,*_test.rb silent! call s:SetVimTestRubyProjectRoot()
-autocmd BufLeave *_spec.rb,*_test.rb silent! call s:ResetVimTestRubyProjectRoot()
+autocmd BufEnter *_spec.rb,*_test.rb silent! call s:setVimTestRubyProjectRoot()
+autocmd BufLeave *_spec.rb,*_test.rb silent! call s:resetVimTestRubyProjectRoot()
 
 " automatically strip whitespace on save
 autocmd BufWritePre * if index(leave_trailing_white_space, &ft) < 0 | :%s/\s\+$//e
