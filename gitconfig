@@ -34,7 +34,7 @@
     ac = !git ci --amend
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
-    mall = "!git up && git co stage && git merge master && git push origin stage && git co develop && git merge stage && git push origin develop"
+    mall = "!git up && git co stage && git merge master && git push origin stage"
 [apply]
     # Detect whitespace errors when applying a patch
     # whitespace = fix
