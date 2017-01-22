@@ -107,12 +107,6 @@ set scrolloff=3
 " ==========
 set wildmode=longest,list,full
 set wildmenu                              " Enable ctrl-n and ctrl-p to scroll thru matches
-" set wildignore=.DS_Store,*.o,*.obj,*~     " Stuff to ignore when tab completing
-" set wildignore+=*/.bundle/*,*/.git/*
-" set wildignore+=*/.sass-cache/*,*/tmp/*
-" set wildignore+=*/.tmp/*,*/.gradle/*,*/build/*
-" set wildignore+=*vim/backups*,argfile*,*/out/*
-" set wildignore+=*coverage/*
 
 " Plugin config
 " =============

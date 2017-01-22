@@ -1,7 +1,4 @@
-" Use the excellent Railscat theme by Jeff Kreeftmeijer (gVim-only)
-" Use 13pt Menlo
-"set guifont=Menlo:h13
-set guifont=Source\ Code\ Pro:h13
+set guifont=Hack:h13
 " Better line-height
 set linespace=6
 " hide scrollbars
@@ -22,4 +19,3 @@ set lines=999 columns=9999
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-
