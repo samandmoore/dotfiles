@@ -38,16 +38,6 @@ pretty_git_log() {
         less -FXRS -h80
 }
 
-dcommit_from_master(){
-    branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/');
-    if [ "$branch" == "(master)" ]; then
-        echo "(master) git svn dcommit";
-        git svn dcommit
-    else
-        echo "Will not dcommit from $branch";
-    fi
-}
-
 add_wildcard(){
     modified_files | grep -i $1 | xargs -I{} git add {}
     untracked_files | grep -i $1 | xargs -I{} git add {}
@@ -75,34 +65,17 @@ what_the_hell_just_happened(){
 }
 
 modified_files() {
-    git st | awk '/modified/ {print "./" substr($0, index($0,$3))}';
+    git status | awk '/modified/ {print "./" substr($0, index($0,$3))}';
 }
 
 deleted_files() {
-    git st | awk '/deleted/ {print "./" substr($0, index($0,$3))}';
+    git status | awk '/deleted/ {print "./" substr($0, index($0,$3))}';
 }
 
 untracked_files() {
-    git st | grep -v "modified" | awk '/#\t/ {print "./" substr($0, index($0,$2))}';
+    git status | grep -v "modified" | awk '/#\t/ {print "./" substr($0, index($0,$2))}';
 }
 
 new_files() {
-    git st | awk '/new\ file/ {print "./" substr($0, index($0,$4))}';
+    git status | awk '/new\ file/ {print "./" substr($0, index($0,$4))}';
 }
-
-# shamelessly copied from here: https://github.com/nonrational/dotfiles/blob/master/.githelpers
-TIMESINCE="function timeSince(date) {\
-    var seconds = Math.floor((new Date() - date) / 1000);\
-    var interval = Math.floor(seconds / 31536000);\
-    if (interval > 1) return interval + \" years\";\
-    interval = Math.floor(seconds / 2592000);\
-    if (interval > 1) return interval + \" months\";\
-    interval = Math.floor(seconds / 86400);\
-    if (interval > 1) return interval + \" days\";\
-    interval = Math.floor(seconds / 3600);\
-    if (interval > 1) return interval + \" hours\";\
-    interval = Math.floor(seconds / 60);\
-    if (interval > 1) return interval + \" minutes\";\
-    return Math.floor(seconds) + \" seconds\";\
-}";
-
