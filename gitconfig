@@ -93,6 +93,3 @@
     templatedir = ~/.git_template
 [include]
     path = ~/.gitconfig.local
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential

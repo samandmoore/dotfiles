@@ -1,14 +1,6 @@
 dotfiles
 ========
 
-using typeface: "Source Code Pro"
-
-##### Sublime Text
-```
-    "font_face": "Source Code Pro Medium",
-    "font_size": 14
-```
-
 Local customizations supported
 ----------------------------
 
@@ -17,3 +9,4 @@ Local customizations supported
 * `~/.gvimrc.local`
 * `~/.vimrc.local`
 * `~/.vimrc.bundles.local`
+* `~/.tmux.conf.local`
