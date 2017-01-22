@@ -37,6 +37,7 @@ function setup_homebrew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   if [ -f "$HOME/.Brewfile" ]; then
+    brew update
     brew bundle --global
   fi
 }
