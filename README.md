@@ -4,7 +4,8 @@ dotfiles
 Local customizations supported
 ----------------------------
 
-* `~/.aliases.local`
+* `~/.path`
+* `~/.extra`
 * `~/.gitconfig.local`
 * `~/.gvimrc.local`
 * `~/.vimrc.local`
