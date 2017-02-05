@@ -48,7 +48,7 @@ export BOLD
 export RESET
 
 function parse_git_dirty() {
-    [[ $(git status 2> /dev/null | tail -n1) != *"working tree clean"* ]] && echo "*"
+    [[ $(git status 2> /dev/null | tail -n1) != *"working tree clean"* ]] && echo " ✗"
 }
 
 function parse_git_branch() {
@@ -56,5 +56,5 @@ function parse_git_branch() {
 }
 
 # export PS1="\[${BOLD}${LIGHT_BLUE}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
-export PS1="\[${BOLD}${LIGHT_BLUE}\]\u \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1="\[${BOLD}${LIGHT_BLUE}\]\u \[$WHITE\]〉\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" 〉\")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
