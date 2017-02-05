@@ -19,3 +19,8 @@ set lines=999 columns=9999
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
+
+" Local config
+if filereadable($HOME . "/.gvimrc.local")
+  source ~/.gvimrc.local
+endif
