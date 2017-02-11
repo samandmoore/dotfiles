@@ -10,6 +10,7 @@ function setup_dotfiles() {
   ln -sFvh $DOTS/exports ~/.exports
   ln -sFvh $DOTS/functions ~/.functions
   ln -sFvh $DOTS/screenrc ~/.screenrc
+  ln -sFvh $DOTS/inputrc ~/.inputrc
 
   ln -sFvh $DOTS/vimrc ~/.vimrc
   ln -sFvh $DOTS/vimrc.bundles ~/.vimrc.bundles

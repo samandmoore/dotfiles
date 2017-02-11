@@ -932,7 +932,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/my/dotfiles</string>
+	<string>~/src/iTerm2-Color-Schemes/schemes</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -976,13 +976,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>972 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>332 291 796 473 0 0 1440 877 </string>
+	<string>332 383 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 1 1436 876 0 0 1440 877 </string>
+	<string>720 1 716 876 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>240 159 956 572 0 0 1440 877 </string>
+	<string>0 1 1436 876 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>372 351 972 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1001,6 +1001,10 @@
 	<string>330 397 972 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
 	<string>351 374 972 452 0 0 1440 877 </string>
+	<key>NeverWarnAboutMeta</key>
+	<true/>
+	<key>NeverWarnAboutMeta_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1595,7 +1599,7 @@
 			<key>Normal Font</key>
 			<string>Hack-Regular 13</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
@@ -1816,6 +1820,8 @@
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1878,7 +1884,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-22T20:13:23Z</date>
+	<date>2017-02-08T21:55:49Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1934,7 +1940,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.14</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
