@@ -32,6 +32,7 @@
     ci = commit -v
     # Amend last commit
     ac = !git ci --amend
+    pick = cherry-pick
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
     mall = "!git up && git co stage && git merge master && git push origin stage"
