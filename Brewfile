@@ -9,6 +9,7 @@ brew 'ctags'
 brew 'coreutils'
 brew 'tree'
 brew 'autojump'
+brew 'hub'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
