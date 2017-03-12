@@ -10,8 +10,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 " even better netrw
 Plug 'tpope/vim-vinegar'
+" helpful motions
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 " useful buffer manager
-Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'jeetsukumaran/vim-buffergator'
 " fuzzy search across all files in directory
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
@@ -39,7 +42,6 @@ Plug 'tpope/vim-endwise'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-ragtag'
 " this plugin is crazy slow with rbenv and jruby?
 " Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
