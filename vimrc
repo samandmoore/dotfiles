@@ -221,7 +221,7 @@ vnoremap > >gv
 
 " Ack search
 " bind K to grep word under cursor
-nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>
+nnoremap K :Ack! -w "<C-R><C-W>"<CR>
 nnoremap <leader>f :Ack<space>
 " When you grep, display your results in cope by doing:
 map <silent> <leader>co :botright cope<CR>

@@ -20,6 +20,7 @@ cask 'nvalt'
 cask 'whatsapp'
 cask '1password'
 cask 'divvy'
+cask 'dash'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
