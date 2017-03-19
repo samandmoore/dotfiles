@@ -5,7 +5,10 @@
 set nocompatible
 
 " where is ruby?
-let g:ruby_path = '/opt/boxen/rbenv/shims'
+" let g:ruby_path = '/opt/boxen/rbenv/shims'
+
+" enable recursive finds
+set path+=**
 
 " Plugin config
 " =============
@@ -171,6 +174,12 @@ let g:ctrlp_working_path_mode = 'rw'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+" us 's' for horizontal splits
+let g:ack_mappings = {
+  \ "s": "<C-W><CR><C-W>K",
+  \ "gs": "<C-W><CR><C-W>K<C-W>b"
+  \ }
+
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
@@ -187,8 +196,8 @@ function! VisualSelection(direction) range
     let l:pattern = escape(@", '\\/.*$^~[]')
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'gv'
-        call CmdLine("Ack \"" . l:pattern . "\" " )
+    if a:direction == 'find'
+        call CmdLine("Ack \"" . l:pattern . "\" ")
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     endif
@@ -231,8 +240,10 @@ map <silent> <leader>n :cn<CR>
 " To go to the previous search results do:
 map <silent> <leader>p :cp<CR>
 
-" When you press gv you Ack after the selected text
-vnoremap <silent> <leader>f :call VisualSelection('gv')<CR>
+" When you press <leader>f you Ack after the selected text
+vnoremap <silent> <leader>f :call VisualSelection('find')<CR>
+" search now!
+vnoremap <silent> <leader>F :call VisualSelection('find')<CR><CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
