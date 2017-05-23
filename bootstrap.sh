@@ -15,6 +15,7 @@ function setup_dotfiles() {
   ln -sFvh $DOTS/vimrc ~/.vimrc
   ln -sFvh $DOTS/vimrc.bundles ~/.vimrc.bundles
   ln -sFvh $DOTS/gvimrc ~/.gvimrc
+  ln -sFvh $DOTS/ideavim ~/.ideavim
 
   ln -sFvh $DOTS/gitconfig ~/.gitconfig
   ln -sFvh $DOTS/githelpers ~/.githelpers
