@@ -1,6 +1,8 @@
 dotfiles
 ========
 
+To install, run `./script/setup`.
+
 Local customizations supported
 ----------------------------
 
