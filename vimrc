@@ -4,9 +4,6 @@
 " use vim not vi
 set nocompatible
 
-" where is ruby?
-" let g:ruby_path = '/opt/boxen/rbenv/shims'
-
 " enable recursive finds
 set path+=**
 
