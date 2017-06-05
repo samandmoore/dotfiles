@@ -21,6 +21,7 @@ cask 'whatsapp'
 cask '1password'
 cask 'divvy'
 cask 'dash'
+cask 'LaunchControl'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
