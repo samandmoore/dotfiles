@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " git helpers, mostly useful for :GBlame
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " shows git changes to the left of line numbers
 Plug 'airblade/vim-gitgutter'
 " sexy stylish status line

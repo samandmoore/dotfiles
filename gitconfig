@@ -26,7 +26,7 @@
     # l = log --pretty=oneline -n 20 --graph
     # PRETTY - View the SHA, description, and history graph of the latest 20 commits
     l = "!. ~/.githelpers && pretty_git_log -n 20"
-    r = !git l -20
+    r = !git l -5
     aa = "!git add -A ."
     # verbose commit
     ci = commit -v
