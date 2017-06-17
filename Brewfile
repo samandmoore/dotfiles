@@ -11,6 +11,7 @@ brew 'tree'
 brew 'autojump'
 brew 'hub'
 brew 'bash'
+brew 'antigen'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
