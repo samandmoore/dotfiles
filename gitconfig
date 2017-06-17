@@ -65,6 +65,8 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+[fetch]
+    prune = true
 
 # URL shorthands
 [url "git@github.com:"]
@@ -89,11 +91,13 @@
     user = samandmoore
 [hub]
     protocol = https
+[rerere]
+    enabled = true
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [init]
     templatedir = ~/.git_template
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [include]
     path = ~/.gitconfig.local

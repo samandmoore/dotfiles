@@ -207,6 +207,8 @@ endfunction
 
 " Custom commands
 " ===============
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
 " faster saving
 nnoremap <leader>s :w<CR>
 " faster command entry
