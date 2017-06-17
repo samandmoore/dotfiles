@@ -10,6 +10,7 @@ brew 'coreutils'
 brew 'tree'
 brew 'autojump'
 brew 'hub'
+brew 'bash'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
