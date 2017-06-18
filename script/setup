@@ -2,7 +2,7 @@
 set -euxo pipefail
 
 function setup_dotfiles() {
-  env RCRC=rcrc rcup
+  env RCRC=rcrc rcup -fv
 }
 
 function setup_homebrew() {
