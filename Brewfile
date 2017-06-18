@@ -1,5 +1,6 @@
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap 'thoughtbot/formulae'
 brew 'macvim', args:['with-cscope', 'with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
 brew 'the_silver_searcher'
 brew 'ripgrep'
@@ -12,6 +13,7 @@ brew 'autojump'
 brew 'hub'
 brew 'bash'
 brew 'antigen'
+brew 'rcm'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
