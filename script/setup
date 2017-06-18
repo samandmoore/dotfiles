@@ -17,7 +17,10 @@ function setup_homebrew() {
 }
 
 function setup_divvy() {
-  open -a safari $(cat etc/divvy/preferences.txt)
+  if [ ! -f "$HOME/.divvy" ]; then
+    open -a safari $(cat etc/divvy/preferences.txt)
+    echo "installed divvy preferences" > "$HOME/.divvy"
+  fi
 }
 
 function setup_vim() {
@@ -31,7 +34,7 @@ function setup_vim() {
 
 cd "$(dirname "$0")/.." || exit
 
-setup_dotfiles
 setup_homebrew
 setup_divvy
+setup_dotfiles
 setup_vim
