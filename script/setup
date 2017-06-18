@@ -44,6 +44,10 @@ function setup_homebrew() {
   fi
 }
 
+function setup_divvy() {
+  open -a safari $(cat etc/divvy/preferences.txt)
+}
+
 function setup_vim() {
   if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
     echo 'installing vim-plug for vim magic'
