@@ -36,6 +36,7 @@
     conflicted = diff --name-only --diff-filter=U
     trash = "!git reset --hard HEAD && git clean -df"
     mall = "!git up && git co stage && git merge master && git push origin stage"
+    browse = "!hub browse"
 [apply]
     # Detect whitespace errors when applying a patch
     # whitespace = fix
