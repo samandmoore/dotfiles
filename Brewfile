@@ -26,6 +26,7 @@ cask '1password'
 cask 'divvy'
 cask 'dash'
 cask 'LaunchControl'
+cask 'licecap'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
