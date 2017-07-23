@@ -107,6 +107,9 @@ set scrolloff=3
 " ==========
 set wildmode=longest,list,full
 set wildmenu                              " Enable ctrl-n and ctrl-p to scroll thru matches
+" use neocomplete for now
+" set omnifunc=syntaxcomplete#Complete
+" set completeopt=longest,menuone
 
 " Plugin config
 " =============
@@ -126,7 +129,7 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  " return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

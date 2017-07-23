@@ -39,17 +39,11 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'tpope/vim-dispatch'
 
 " Syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-endwise'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
-Plug 'vim-ruby/vim-ruby'
-" this plugin is crazy slow with rbenv and jruby?
-" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'tpope/vim-markdown'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'tpope/vim-markdown'
 Plug 'editorconfig/editorconfig-vim'
 
 " Colorschemes
