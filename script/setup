@@ -1,9 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
-function setup_dotfiles() {
-  env RCRC=rcrc rcup -fv
-}
+DOTFILES="$HOME/.dotfiles"
 
 function setup_homebrew() {
   if [ ! type brew 2>/dev/null ]; then
@@ -13,14 +11,23 @@ function setup_homebrew() {
   if [ -f "$HOME/.Brewfile" ]; then
     brew update
     brew bundle --global
+  elif [ -f "$DOTFILES/Brewfile" ]; then
+    # on first run, rcup hasn't run yet, so
+    # let's brew bundle from a special location
+    brew update
+    brew bundle --file="$DOTFILES/Brewfile"
   fi
 }
 
 function setup_divvy() {
   if [ ! -f "$HOME/.divvy" ]; then
-    open -a safari $(cat etc/divvy/preferences.txt)
+    open -a safari $(cat "$DOTFILES/etc/divvy/preferences.txt")
     echo "installed divvy preferences" > "$HOME/.divvy"
   fi
+}
+
+function setup_dotfiles() {
+  env RCRC=rcrc rcup -fv
 }
 
 function setup_vim() {
