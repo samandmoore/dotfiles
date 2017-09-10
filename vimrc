@@ -218,6 +218,8 @@ nnoremap <leader>s :w<CR>
 nnoremap ; :
 " disable highlight
 noremap <silent> <leader><CR> :noh<CR>
+" hit space to clear search
+nnoremap <silent> <Space> :noh<Bar>:echo<CR>""
 
 " create a new file and open in a new tab
 " http://vimcasts.org/e/14
@@ -225,6 +227,9 @@ nmap <leader>ew :e <C-R>=expand('%:h').'/'<CR>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<CR>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<CR>
+
+" copy current path
+map <silent> <leader>C :let @* = expand("%:p")<CR>:echo "Copied: ".expand("%:p")<CR>
 
 " remain in visual block mode after indent/outdent
 vnoremap < <gv
