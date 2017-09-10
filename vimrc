@@ -151,8 +151,8 @@ nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
 " vim-test
-let test#strategy = "dispatch"
-" let test#strategy = "vtr"
+" let test#strategy = "dispatch"
+let test#strategy = "vtr"
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>ta :TestFile<cr>
 

@@ -37,6 +37,7 @@ Plug 'ReekenX/vim-rename2'
 Plug 'janko-m/vim-test'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'tpope/vim-dispatch'
+" Plug 'thoughtbot/vim-rspec'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
