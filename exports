@@ -21,5 +21,8 @@ export MANPAGER="less -X"
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 
+# FZF search command
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+
 # Add `~/.bin` to the `$PATH`
 export PATH="$HOME/.bin:$PATH"

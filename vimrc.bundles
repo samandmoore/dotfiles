@@ -17,8 +17,9 @@ Plug 'tpope/vim-ragtag'
 " useful buffer manager
 " Plug 'jeetsukumaran/vim-buffergator'
 " fuzzy search across all files in directory
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " smart search within all files
 Plug 'mileszs/ack.vim'
 " comment and uncomment lines quickly

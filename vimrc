@@ -150,6 +150,9 @@ nnoremap [b :BuffergatorMruCyclePrev<CR>
 nnoremap ]b :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
+" editorconfig is slow sometimes, this used to help
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " vim-test
 " let test#strategy = "dispatch"
 let test#strategy = "vtr"
@@ -158,52 +161,69 @@ nnoremap <leader>ta :TestFile<cr>
 
 " Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
-  " Use Rg over Grep
+  " Use rg over Grep
   set grepprg=rg\ --no-heading\ --vimgrep
-
-  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'rg %s -l --color=never --files'
-
-  " rg is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " Use rg over ack
   let g:ackprg = 'rg --vimgrep --smart-case'
 endif
-" use ctrlp-matcher for better matches
-let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
-let g:ctrlp_working_path_mode = 'rw'
 
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" us 's' for horizontal splits
+" use 's' for horizontal splits
 let g:ack_mappings = {
   \ "s": "<C-W><CR><C-W>K",
   \ "gs": "<C-W><CR><C-W>K<C-W>b"
   \ }
 
+" fzf
+" use 's' for horizontal splits
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+" open fzf with ctrl+p
+nmap <C-p> :Files<CR>
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>),
+  \   1,
+  \   <bang>0
+  \ )
+
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
 function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
+  exe "menu Foo.Bar :" . a:str
+  emenu Foo.Bar
+  unmenu Foo
 endfunction
 
 function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+  let l:saved_reg = @"
+  execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'find'
-        call CmdLine("Ack \"" . l:pattern . "\" ")
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
+  if a:direction == 'find'
+    call CmdLine("Ack \"" . l:pattern . "\" ")
+  elseif a:direction == 'replace'
+    call CmdLine("%s" . '/'. l:pattern . '/')
+  endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+  let @/ = l:pattern
+  let @" = l:saved_reg
 endfunction
 " end helper functions
 

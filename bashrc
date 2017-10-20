@@ -30,5 +30,7 @@ complete -W "NSGlobalDomain" defaults
 
 # If possible, add tab completion for many more commands
 brewery=`brew --prefix`
-[[ -s $brewery/etc/bash_completion ]] && . $brewery/etc/bash_completion
-[[ -s $brewery/etc/autojump.sh ]] && . $brewery/etc/autojump.sh
+[[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
+[[ -s $brewery/etc/autojump.sh ]] && source $brewery/etc/autojump.sh
+[[ -s $brewery/opt/fzf/shell/completion.bash ]] && source $brewery/opt/fzf/shell/completion.bash
+[[ -s $brewery/opt/fzf/shell/key-bindings.bash ]] && source $brewery/opt/fzf/shell/key-bindings.bash
