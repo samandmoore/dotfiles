@@ -180,6 +180,8 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+" use less of the screen by default
+let g:fzf_layout = { 'down': '~25%' }
 " open fzf with ctrl+p
 nmap <C-p> :Files<CR>
 
