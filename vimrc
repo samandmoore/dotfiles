@@ -197,6 +197,17 @@ let g:rg_command = '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
+" ale syntax linting
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+" adjust colors
+highlight link ALEError Error
+highlight link ALEStyleError Error
+highlight ALEErrorSign guifg=#1E0010
+highlight link ALEWarning WarningMsg
+highlight link ALEStyleWarning WarningMsg
+highlight ALEWarningSign guifg=#FFFFFF
+
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
