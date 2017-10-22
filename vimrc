@@ -174,12 +174,6 @@ let g:ack_mappings = {
   \ }
 
 " fzf
-" use 's' for horizontal splits
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
 " use less of the screen by default
 let g:fzf_layout = { 'down': '~25%' }
 " open fzf with ctrl+p
@@ -193,14 +187,13 @@ nmap <C-p> :Files<CR>
 " --no-ignore: Do not respect .gitignore, etc...
 " --hidden: Search hidden files and folders
 " --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --glob: Additional conditions for search (in this case ignore everything in .git/ and node_modules/)
 " --color: Search color options
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>),
-  \   1,
-  \   <bang>0
-  \ )
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ --glob "!{.git,node_modules}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " helper functions
 " ===============
