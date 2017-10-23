@@ -1,107 +1,107 @@
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
-    local tmpFile="${@%/}.tar"
-    tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
+  local tmpFile="${@%/}.tar"
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
 
-    size=$(
-        stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
-        stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
-    )
+  size=$(
+      stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+      stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+  )
 
-    local cmd=""
-    if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
-        # the .tar file is smaller than 50 MB and Zopfli is available; use it
-        cmd="zopfli"
-    else
-        if hash pigz 2> /dev/null; then
-            cmd="pigz"
-        else
-            cmd="gzip"
-        fi
-    fi
+  local cmd=""
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+      # the .tar file is smaller than 50 MB and Zopfli is available; use it
+      cmd="zopfli"
+  else
+      if hash pigz 2> /dev/null; then
+          cmd="pigz"
+      else
+          cmd="gzip"
+      fi
+  fi
 
-    echo "Compressing .tar using \`${cmd}\`…"
-    "${cmd}" -v "${tmpFile}" || return 1
-    [ -f "${tmpFile}" ] && rm "${tmpFile}"
-    echo "${tmpFile}.gz created successfully."
+  echo "Compressing .tar using \`${cmd}\`…"
+  "${cmd}" -v "${tmpFile}" || return 1
+  [ -f "${tmpFile}" ] && rm "${tmpFile}"
+  echo "${tmpFile}.gz created successfully."
 }
 
 # Determine size of a file or total size of a directory
 function fs() {
-    if du -b /dev/null > /dev/null 2>&1; then
-        local arg=-sbh
-    else
-        local arg=-sh
-    fi
-    if [[ -n "$@" ]]; then
-        du $arg -- "$@"
-    else
-        du $arg .[^.]* *
-    fi
+  if du -b /dev/null > /dev/null 2>&1; then
+      local arg=-sbh
+  else
+      local arg=-sh
+  fi
+  if [[ -n "$@" ]]; then
+      du $arg -- "$@"
+  else
+      du $arg .[^.]* *
+  fi
 }
 
 # Use Git’s colored diff when available
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
-    function diff() {
-        git diff --no-index --color-words "$@"
-    }
+  function diff() {
+      git diff --no-index --color-words "$@"
+  }
 fi
 
 # Create a data URL from a file
 function dataurl() {
-    local mimeType=$(file -b --mime-type "$1")
-    if [[ $mimeType == text/* ]]; then
-        mimeType="${mimeType};charset=utf-8"
-    fi
-    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+  local mimeType=$(file -b --mime-type "$1")
+  if [[ $mimeType == text/* ]]; then
+      mimeType="${mimeType};charset=utf-8"
+  fi
+  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
 # All the dig info
 function digga() {
-    dig +nocmd "$1" any +multiline +noall +answer
+  dig +nocmd "$1" any +multiline +noall +answer
 }
 
 # Escape UTF-8 characters into their 3-byte format
 function escape() {
-    printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
-    # print a newline unless we’re piping the output to another program
-    if [ -t 1 ]; then
-        echo # newline
-    fi
+  printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+      echo # newline
+  fi
 }
 
 # Decode \x{ABCD}-style Unicode escape sequences
 function unidecode() {
-    perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
-    # print a newline unless we’re piping the output to another program
-    if [ -t 1 ]; then
-        echo # newline
-    fi
+  perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+      echo # newline
+  fi
 }
 
 # Get a character’s Unicode code point
 function codepoint() {
-    perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
-    # print a newline unless we’re piping the output to another program
-    if [ -t 1 ]; then
-        echo # newline
-    fi
+  perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+      echo # newline
+  fi
 }
 
 # print all the 256 colors supported by terminal
 function allthecolors() {
-    x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done;
+  x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done;
 }
 
 # kill all connections to a given pg database
 function pg_kill_db() {
-    psql -d $1 -c "select pg_terminate_backend(pg_stat_activity.pid) from pg_stat_activity where pg_stat_activity.datname = '${1}' and pid <> pg_backend_pid();";
+  psql -d $1 -c "select pg_terminate_backend(pg_stat_activity.pid) from pg_stat_activity where pg_stat_activity.datname = '${1}' and pid <> pg_backend_pid();";
 }
 
 # reload bashrc

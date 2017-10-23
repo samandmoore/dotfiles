@@ -6,7 +6,7 @@ To install, run `./script/setup`.
 Local customizations supported
 ----------------------------
 
-* `~/.extra`
+* `~/.bashrc.local`
 * `~/.gitconfig.local`
 * `~/.gvimrc.local`
 * `~/.vimrc.local`

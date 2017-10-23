@@ -1,6 +1,5 @@
 # Load the shell dotfiles, and then some:
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{bash_prompt,exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -34,3 +33,8 @@ brewery=`brew --prefix`
 [[ -s $brewery/etc/autojump.sh ]] && source $brewery/etc/autojump.sh
 [[ -s $brewery/opt/fzf/shell/completion.bash ]] && source $brewery/opt/fzf/shell/completion.bash
 [[ -s $brewery/opt/fzf/shell/key-bindings.bash ]] && source $brewery/opt/fzf/shell/key-bindings.bash
+
+# ~/.bashrc.local can be used for other settings you don’t want to commit.
+if [ -f ~/.bashrc.local ]; then
+  source ~/.bashrc.local
+fi
