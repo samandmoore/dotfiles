@@ -180,6 +180,8 @@ let g:ack_mappings = {
 let g:fzf_layout = { 'down': '~25%' }
 " open fzf with ctrl+p
 nmap <C-p> :Files<CR>
+" ctrl-p / ctrl-n cycle fzf history
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " --column: Show column number
 " --line-number: Show line number
