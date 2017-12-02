@@ -198,8 +198,11 @@ let g:rg_command = '
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " ale syntax linting
+let g:ale_sign_column_always = 1
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 " adjust colors
 highlight link ALEError Error
 highlight link ALEStyleError Error
