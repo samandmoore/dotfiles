@@ -216,12 +216,7 @@ highlight ALEWarningSign guifg=#FFFFFF
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
-function! CmdLine(str)
-  exe "menu Foo.Bar :" . a:str
-  emenu Foo.Bar
-  unmenu Foo
-endfunction
-
+" changed based on issues explained here: https://github.com/vim/vim/issues/2310
 function! VisualSelection(direction) range
   let l:saved_reg = @"
   execute "normal! vgvy"
@@ -230,9 +225,9 @@ function! VisualSelection(direction) range
   let l:pattern = substitute(l:pattern, "\n$", "", "")
 
   if a:direction == 'find'
-    call CmdLine("Ack \"" . l:pattern . "\" ")
+    let @g="Ack \"" . l:pattern . "\" "
   elseif a:direction == 'replace'
-    call CmdLine("%s" . '/'. l:pattern . '/')
+    let @g="%s" . '/'. l:pattern . '/'
   endif
 
   let @/ = l:pattern
@@ -281,11 +276,11 @@ map <silent> <leader>n :cn<CR>
 map <silent> <leader>p :cp<CR>
 
 " When you press <leader>f you Ack after the selected text
-vnoremap <silent> <leader>f :call VisualSelection('find')<CR>
+vnoremap <leader>f :call VisualSelection('find')<CR>:<C-U><C-R>=@g<CR>
 " search now!
-vnoremap <silent> <leader>F :call VisualSelection('find')<CR><CR>
+vnoremap <leader>F :call VisualSelection('find')<CR>:<C-U><C-R>=@g<CR><CR>
 " When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+vnoremap <leader>r :call VisualSelection('replace')<CR>:<C-U><C-R>=@g<CR>
 
 " automagical directory changing for big repos and ruby testing
 function! s:setVimTestRubyProjectRoot()
