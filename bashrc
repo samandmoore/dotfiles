@@ -28,7 +28,7 @@ done
 complete -W "NSGlobalDomain" defaults
 
 # If possible, add tab completion for many more commands
-brewery=`brew --prefix`
+brewery=$(brew --prefix)
 [[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
 [[ -s $brewery/etc/autojump.sh ]] && source $brewery/etc/autojump.sh
 [[ -s $brewery/opt/fzf/shell/completion.bash ]] && source $brewery/opt/fzf/shell/completion.bash

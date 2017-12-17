@@ -264,6 +264,10 @@ map <silent> <leader>C :let @* = expand("%:p")<CR>:echo "Copied: ".expand("%:p")
 vnoremap < <gv
 vnoremap > >gv
 
+" up and down by visual line
+nnoremap j gj
+nnoremap k gk
+
 " Ack search
 " bind K to grep word under cursor
 nnoremap K :Ack! -w "<C-R><C-W>"<CR>

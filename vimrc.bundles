@@ -9,8 +9,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 " tmux <-> vim swapping
 Plug 'christoomey/vim-tmux-navigator'
-" even better netrw
-Plug 'tpope/vim-vinegar'
+" alternative to vim-vinegar
+Plug 'justinmk/vim-dirvish'
 " helpful motions
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
