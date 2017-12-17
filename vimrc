@@ -146,12 +146,6 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
-" buffergator
-let g:buffergator_suppress_keymaps = 1
-nnoremap [b :BuffergatorMruCyclePrev<CR>
-nnoremap ]b :BuffergatorMruCycleNext<CR>
-nnoremap <leader>b :BuffergatorToggle<CR>
-
 " editorconfig is slow sometimes, this used to help
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
@@ -245,9 +239,7 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>s :w<CR>
 " faster command entry
 nnoremap ; :
-" disable highlight
-noremap <silent> <leader><CR> :noh<CR>
-" hit space to clear search
+" disable highlight and clear search
 nnoremap <silent> <Space> :noh<Bar>:echo<CR>""
 
 " create a new file and open in a new tab
