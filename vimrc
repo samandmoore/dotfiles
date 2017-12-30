@@ -150,8 +150,10 @@ let g:lightline = {
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " vim-test
+" test runner load results to quickfix
 " let test#strategy = "dispatch"
-let test#strategy = "vtr"
+" test runer in tmux pane
+" let test#strategy = "vtr"
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>ta :TestFile<cr>
 
