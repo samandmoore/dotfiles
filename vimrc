@@ -160,9 +160,9 @@ nnoremap <leader>ta :TestFile<cr>
 " Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
   " Use rg over Grep
-  set grepprg=rg\ --no-heading\ --vimgrep
+  set grepprg=rg\ -L\ --no-heading\ --vimgrep
   " Use rg over ack
-  let g:ackprg = 'rg --vimgrep --smart-case'
+  let g:ackprg = 'rg -L --vimgrep --smart-case'
 endif
 
 " use 's' for horizontal splits
@@ -202,6 +202,9 @@ let g:ale_sign_warning = '•'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_linters = {
+\   'ruby': ['ruby', 'rubocop', 'brakeman', 'rails_best_practices'],
+\}
 " adjust colors
 highlight link ALEError Error
 highlight link ALEStyleError Error
