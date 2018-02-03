@@ -11,7 +11,7 @@ fi
 if tput setaf 1 &> /dev/null; then
     tput sgr0
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-        LIGHT_BLUE=$(tput setaf 330)
+        LIGHT_BLUE=$(tput setaf 6)
         MAGENTA=$(tput setaf 5)
         ORANGE=$(tput setaf 172)
         GREEN=$(tput setaf 112)
