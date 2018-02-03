@@ -1084,7 +1084,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>2A050E57-FBA9-44CC-8EDE-0B1E6E4885D1</string>
+	<string>579435DE-C2DF-464C-9F86-3F8DABC32C82</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -1186,9 +1186,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 311 796 473 0 0 1440 877 </string>
+	<string>269 364 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 305 812 572 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 716 877 0 0 1440 877 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -2748,6 +2748,8 @@
 			<string>/Users/sam</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -2828,7 +2830,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-03T03:09:46Z</date>
+	<date>2018-02-03T16:11:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
