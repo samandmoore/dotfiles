@@ -4,7 +4,7 @@ set -euxo pipefail
 DOTFILES="$HOME/.dotfiles"
 
 function setup_homebrew() {
-  if [ ! type brew 2>/dev/null ]; then
+  if ! type brew 2> /dev/null; then
     echo 'installing brew'
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
