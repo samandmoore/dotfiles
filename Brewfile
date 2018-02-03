@@ -27,6 +27,7 @@ cask 'divvy'
 cask 'dash'
 cask 'LaunchControl'
 cask 'licecap'
+cask 'dropbox'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
