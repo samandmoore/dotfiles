@@ -28,6 +28,8 @@ cask 'dash'
 cask 'LaunchControl'
 cask 'licecap'
 cask 'dropbox'
+cask 'keybase'
+cask 'docker'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
