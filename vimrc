@@ -246,6 +246,8 @@ nnoremap <leader>s :w<CR>
 nnoremap ; :
 " disable highlight and clear search
 nnoremap <silent> <Space> :noh<Bar>:echo<CR>""
+" overcome the touchbar
+inoremap jj <ESC>
 
 " create a new file and open in a new tab
 " http://vimcasts.org/e/14
