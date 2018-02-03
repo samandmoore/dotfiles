@@ -25,8 +25,9 @@ endif
 set noshowmode
 set background=dark
 " colorscheme settings
-colorscheme molokai
-" colorscheme seoul256
+" colorscheme molokai
+colorscheme seoul256
+let g:seoul256_background = 236
 
 " General Config
 " ==============

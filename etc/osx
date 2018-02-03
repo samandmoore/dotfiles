@@ -29,7 +29,8 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Set a fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
