@@ -12,11 +12,11 @@ if tput setaf 1 &> /dev/null; then
     tput sgr0
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
         LIGHT_BLUE=$(tput setaf 6)
-        MAGENTA=$(tput setaf 5)
+        MAGENTA=$(tput setaf 1)
         ORANGE=$(tput setaf 172)
         GREEN=$(tput setaf 112)
-        PURPLE=$(tput setaf 141)
-        WHITE=$(tput setaf 0)
+        PURPLE=$(tput setaf 5)
+        WHITE=$(tput setaf 7)
     else
         LIGHT_BLUE=$(tput setaf 6)
         MAGENTA=$(tput setaf 5)
@@ -55,6 +55,5 @@ function parse_git_branch() {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$ORANGE$(parse_git_dirty)/"
 }
 
-# export PS1="\[${BOLD}${LIGHT_BLUE}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS1="\[${BOLD}${LIGHT_BLUE}\]\u \[$WHITE\]〉\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" 〉\")\[$MAGENTA\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
