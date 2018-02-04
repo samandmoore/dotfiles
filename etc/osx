@@ -18,6 +18,9 @@ sudo nvram SystemAudioVolume=" "
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
+# Show time in 24-hours
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -80,7 +83,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Set fn keys to behave as fn keys
-defaults write -g com.apple.keyboard.fnState -boolean true
+defaults write -g com.apple.keyboard.fnState -bool true
 
 # disable notification center
 # defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false
@@ -124,13 +127,28 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Configure touchbar
+defaults write ~/Library/Preferences/com.apple.controlstrip FullCustomized \
+  '("com.apple.system.group.brightness",
+    "com.apple.system.mission-control",
+    "com.apple.system.group.keyboard-brightness",
+    "com.apple.system.group.media",
+    "com.apple.system.group.volume",
+    "com.apple.system.screen-lock")'
+
+defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
+  '("com.apple.system.screen-lock")'
+
+# Default touchbar to function keys
+defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys" # "fullControlStrip"
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
     "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-    "Terminal" "NotificationCenter"; do
+    "Terminal" "NotificationCenter" "ControlStrip"; do
     killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
