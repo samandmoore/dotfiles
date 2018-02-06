@@ -27,6 +27,9 @@ done
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# Add tab completion for `aws` if installed
+type aws > /dev/null && complete -C "$(which aws_completer)" aws
+
 # If possible, add tab completion for many more commands
 brewery=$(brew --prefix)
 [[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
