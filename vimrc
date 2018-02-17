@@ -313,6 +313,11 @@ autocmd BufLeave *_spec.rb,*_test.rb silent! call s:resetVimTestRubyProjectRoot(
 " filetyle overrides
 autocmd BufRead,BufNewFile *Dockerfile.template set filetype=dockerfile
 
+augroup dirvish_config
+  autocmd!
+  autocmd FileType dirvish silent! unmap <buffer> <C-p>
+augroup END
+
 " automatically strip whitespace on save
 autocmd BufWritePre * if index(leave_trailing_white_space, &ft) < 0 | :%s/\s\+$//e
 " except in markdown
