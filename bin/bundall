@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# usage:
+# bundall
+# bundall update
+# bundall update rails
+
+trap "exit" SIGINT SIGTERM
+
+function bundall() {
+  for g in $(find . -name 'Gemfile*' ! -name '*.lock' -maxdepth 2); do
+    local dir="$(dirname "$g")"
+    local filename="$(basename "$g")"
+    pushd "$dir"
+    bundsingle "$filename" $@
+    popd
+  done
+}
+
+function bundsingle() {
+  local gemfile=$1
+  shift
+  (set -x; BUNDLE_GEMFILE=$gemfile bundle $@)
+}
+
+bundall $@
