@@ -26,9 +26,6 @@ Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
 " subl-like smart completion of braces
 Plug 'Raimondi/delimitMate'
-" typing autocomplete using lua
-" this is super slow now for some reason, at least with ruby
-" Plug 'Shougo/neocomplete.vim'
 " useful unix commands, move, remove, find, locate
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
