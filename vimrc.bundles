@@ -29,6 +29,9 @@ Plug 'Raimondi/delimitMate'
 " useful unix commands, move, remove, find, locate
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
+" fancypants autocomplete
+" install python with PYTHON_CONFIGURE_OPTS="--enable-shared"
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " test runner stuff
 Plug 'janko-m/vim-test'
