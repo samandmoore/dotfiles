@@ -16,6 +16,7 @@ Plug 'justinmk/vim-dirvish'
 " helpful motions
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
 " fuzzy search across all files in directory
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " smart search within all files
