@@ -1,4 +1,4 @@
-tap 'homebrew/core'
+eap 'homebrew/core'
 tap 'homebrew/services'
 tap 'thoughtbot/formulae'
 brew 'macvim', args: ['with-cscope', 'with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
@@ -30,6 +30,8 @@ cask 'licecap'
 cask 'dropbox'
 cask 'keybase'
 cask 'docker'
+cask 'skitch'
+cask 'aerial'
 
 tap 'caskroom/fonts'
 cask 'font-hack'

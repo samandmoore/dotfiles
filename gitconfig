@@ -26,7 +26,7 @@
   # verbose commit
   ci = commit -v
   # Amend last commit
-  ac = "ci --amend"
+  ac = "!git ci --amend"
   # just cherry pick
   pick = cherry-pick
   # show files with conflicts
@@ -38,6 +38,8 @@
   browse = "!hub browse"
   # open comparison in github
   compare = "!hub compare"
+  # make the PR and open it
+  pr = "!hub pull-request -o"
 [apply]
   # Detect whitespace errors when applying a patch
   # whitespace = fix

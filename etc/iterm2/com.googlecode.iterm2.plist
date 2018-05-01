@@ -1188,11 +1188,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 256 606 404 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 362 796 473 0 0 1440 877 </string>
+	<string>737 903 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>240 159 956 572 0 0 1440 877 </string>
+	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 304 812 572 0 0 1440 877 </string>
+	<string>0 228 912 636 0 0 1440 877 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -2774,6 +2774,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>539319461.49380696</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -2846,7 +2848,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-16T13:29:13Z</date>
+	<date>2018-04-25T17:49:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2887,6 +2889,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
+	<key>UseMetal</key>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -2904,7 +2908,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.2</string>
+	<string>3.1.6beta5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
