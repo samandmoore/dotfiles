@@ -28,7 +28,7 @@ done
 complete -W "NSGlobalDomain" defaults
 
 # Add tab completion for `aws` if installed
-type aws > /dev/null && complete -C "$(which aws_completer)" aws
+type aws &> /dev/null && complete -C "$(which aws_completer)" aws
 
 # If possible, add tab completion for many more commands
 brewery=$(brew --prefix)
