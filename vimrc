@@ -133,9 +133,9 @@ nnoremap <leader>ta :TestFile<cr>
 " Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
   " Use rg over Grep
-  set grepprg=rg\ -L\ --no-heading\ --vimgrep
+  set grepprg=rg\ --no-heading\ --vimgrep
   " Use rg over ack
-  let g:ackprg = 'rg -L --vimgrep --smart-case'
+  let g:ackprg = 'rg --vimgrep --smart-case'
 endif
 
 " use 's' for horizontal splits

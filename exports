@@ -22,7 +22,7 @@ export MANPAGER="less -X"
 export GREP_OPTIONS="--color=auto"
 
 # FZF search command
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 
 # Add `~/.bin` to the `$PATH`
 export PATH="$HOME/.bin:$PATH"
