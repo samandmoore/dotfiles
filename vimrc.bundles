@@ -33,6 +33,7 @@ Plug 'ReekenX/vim-rename2'
 " fancypants autocomplete
 " install python with PYTHON_CONFIGURE_OPTS="--enable-shared"
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ajh17/VimCompletesMe'
 
 " test runner stuff
 Plug 'janko-m/vim-test'

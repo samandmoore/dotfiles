@@ -1,4 +1,4 @@
-eap 'homebrew/core'
+tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'thoughtbot/formulae'
 brew 'macvim', args: ['with-cscope', 'with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
@@ -39,3 +39,5 @@ cask 'font-inconsolata'
 cask 'font-source-code-pro'
 cask 'font-fira-code'
 cask 'font-fira-mono'
+
+mas 'Snappy', id: 512617038
