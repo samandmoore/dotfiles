@@ -7,3 +7,5 @@ vendor/gems/
 bower_components/
 node_modules/
 coverage/
+*.tfstate
+*.tfstate.backup
