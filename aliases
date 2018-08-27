@@ -78,3 +78,6 @@ done
 
 # bundle exec is for younger me
 alias be='bundle exec'
+
+# kubectl is too long
+alias k='kubectl'
