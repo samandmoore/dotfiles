@@ -32,6 +32,7 @@ cask 'keybase'
 cask 'docker'
 cask 'skitch'
 cask 'aerial'
+cask 'visual-studio-code'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
