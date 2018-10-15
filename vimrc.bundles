@@ -47,6 +47,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'Quramy/tsuquyomi'
+Plug 'hashivim/vim-terraform'
 " Plug 'tpope/vim-markdown'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }

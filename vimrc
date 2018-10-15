@@ -199,6 +199,9 @@ let g:go_fmt_command="goimports"
 " let g:go_auto_type_info=1
 " let g:go_snippet_engine="neosnippet"
 
+" ===== terraform =====
+let g:terraform_fmt_on_save = 1
+
 " helper functions
 " ===============
 " from: https://github.com/amix/vimrc/blob/768c72a3edf3825e7fd5c64a460b7cd6b7e475d5/vimrcs/basic.vim#L374
