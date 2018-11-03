@@ -34,12 +34,8 @@
   trash = "!git reset --hard HEAD && git clean -df"
   # merge master into stage and push
   mall = "!git up && git co stage && git merge master && git push origin stage"
-  # open branch in github
-  browse = "!hub browse"
-  # open comparison in github
-  compare = "!hub compare"
-  # make the PR and open it
-  pr = "!hub pull-request -o"
+  # sync is the new up, but i can't remember that
+  up = sync
 [apply]
   # Detect whitespace errors when applying a patch
   # whitespace = fix

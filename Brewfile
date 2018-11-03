@@ -13,6 +13,7 @@ brew 'hub'
 brew 'bash'
 brew 'rcm'
 brew 'fzf'
+brew 'git'
 brew 'git-lfs'
 
 tap 'caskroom/cask'
