@@ -26,12 +26,9 @@ cask '1password'
 cask 'divvy'
 cask 'dash'
 cask 'LaunchControl'
-cask 'licecap'
 cask 'dropbox'
 cask 'keybase'
 cask 'docker'
-cask 'skitch'
-cask 'aerial'
 cask 'visual-studio-code'
 
 tap 'caskroom/fonts'
@@ -40,5 +37,3 @@ cask 'font-inconsolata'
 cask 'font-source-code-pro'
 cask 'font-fira-code'
 cask 'font-fira-mono'
-
-mas 'Snappy', id: 512617038
