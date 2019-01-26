@@ -1214,9 +1214,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 361 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>240 153 960 578 0 0 1440 877 </string>
+	<string>0 353 970 524 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>240 205 972 526 0 0 1440 877 </string>
+	<string>240 207 970 524 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>197 47 912 636 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2798,6 +2798,8 @@
 			<string>/Users/sam</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -2819,7 +2821,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -2884,7 +2886,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-22T17:09:18Z</date>
+	<date>2019-01-26T18:59:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2944,7 +2946,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.7beta2</string>
+	<string>3.2.7beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
