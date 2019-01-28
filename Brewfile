@@ -13,6 +13,7 @@ brew 'bash'
 brew 'rcm'
 brew 'fzf'
 brew 'git'
+brew 'ccat'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'

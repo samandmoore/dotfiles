@@ -82,3 +82,6 @@ alias be='bundle exec'
 
 # kubectl is too long
 alias k='kubectl'
+
+# colorize our cat
+alias cat='ccat'
