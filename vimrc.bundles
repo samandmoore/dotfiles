@@ -47,7 +47,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'hashivim/vim-terraform'
 " Plug 'tpope/vim-markdown'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'w0rp/ale'
 
 " Colorschemes
