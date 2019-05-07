@@ -177,7 +177,21 @@ let g:ale_lint_on_enter = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_linters = {
 \   'ruby': ['ruby', 'rubocop', 'brakeman', 'rails_best_practices'],
+\   'typescript': ['tslint', 'tsserver'],
 \}
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'typescript': ['prettier'],
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+
+" ===== TypeScript =====
+" let g:tsuquyomi_use_vimproc = 1
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_preview = 1
+let g:tsuquyomi_completion_detail = 1
+
 " adjust colors
 highlight link ALEError Error
 highlight link ALEStyleError Error
