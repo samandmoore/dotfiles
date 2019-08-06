@@ -31,6 +31,7 @@ cask 'dropbox'
 cask 'keybase'
 cask 'docker'
 cask 'visual-studio-code'
+cask 'pastebot'
 
 tap 'caskroom/fonts'
 cask 'font-hack'
