@@ -30,9 +30,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
 " fancypants autocomplete
-" Plug 'ajh17/VimCompletesMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-sources'
+Plug 'neoclide/coc-neco'
 
 " test runner stuff
 Plug 'janko-m/vim-test'
