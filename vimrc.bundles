@@ -30,7 +30,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-eunuch'
 Plug 'ReekenX/vim-rename2'
 " fancypants autocomplete
-Plug 'ajh17/VimCompletesMe'
+" Plug 'ajh17/VimCompletesMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-sources'
 
 " test runner stuff
 Plug 'janko-m/vim-test'
@@ -50,6 +52,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'w0rp/ale'
+Plug 'mattn/emmet-vim'
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'

@@ -4,9 +4,6 @@
 " use vim not vi
 set nocompatible
 
-" enable recursive finds
-set path+=**
-
 " Plugin config
 " =============
 " setup Vundle for package management
@@ -57,7 +54,7 @@ set noerrorbells
 set visualbell t_vb=
 " don’t show the intro message when starting Vim
 " don't show "ATTENTION" warnings
-set shortmess=atIA
+set shortmess=atIAc
 " use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Centralize backups, swapfiles and undo history
@@ -167,6 +164,18 @@ let g:rg_command = '
   \ --glob "!{.git,node_modules}/*" '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+" coc.nvim
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " ale syntax linting
 let g:ale_sign_column_always = 1
