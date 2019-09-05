@@ -64,6 +64,7 @@ silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
+set redrawtime=10000
 
 " Mouse Config
 " ============
@@ -186,7 +187,8 @@ let g:ale_lint_on_enter = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_linters = {
 \   'ruby': ['ruby', 'rubocop', 'brakeman', 'rails_best_practices'],
-\   'typescript': ['tslint', 'tsserver'],
+\   'typescript': ['eslint', 'tsserver'],
+\   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
