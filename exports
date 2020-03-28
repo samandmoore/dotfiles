@@ -26,3 +26,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 
 # Add `~/.bin` to the `$PATH`
 export PATH="$HOME/.bin:$PATH"
+
+# Shush macos. I shan't use zsh.
+export BASH_SILENCE_DEPRECATION_WARNING=1

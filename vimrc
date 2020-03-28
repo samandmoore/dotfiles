@@ -66,6 +66,9 @@ set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 set redrawtime=10000
 
+" fugutive used to do this for me, now it's my job
+set tags^=./.git/tags;
+
 " Mouse Config
 " ============
 set mouse=a     " Enable mouse in all modes
