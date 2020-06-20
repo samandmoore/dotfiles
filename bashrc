@@ -41,3 +41,7 @@ brewery=$(brew --prefix)
 if [ -f ~/.bashrc.local ]; then
   source ~/.bashrc.local
 fi
+
+export FLUTTER_HOME="$HOME/flutter"
+
+export PATH="$FLUTTER_HOME/bin:$PATH"

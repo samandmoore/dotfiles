@@ -1,2 +1,0 @@
-set surround
-nnoremap <leader>s :w<CR>
