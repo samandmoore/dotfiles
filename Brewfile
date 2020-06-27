@@ -1,7 +1,7 @@
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'thoughtbot/formulae'
-brew 'macvim', args: ['with-cscope', 'with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
+brew 'macvim', args: ['with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
 brew 'ripgrep'
 brew 'tmux'
 brew 'ctags'
@@ -26,7 +26,6 @@ cask 'signal'
 cask '1password'
 cask 'divvy'
 cask 'dash'
-cask 'LaunchControl'
 cask 'dropbox'
 cask 'keybase'
 cask 'docker'
