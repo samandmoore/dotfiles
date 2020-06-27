@@ -15,7 +15,7 @@ brew 'fzf'
 brew 'git'
 brew 'ccat'
 
-tap 'homebrew/cask-cask'
+tap 'homebrew/cask'
 cask_args appdir: '/Applications'
 cask 'alfred'
 cask 'iterm2'

@@ -71,6 +71,7 @@
 
 # URL shorthands
 [url "git@github.com:"]
+  insteadOf = https://github.com/
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
@@ -91,7 +92,7 @@
 [github]
   user = samandmoore
 [hub]
-  protocol = https
+  protocol = ssh
 [rerere]
   enabled = true
 [filter "lfs"]
