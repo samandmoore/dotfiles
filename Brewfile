@@ -1,7 +1,7 @@
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'thoughtbot/formulae'
-brew 'macvim', args: ['with-lua', 'with-features=huge', 'with-luajit', 'with-override-system-vim']
+brew 'macvim'
 brew 'ripgrep'
 brew 'tmux'
 brew 'ctags'
