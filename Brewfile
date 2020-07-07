@@ -15,6 +15,8 @@ brew 'rcm'
 brew 'fzf'
 brew 'git'
 brew 'ccat'
+brew 'rbenv'
+brew 'nodenv'
 
 tap 'homebrew/cask'
 cask_args appdir: '/Applications'

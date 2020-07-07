@@ -5,13 +5,15 @@ DOTFILES="$HOME/.dotfiles"
 
 function setup_homebrew() {
   if ! type brew 2> /dev/null; then
-    echo 'installing brew'
+    echo 'Installing brew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
   if [ -f "$HOME/.Brewfile" ]; then
+    echo 'Installing brew dependencies'
     brew update
     brew bundle --global
   elif [ -f "$DOTFILES/Brewfile" ]; then
+    echo 'Installing brew dependencies'
     # on first run, rcup hasn't run yet, so
     # let's brew bundle from a special location
     brew update
@@ -19,7 +21,21 @@ function setup_homebrew() {
   fi
 }
 
+function setup_node() {
+  echo 'Installing node'
+  nodenv install 10.17.0
+  nodenv rehash
+  npm install -g yarn
+}
+
+function setup_ruby() {
+  echo 'Installing ruby'
+  rbenv install 2.6.5
+  rbenv rehash
+}
+
 function setup_divvy() {
+  echo 'Setting up divvy'
   if [ ! -f "$HOME/.divvy" ]; then
     open -a safari $(cat "$DOTFILES/etc/divvy/preferences.txt")
     echo "installed divvy preferences" > "$HOME/.divvy"
@@ -27,12 +43,13 @@ function setup_divvy() {
 }
 
 function setup_dotfiles() {
+  echo 'Setting up dotfiles'
   env RCRC=rcrc rcup -fv
 }
 
 function setup_vim() {
   if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
-    echo 'installing vim-plug for vim magic'
+    echo 'Installing vim-plug for vim magic'
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +PlugInstall +qall
@@ -42,6 +59,8 @@ function setup_vim() {
 cd "$(dirname "$0")/.." || exit
 
 setup_homebrew
+setup_node
+setup_ruby
 setup_divvy
 setup_dotfiles
 setup_vim
