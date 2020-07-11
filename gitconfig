@@ -71,7 +71,7 @@
 
 # URL shorthands
 [url "git@github.com:"]
-  insteadOf = https://github.com/
+  ; insteadOf = https://github.com/
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
@@ -100,6 +100,6 @@
   smudge = git-lfs smudge %f
   required = true
 [init]
-  templatedir = ~/.git_template
+  templatedir = ~/.git-template
 [include]
   path = ~/.gitconfig.local
