@@ -28,6 +28,8 @@ cask 'dash'
 cask 'keybase'
 cask 'docker'
 cask 'visual-studio-code'
+cask 'whatsapp'
+cask 'signal'
 
 tap 'homebrew/cask-fonts'
 cask 'font-hack'
