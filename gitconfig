@@ -19,6 +19,7 @@
   credit = blame
   # Interactive rebase with the given number of latest commits
   reb = "!r() { git rebase -i HEAD~$1; }; r"
+  forkpoint = "!git merge-base --fork-point $1"
   co = checkout
   # View the SHA, description, and history graph of the latest 20 commits
   l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 20"

@@ -30,6 +30,7 @@ cask 'docker'
 cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'signal'
+cask 'licecap'
 
 tap 'homebrew/cask-fonts'
 cask 'font-hack'
