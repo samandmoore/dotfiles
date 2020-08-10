@@ -87,6 +87,8 @@
 
 [push]
   default = simple
+[pull]
+  ff = only
 [user]
   name = Sam Moore
   email = samandmoore@gmail.com
