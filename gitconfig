@@ -33,8 +33,6 @@
   # show files with conflicts
   conflicted = diff --name-only --diff-filter=U
   trash = "!git reset --hard HEAD && git clean -df"
-  # merge master into stage and push
-  mall = "!git up && git co stage && git merge master && git push origin stage"
   # sync is the new up, but i can't remember that
   up = sync
   pu = "push -u origin HEAD"
