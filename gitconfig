@@ -102,5 +102,6 @@
   required = true
 [init]
   templatedir = ~/.git-template
+  defaultBranch = main
 [include]
   path = ~/.gitconfig.local
