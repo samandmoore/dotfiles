@@ -18,7 +18,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 " fuzzy search across all files in directory
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'wsdjeg/FlyGrep.vim'
 " smart search within all files
 Plug 'mileszs/ack.vim'
