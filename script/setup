@@ -42,6 +42,13 @@ function setup_divvy() {
   fi
 }
 
+function setup_alfred() {
+  echo 'Setting up alfred preferences'
+  if [ ! -d "$HOME/.alfred" ]; then
+    git clone https://github.com/samandmoore/alfred "$HOME/.alfred"
+  fi
+}
+
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
   env RCRC=rcrc rcup -fv
