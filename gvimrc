@@ -1,4 +1,4 @@
-set guifont=Hack:h13
+set guifont="JetBrains Mono:h19"
 " Better line-height
 set linespace=6
 " hide scrollbars
