@@ -33,6 +33,7 @@ cask 'licecap'
 cask 'signal'
 cask 'visual-studio-code'
 cask 'whatsapp'
+cask 'microsoft-edge'
 
 tap 'homebrew/cask-fonts'
 cask 'font-fira-code'

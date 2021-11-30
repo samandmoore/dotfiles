@@ -27,6 +27,9 @@ done
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# Setup homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Add tab completion for `aws` if installed
 type aws &> /dev/null && complete -C "$(which aws_completer)" aws
 
