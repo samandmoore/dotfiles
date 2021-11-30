@@ -73,7 +73,7 @@ cd "$(dirname "$0")/.." || exit
 setup_shell
 setup_homebrew
 # uncomment these to include a default node and ruby
-# setup_node
+setup_node
 # setup_ruby
 setup_divvy
 setup_alfred
