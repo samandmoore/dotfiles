@@ -113,7 +113,7 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+# defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
@@ -127,28 +127,13 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-# Configure touchbar
-defaults write ~/Library/Preferences/com.apple.controlstrip FullCustomized \
-  '("com.apple.system.group.brightness",
-    "com.apple.system.mission-control",
-    "com.apple.system.group.keyboard-brightness",
-    "com.apple.system.group.media",
-    "com.apple.system.group.volume",
-    "com.apple.system.screen-lock")'
-
-defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
-  '("com.apple.system.screen-lock")'
-
-# Default touchbar to function keys
-defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys" # "fullControlStrip"
-
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
     "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-    "Terminal" "NotificationCenter" "ControlStrip"; do
+    "Terminal" "NotificationCenter"; do
     killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
