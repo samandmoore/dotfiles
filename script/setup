@@ -3,6 +3,10 @@ set -euxo pipefail
 
 DOTFILES="$HOME/.dotfiles"
 
+function setup_shell() {
+  chsh -s /bin/bash
+}
+
 function setup_homebrew() {
   if ! type brew 2> /dev/null; then
     echo 'Installing brew'
@@ -65,9 +69,11 @@ function setup_vim() {
 
 cd "$(dirname "$0")/.." || exit
 
+setup_shell
 setup_homebrew
-setup_node
-setup_ruby
+# uncomment these to include a default node and ruby
+# setup_node
+# setup_ruby
 setup_divvy
 setup_alfred
 setup_dotfiles
