@@ -24,7 +24,7 @@ set background=dark
 " colorscheme settings
 " colorscheme molokai
 let g:seoul256_background = 236
-colorscheme seoul256
+silent! colorscheme seoul256
 
 " General Config
 " ==============
