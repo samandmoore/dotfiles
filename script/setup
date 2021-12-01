@@ -28,14 +28,14 @@ function setup_homebrew() {
 
 function setup_node() {
   echo 'Installing node'
-  nodenv install 10.17.0
+  nodenv install 16.13.0
   nodenv rehash
   npm install -g yarn
 }
 
 function setup_ruby() {
   echo 'Installing ruby'
-  rbenv install 2.6.5
+  rbenv install 3.0.3
   rbenv rehash
 }
 
