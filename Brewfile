@@ -1,7 +1,7 @@
 tap 'homebrew/core'
 tap 'homebrew/services'
-tap 'thoughtbot/formulae'
 tap 'heroku/brew'
+tap 'thoughtbot/formulae'
 brew 'autojump'
 brew 'bash'
 brew 'bash-completion'
@@ -21,6 +21,12 @@ brew 'rcm'
 brew 'ripgrep'
 brew 'tmux'
 brew 'tree'
+
+# mobile dev things
+tap 'leoafarias/fvm'
+tap 'robotsandpencils/made'
+brew 'fvm'
+brew 'xcodes'
 
 tap 'homebrew/cask'
 cask_args appdir: '/Applications'
