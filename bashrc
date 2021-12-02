@@ -28,6 +28,7 @@ done
 complete -W "NSGlobalDomain" defaults
 
 # Setup homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add tab completion for `aws` if installed
