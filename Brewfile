@@ -40,6 +40,7 @@ cask 'signal'
 cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'microsoft-edge'
+cask 'meetingbar'
 
 tap 'homebrew/cask-fonts'
 cask 'font-fira-code'

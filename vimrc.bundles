@@ -54,6 +54,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'w0rp/ale'
 Plug 'mattn/emmet-vim'
+Plug 'cappyzawa/starlark.vim'
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
