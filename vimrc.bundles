@@ -34,6 +34,7 @@ Plug 'ReekenX/vim-rename2'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-sources'
 Plug 'neoclide/coc-neco'
+Plug 'github/copilot.vim'
 
 " test runner stuff
 Plug 'janko-m/vim-test'
