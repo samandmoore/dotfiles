@@ -34,12 +34,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Add tab completion for `aws` if installed
 type aws &> /dev/null && complete -C "$(which aws_completer)" aws
 
-if type rbenv &> /dev/null; then
-  eval "$(rbenv init -)"
+if type rtx &> /dev/null; then
+  eval "$(rtx activate bash)"
 fi
 
-if type nodenv &> /dev/null; then
-  eval "$(nodenv init -)"
+if [ -f ~/.cargo/env ]; then
+  source "$HOME/.cargo/env"
 fi
 
 # If possible, add tab completion for many more commands

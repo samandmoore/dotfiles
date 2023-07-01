@@ -28,15 +28,13 @@ function setup_homebrew() {
 
 function setup_node() {
   echo 'Installing node'
-  nodenv install 16.13.0
-  nodenv rehash
+  rtx install node@latest
   npm install -g yarn
 }
 
 function setup_ruby() {
   echo 'Installing ruby'
-  rbenv install 3.0.3
-  rbenv rehash
+  rtx install ruby@latest
 }
 
 function setup_divvy() {
