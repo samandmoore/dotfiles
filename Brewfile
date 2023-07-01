@@ -22,9 +22,7 @@ brew 'tmux'
 brew 'tree'
 
 # mobile dev things
-tap 'leoafarias/fvm'
 tap 'robotsandpencils/made'
-brew 'fvm'
 brew 'xcodes'
 
 tap 'homebrew/cask'

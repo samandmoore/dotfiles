@@ -38,10 +38,6 @@ if type rtx &> /dev/null; then
   eval "$(rtx activate bash)"
 fi
 
-if [ -f ~/.cargo/env ]; then
-  source "$HOME/.cargo/env"
-fi
-
 # If possible, add tab completion for many more commands
 brewery=$(brew --prefix)
 [[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
