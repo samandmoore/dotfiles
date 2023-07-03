@@ -29,12 +29,14 @@ function setup_homebrew() {
 function setup_node() {
   echo 'Installing node'
   rtx install node@latest
+  rtx use -g node@latest
   npm install -g yarn
 }
 
 function setup_ruby() {
   echo 'Installing ruby'
   rtx install ruby@latest
+  rtx use -g ruby@latest
 }
 
 function setup_divvy() {
