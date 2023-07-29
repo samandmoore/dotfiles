@@ -26,17 +26,9 @@ function setup_homebrew() {
   fi
 }
 
-function setup_node() {
-  echo 'Installing node'
-  rtx install node@latest
-  rtx use -g node@latest
-  npm install -g yarn
-}
-
-function setup_ruby() {
-  echo 'Installing ruby'
-  rtx install ruby@latest
-  rtx use -g ruby@latest
+function setup_tools() {
+  echo 'Installing tools'
+  rtx install --install-missing
 }
 
 function setup_divvy() {
@@ -72,8 +64,7 @@ cd "$(dirname "$0")/.." || exit
 
 setup_shell
 setup_homebrew
-setup_node
-setup_ruby
+setup_tools
 setup_divvy
 setup_alfred
 setup_dotfiles
