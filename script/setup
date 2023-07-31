@@ -64,8 +64,8 @@ cd "$(dirname "$0")/.." || exit
 
 setup_shell
 setup_homebrew
+setup_dotfiles
 setup_tools
 setup_divvy
 setup_alfred
-setup_dotfiles
 setup_vim
