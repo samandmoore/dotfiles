@@ -31,14 +31,6 @@ function setup_tools() {
   rtx install --install-missing
 }
 
-function setup_divvy() {
-  echo 'Setting up divvy'
-  if [ ! -f "$HOME/.divvy" ]; then
-    open -a safari $(cat "$DOTFILES/etc/divvy/preferences.txt")
-    echo "installed divvy preferences" > "$HOME/.divvy"
-  fi
-}
-
 function setup_alfred() {
   echo 'Setting up alfred preferences'
   if [ ! -d "$HOME/.alfred" ]; then
@@ -67,6 +59,5 @@ setup_shell
 setup_homebrew
 setup_dotfiles
 setup_tools
-setup_divvy
 setup_alfred
 setup_vim
