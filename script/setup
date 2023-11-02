@@ -7,6 +7,13 @@ function setup_shell() {
   chsh -s /bin/bash
 }
 
+function setup_shell_after_homebrew() {
+  if grep -q '/opt/homebrew/bin/bash' /etc/shells; then
+    echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
+  fi
+  chsh -s /opt/homebrew/bin/bash
+}
+
 function setup_homebrew() {
   if ! type brew 2> /dev/null; then
     echo 'Installing brew'
@@ -57,6 +64,7 @@ cd "$(dirname "$0")/.." || exit
 
 setup_shell
 setup_homebrew
+setup_shell_after_homebrew
 setup_dotfiles
 setup_tools
 setup_alfred
