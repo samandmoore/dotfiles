@@ -334,6 +334,9 @@ augroup dirvish_config
   autocmd FileType dirvish silent! unmap <buffer> <C-p>
 augroup END
 
+" automatically add frozen string literal pragma to new ruby buffers
+autocmd BufNewFile *.rb norm i# frozen_string_literal: true
+
 " automatically strip whitespace on save
 autocmd BufWritePre * if index(leave_trailing_white_space, &ft) < 0 | :%s/\s\+$//e
 " except in markdown
