@@ -35,7 +35,7 @@ function setup_homebrew() {
 
 function setup_tools() {
   echo 'Installing tools'
-  rtx install --install-missing
+  mise install --install-missing
 }
 
 function setup_alfred() {

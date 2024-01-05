@@ -34,8 +34,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Add tab completion for `aws` if installed
 type aws &> /dev/null && complete -C "$(which aws_completer)" aws
 
-if type rtx &> /dev/null; then
-  eval "$(rtx activate bash)"
+if type mise &> /dev/null; then
+  eval "$(mise activate bash)"
 fi
 
 # If possible, add tab completion for many more commands
