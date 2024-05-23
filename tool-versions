@@ -1,4 +1,4 @@
-rust    latest
+rust    stable
 node    18.16.0
 ruby    3.2.2
 flutter 3.19.0
