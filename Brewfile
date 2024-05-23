@@ -19,6 +19,7 @@ brew 'mise'
 brew 'rcm'
 brew 'ripgrep'
 brew 'tmux'
+brew 'tpm'
 brew 'tree'
 
 # mobile dev things
