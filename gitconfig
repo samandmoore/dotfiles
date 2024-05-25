@@ -34,7 +34,6 @@
   conflicted = diff --name-only --diff-filter=U
   trash = "!git reset --hard HEAD && git clean -df"
   # sync is the new up, but i can't remember that
-  up = sync
   pu = "push -u origin HEAD"
 [apply]
   # Detect whitespace errors when applying a patch
@@ -92,8 +91,6 @@
   email = samandmoore@gmail.com
 [github]
   user = samandmoore
-[hub]
-  protocol = ssh
 [rerere]
   enabled = true
 [filter "lfs"]
