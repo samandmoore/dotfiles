@@ -35,6 +35,8 @@
   trash = "!git reset --hard HEAD && git clean -df"
   # sync is the new up, but i can't remember that
   pu = "push -u origin HEAD"
+  # open in github web ui
+  browse = "!gh browse"
 [apply]
   # Detect whitespace errors when applying a patch
   # whitespace = fix

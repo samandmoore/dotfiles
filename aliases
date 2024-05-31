@@ -12,7 +12,6 @@ alias dt="cd ~/Desktop"
 alias oo="open ."
 alias hosts="vim /etc/hosts"
 alias g="git"
-alias git="hub"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
