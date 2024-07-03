@@ -1,4 +1,7 @@
 live_config_reload = true
+import = [
+  "~/.config/alacritty/themes/themes/afterglow.toml"
+]
 
 [shell]
 program = "/opt/homebrew/bin/tmux"

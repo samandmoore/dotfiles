@@ -38,6 +38,12 @@ function setup_tools() {
   mise install --install-missing
 }
 
+function setup_terminal() {
+  echo 'Installing alacritty tools'
+  mkdir -p "$HOME/.config/alacritty/themes"
+  git clone https://github.com/alacritty/alacritty-theme "$HOME/.config/alacritty/themes"
+}
+
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
   env RCRC=rcrc rcup -fv
@@ -60,4 +66,5 @@ setup_homebrew
 setup_shell_after_homebrew
 setup_dotfiles
 setup_tools
+setup_terminal
 setup_vim
