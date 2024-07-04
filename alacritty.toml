@@ -5,7 +5,7 @@ import = [
 
 [shell]
 program = "/opt/homebrew/bin/tmux"
-args = ["new", "-A", "-s", "work"]
+args = ["new", "-A", "-s", "main"]
 
 [window]
 decorations = "None"
