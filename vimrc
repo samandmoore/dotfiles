@@ -25,6 +25,7 @@ set background=dark
 " colorscheme molokai
 let g:seoul256_background = 236
 silent! colorscheme seoul256
+" silent! colorscheme github_dark
 
 " General Config
 " ==============

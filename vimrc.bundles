@@ -63,6 +63,7 @@ Plug 'rust-lang/rust.vim'
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
+Plug 'projekt0n/github-nvim-theme'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
