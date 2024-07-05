@@ -10,12 +10,12 @@ args = ["new", "-A", "-s", "main"]
 
 [window]
 decorations = "None"
-padding = { x = 0, y = 0 }
+padding = { x = 5, y = 0 }
 dynamic_padding = true
 startup_mode = "Maximized"
 
 [font]
 normal = { family = "Intel One Mono", style = "Regular" }
-size = 19
+size = 20
 offset = { x = 0, y = 5 }
 
