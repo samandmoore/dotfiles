@@ -1,0 +1,12 @@
+[alias]
+
+[alias.java]
+"17.0.8" = "temurin-17.0.8+7"
+
+[tools]
+flutter = "3.19.3"
+java = "17.0.8"
+node = "18.16.0"
+python = "latest"
+ruby = "3.2.3"
+rust = "stable"
