@@ -12,8 +12,9 @@ $line_break\
 $character"""
 
 [username]
-# show_always = true
+show_always = true
 style_user = "bold fg:6"
+aliases = { "sammoore" = "sam" }
 
 [directory]
 fish_style_pwd_dir_length = 1
