@@ -38,6 +38,10 @@ if type mise &> /dev/null; then
   eval "$(mise activate bash)"
 fi
 
+if type starship &> /dev/null; then
+  eval "$(starship init bash)"
+fi
+
 # If possible, add tab completion for many more commands
 brewery=$(brew --prefix)
 [[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
