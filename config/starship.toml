@@ -1,0 +1,27 @@
+command_timeout = 1000
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[username]
+# show_always = true
+style_user = "bold fg:6"
+
+[directory]
+fish_style_pwd_dir_length = 1
+style = "bold fg:112"
+
+[git_branch]
+style = "bold fg:5"
+
+[git_status]
+stashed = ""
+style = "bold fg:172"
