@@ -20,7 +20,7 @@ fish_style_pwd_dir_length = 1
 style = "bold fg:112"
 
 [git_branch]
-style = "bold fg:5"
+style = "bold fg:1"
 
 [git_status]
 stashed = ""
