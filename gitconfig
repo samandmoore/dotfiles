@@ -37,6 +37,8 @@
   pu = "push -u origin HEAD"
   # open in github web ui
   browse = "!gh browse"
+  # open pr view in web ui
+  compare = "!gh pr create --web"
 [apply]
   # Detect whitespace errors when applying a patch
   # whitespace = fix
