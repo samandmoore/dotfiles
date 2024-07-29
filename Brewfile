@@ -46,3 +46,5 @@ cask 'font-jetbrains-mono'
 cask 'font-source-code-pro'
 cask 'font-intel-one-mono'
 cask 'font-intone-mono-nerd-font'
+
+mas 'HazeOver • Distraction Dimmer™', id: 430798174
