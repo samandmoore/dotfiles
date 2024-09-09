@@ -48,3 +48,4 @@ cask 'font-intel-one-mono'
 cask 'font-intone-mono-nerd-font'
 
 mas 'HazeOver • Distraction Dimmer™', id: 430798174
+mas 'Things 3', id: 904280696
