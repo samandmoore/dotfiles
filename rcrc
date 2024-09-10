@@ -1,2 +1,2 @@
 EXCLUDES="README.md LICENSE etc script"
-SYMLINK_DIRS="git_template vim"
+SYMLINK_DIRS="git_template vim config/nvim"
