@@ -12,6 +12,7 @@ decorations = "None"
 padding = { x = 5, y = 0 }
 dynamic_padding = true
 startup_mode = "Maximized"
+option_as_alt = "Both"
 
 [font]
 # normal = { family = "Intel One Mono", style = "Regular" }
