@@ -1,5 +1,5 @@
 # Load the shell dotfiles, and then some:
-for file in ~/.{bash_prompt,exports,aliases,functions}; do
+for file in ~/.{bash_prompt,exports,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -17,7 +17,7 @@ shopt -s cdspell
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-  shopt -s "$option" 2> /dev/null
+  shopt -s "$option" 2>/dev/null
 done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
@@ -32,13 +32,13 @@ export PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add tab completion for `aws` if installed
-type aws &> /dev/null && complete -C "$(which aws_completer)" aws
+type aws &>/dev/null && complete -C "$(which aws_completer)" aws
 
-if type mise &> /dev/null; then
+if type mise &>/dev/null; then
   eval "$(mise activate bash)"
 fi
 
-if type starship &> /dev/null; then
+if type starship &>/dev/null; then
   eval "$(starship init bash)"
 fi
 
@@ -48,6 +48,12 @@ brewery=$(brew --prefix)
 [[ -s $brewery/etc/autojump.sh ]] && source $brewery/etc/autojump.sh
 [[ -s $brewery/opt/fzf/shell/completion.bash ]] && source $brewery/opt/fzf/shell/completion.bash
 [[ -s $brewery/opt/fzf/shell/key-bindings.bash ]] && source $brewery/opt/fzf/shell/key-bindings.bash
+
+# load aliases, this comes after we've fiddled with the PATH to make sure
+# that we can properly check for commands when defining aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
 
 # ~/.bashrc.local can be used for other settings you don’t want to commit.
 if [ -f ~/.bashrc.local ]; then
