@@ -1,7 +1,0 @@
-set clipboard+=unnamed
-set ideajoin
-set surround
-set commentary
-
-let mapleader = "\"
-nnoremap <leader>s :w<CR>
