@@ -15,7 +15,7 @@ function setup_shell_after_homebrew() {
 }
 
 function setup_homebrew() {
-  if ! type brew 2> /dev/null; then
+  if ! type brew 2>/dev/null; then
     echo 'Installing brew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -49,16 +49,6 @@ function setup_dotfiles() {
   env RCRC=rcrc rcup -fv
 }
 
-function setup_vim() {
-  if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
-    echo 'Installing vim-plug for vim magic'
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    vim +PlugInstall +qall
-    vim +'CocInstall coc-solargraph coc-tsserver coc-java coc-rust-analyzer coc-html coc-json coc-css coc-eslint' +qa
-  fi
-}
-
 cd "$(dirname "$0")/.." || exit
 
 setup_shell
@@ -67,4 +57,3 @@ setup_shell_after_homebrew
 setup_dotfiles
 setup_tools
 setup_terminal
-setup_vim
