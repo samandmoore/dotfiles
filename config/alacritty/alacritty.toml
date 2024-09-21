@@ -8,7 +8,7 @@ import = [
 [shell]
 # program = "/opt/homebrew/bin/zellij"
 program = "/opt/homebrew/bin/tmux"
-args = ["new", "-A", "-s", "main"]
+args = ["new", "-A", "-s", "🤓"]
 
 [window]
 decorations = "None"
