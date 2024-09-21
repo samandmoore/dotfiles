@@ -21,7 +21,6 @@ brew 'rcm'
 brew 'ripgrep'
 brew 'starship'
 brew 'tmux'
-brew 'tpm'
 brew 'tree'
 
 # mobile dev things

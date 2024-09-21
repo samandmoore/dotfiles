@@ -42,6 +42,10 @@ function setup_terminal() {
   echo 'Installing alacritty tools'
   mkdir -p "$HOME/.config/alacritty/themes"
   git clone https://github.com/alacritty/alacritty-theme "$HOME/.config/alacritty/themes"
+
+  echo 'Installing tmux tools'
+  mkdir -p "$HOME/.tmux/plugins/tpm"
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 }
 
 function setup_dotfiles() {
