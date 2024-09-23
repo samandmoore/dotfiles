@@ -6,4 +6,5 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.opt.background = "dark"
-vim.g.seoul256_background = 236
+
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
