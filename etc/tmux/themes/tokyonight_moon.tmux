@@ -22,7 +22,8 @@ set -g status-left-style NONE
 set -g status-right-style NONE
 
 set -g status-left " #S "
-set -g status-right "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261] #[fg=#82aaff,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#1b1d2b,bg=#82aaff,bold] TMUX "
+set -g status-right "#[fg=#1e2030,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#3b4261,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#82aaff,bg=#3b4261] #[fg=#82aaff,bg=#3b4261,nobold,nounderscore,noitalics]#[fg=#1b1d2b,bg=#82aaff,bold] #{tmux_mode_indicator} "
+set -g status-right " #[fg=#82aaff,bg=#1e2030,nobold,nounderscore,noitalics]#[fg=#1b1d2b,bg=#82aaff]\uE0CF "
 
 setw -g window-status-activity-style "underscore,fg=#828bb8,bg=#1e2030"
 setw -g window-status-separator ""

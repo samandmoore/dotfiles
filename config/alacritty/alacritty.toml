@@ -8,11 +8,11 @@ import = [
 [shell]
 # program = "/opt/homebrew/bin/zellij"
 program = "/opt/homebrew/bin/tmux"
-args = ["new", "-A", "-s", "🤓"]
+args = ["new", "-A", "-s", "\ue234"]
 
 [window]
 decorations = "None"
-padding = { x = 5, y = 0 }
+padding = { x = 0, y = 0 }
 dynamic_padding = true
 startup_mode = "Maximized"
 option_as_alt = "Both"
