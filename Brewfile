@@ -22,7 +22,6 @@ brew 'rcm'
 brew 'ripgrep'
 brew 'starship'
 brew 'tmux'
-brew 'tree'
 
 # mobile dev things
 tap 'robotsandpencils/made'
