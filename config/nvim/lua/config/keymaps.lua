@@ -6,6 +6,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "Faster command entry with semicolon" })
 map("i", "jj", "<esc>", { desc = "Faster escape to normal mode" })
+map("n", "<leader><space>", "<cmd>Telescope git_files<cr>", { desc = "Find Files (git-files)" })
 
 -- if Oil doesn't work out, maybe try neotree
 -- map("n", "-", "<cmd>Neotree filesystem reveal current<cr>", { desc = "Open Neotree to current file in current window" })
