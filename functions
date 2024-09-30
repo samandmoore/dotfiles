@@ -18,5 +18,5 @@ function pg_kill_db() {
 
 # reload bashrc
 function resource() {
-  source $HOME/.bashrc
+  source ~/.bashrc
 }

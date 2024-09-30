@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
-DOTFILES="$HOME/.dotfiles"
+DOTFILES=~/.dotfiles
 
 function setup_shell() {
   chsh -s /bin/bash
@@ -20,7 +20,7 @@ function setup_homebrew() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-  if [ -f "$HOME/.Brewfile" ]; then
+  if [ -f ~/.Brewfile ]; then
     echo 'Installing brew dependencies'
     brew update
     brew bundle --global
@@ -40,12 +40,15 @@ function setup_tools() {
 
 function setup_terminal() {
   echo 'Installing alacritty tools'
-  mkdir -p "$HOME/.config/alacritty/themes"
-  git clone https://github.com/alacritty/alacritty-theme "$HOME/.config/alacritty/themes"
+  mkdir -p ~/.config/alacritty/themes
+  git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
   echo 'Installing tmux tools'
-  mkdir -p "$HOME/.tmux/plugins/tpm"
-  git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+  mkdir -p ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  tmux start-server
+  tmux new-session -d
+  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
 function setup_dotfiles() {

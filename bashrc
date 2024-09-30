@@ -21,7 +21,7 @@ for option in autocd globstar; do
 done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
+[ -e ~/.ssh/config ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
@@ -44,10 +44,10 @@ fi
 
 # If possible, add tab completion for many more commands
 brewery=$(brew --prefix)
-[[ -s $brewery/etc/bash_completion ]] && source $brewery/etc/bash_completion
-[[ -s $brewery/etc/autojump.sh ]] && source $brewery/etc/autojump.sh
-[[ -s $brewery/opt/fzf/shell/completion.bash ]] && source $brewery/opt/fzf/shell/completion.bash
-[[ -s $brewery/opt/fzf/shell/key-bindings.bash ]] && source $brewery/opt/fzf/shell/key-bindings.bash
+[[ -s "$brewery/etc/bash_completion" ]] && source "$brewery/etc/bash_completion"
+[[ -s "$brewery/etc/autojump.sh" ]] && source "$brewery/etc/autojump.sh"
+[[ -s "$brewery/opt/fzf/shell/completion.bash" ]] && source "$brewery/opt/fzf/shell/completion.bash"
+[[ -s "$brewery/opt/fzf/shell/key-bindings.bash" ]] && source "$brewery/opt/fzf/shell/key-bindings.bash"
 
 # load aliases, this comes after we've fiddled with the PATH to make sure
 # that we can properly check for commands when defining aliases
