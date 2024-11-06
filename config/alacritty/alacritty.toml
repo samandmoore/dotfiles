@@ -2,13 +2,14 @@ live_config_reload = true
 import = [
   # "~/.config/alacritty/themes/themes/afterglow.toml",
   # "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
-  "~/.dotfiles/etc/alacritty/themes/tokyonight_moon.toml",
+  # "~/.dotfiles/etc/alacritty/themes/tokyonight_moon.toml",
+  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
 ]
 
 [shell]
 # program = "/opt/homebrew/bin/zellij"
 program = "/opt/homebrew/bin/tmux"
-args = ["new", "-A", "-s", "\ue234"]
+args = ["new", "-A", "-s", "work"]
 
 [window]
 decorations = "None"
