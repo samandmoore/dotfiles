@@ -6,6 +6,9 @@ return {
     keymaps = {
       ["?"] = "actions.show_help",
     },
+    view_options = {
+      show_hidden = true,
+    },
   },
   cmd = {
     "Oil",
