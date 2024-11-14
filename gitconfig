@@ -13,6 +13,7 @@
   credit = blame
   forkpoint = "!git merge-base --fork-point $1"
   co = checkout
+  c = switch -c
   # View the SHA, description, and history graph of the latest 20 commits
   l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 20"
   aa = "add -A ."
