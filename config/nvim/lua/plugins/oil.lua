@@ -5,6 +5,11 @@ return {
     -- default_file_explorer = true,
     keymaps = {
       ["?"] = "actions.show_help",
+      -- disable keymaps that clash with ctrl+{h,j,k,l} for split navigation
+      ["<C-h>"] = false,
+      ["<C-l>"] = false,
+      -- add custom map for refresh since C-l is taken
+      ["<A-r>"] = "actions.refresh",
     },
     view_options = {
       show_hidden = true,
