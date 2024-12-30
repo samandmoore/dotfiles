@@ -49,6 +49,12 @@ brewery=$(brew --prefix)
 [[ -s "$brewery/opt/fzf/shell/completion.bash" ]] && source "$brewery/opt/fzf/shell/completion.bash"
 [[ -s "$brewery/opt/fzf/shell/key-bindings.bash" ]] && source "$brewery/opt/fzf/shell/key-bindings.bash"
 
+# Set terminal title to something reasonable
+__set_terminal_title() {
+  echo -ne "\033]0;${PWD}  〉$BASH_COMMAND\007"
+}
+trap '__set_terminal_title' DEBUG
+
 # load aliases, this comes after we've fiddled with the PATH to make sure
 # that we can properly check for commands when defining aliases
 if [ -f ~/.aliases ]; then
