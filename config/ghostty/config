@@ -5,6 +5,9 @@ font-family = IntoneMono Nerd Font
 font-size = 20
 window-inherit-font-size = true
 
+quit-after-last-window-closed = true
+shell-integration-features = no-cursor,sudo,title
+
 keybind = ctrl+a>c=new_tab
 keybind = ctrl+a>v=new_split:right
 keybind = ctrl+a>s=new_split:down
