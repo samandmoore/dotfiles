@@ -1,4 +1,6 @@
 macos-titlebar-style = tabs
+theme = catppuccin-macchiato
+# theme = tokyonight-storm
 font-family = IntoneMono Nerd Font
 font-size = 20
 window-inherit-font-size = true
