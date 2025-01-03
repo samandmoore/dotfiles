@@ -131,6 +131,10 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Configure vs code to open text files
+# Depends on: brew install duti
+duti -s com.microsoft.VSCode public.plain-text all
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
