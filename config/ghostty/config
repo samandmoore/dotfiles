@@ -1,3 +1,5 @@
+auto-update-channel = tip
+
 macos-titlebar-style = tabs
 theme = catppuccin-macchiato
 # theme = tokyonight-storm
