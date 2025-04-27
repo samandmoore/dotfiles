@@ -1,2 +1,3 @@
 EXCLUDES="README.md LICENSE etc script"
+DOTFILES_DIRS="~/.dotfiles ~/.local/share/dotfiles"
 SYMLINK_DIRS="git_template vim config/nvim"

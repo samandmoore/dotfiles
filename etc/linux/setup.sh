@@ -101,6 +101,15 @@ sudo apt install -y gnome-sushi
 # managing gnome settings
 sudo apt install -y gnome-tweak-tool
 
+# nicer terminal prompt
+sudo apt install starship
+
+# terminal multiplexer
+sudo apt install tmux
+
+# dotfiles helper
+sudo apt install rcm
+
 # signal
 wget -qO- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
 cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
