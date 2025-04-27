@@ -9,7 +9,8 @@ import = [
 
 [terminal.shell]
 # program = "/opt/homebrew/bin/zellij"
-program = "/opt/homebrew/bin/tmux"
+# program = "/opt/homebrew/bin/tmux"
+program = "tmux"
 args = ["new", "-A", "-s", "work"]
 
 [window]
@@ -34,5 +35,5 @@ duration = 300
 [font]
 # normal = { family = "Intel One Mono", style = "Regular" }
 normal = { family = "IntoneMono Nerd Font", style = "Regular" }
-size = 20
+size = 10
 offset = { x = 0, y = 5 }
