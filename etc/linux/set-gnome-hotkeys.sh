@@ -1,3 +1,9 @@
+# Center new windows in the middle of the screen
+gsettings set org.gnome.mutter center-new-windows true
+
+# Set Cascadia Mono as the default monospace font
+gsettings set org.gnome.desktop.interface monospace-font-name 'Intone Mono Nerd Font 10'
+
 # Alt+F4 is very cumbersome
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
