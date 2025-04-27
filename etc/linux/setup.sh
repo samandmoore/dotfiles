@@ -8,7 +8,7 @@ sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
 sudo apt install -y python3-nautilus
 mkdir -p ~/.local/share/nautilus-python/extensions/
 
-cat > ~/.local/share/nautilus-python/extensions/open-alacritty.py <<TECHNICALLYNOTACONFIGSOHEREDOCCEDITIS
+cat >~/.local/share/nautilus-python/extensions/open-alacritty.py <<TECHNICALLYNOTACONFIGSOHEREDOCCEDITIS
 import os
 from urllib.parse import unquote
 from gi.repository import Nautilus, GObject
@@ -73,6 +73,13 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
         ]
 TECHNICALLYNOTACONFIGSOHEREDOCCEDITIS
 
+# github cli
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&
+  sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null &&
+  sudo apt update &&
+  sudo apt install gh -y
+
 # command line utilities
 sudo apt install -y fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr
 
@@ -114,7 +121,7 @@ sudo apt install rcm
 wget -qO- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
 cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |
-	sudo tee /etc/apt/sources.list.d/signal-xenial.list
+  sudo tee /etc/apt/sources.list.d/signal-xenial.list
 rm signal-desktop-keyring.gpg
 sudo apt update
 sudo apt install -y signal-desktop
