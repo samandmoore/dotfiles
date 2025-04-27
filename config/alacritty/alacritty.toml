@@ -1,3 +1,4 @@
+[general]
 live_config_reload = true
 import = [
   # "~/.config/alacritty/themes/themes/afterglow.toml",
@@ -6,7 +7,7 @@ import = [
   "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
 ]
 
-[shell]
+[terminal.shell]
 # program = "/opt/homebrew/bin/zellij"
 program = "/opt/homebrew/bin/tmux"
 args = ["new", "-A", "-s", "work"]
