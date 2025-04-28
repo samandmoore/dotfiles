@@ -1,0 +1,14 @@
+[general]
+import = [
+  # "~/.config/alacritty/themes/themes/afterglow.toml",
+  # "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
+  # "~/.dotfiles/etc/alacritty/themes/tokyonight_moon.toml",
+  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
+  "~/.config/alacritty/shared.toml",
+]
+
+[font]
+# normal = { family = "Intel One Mono", style = "Regular" }
+normal = { family = "IntoneMono Nerd Font", style = "Regular" }
+size = 20
+offset = { x = 0, y = 5 }
