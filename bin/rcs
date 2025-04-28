@@ -3,6 +3,8 @@ set -euo pipefail
 
 echo "Linking dotfiles..."
 
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+
 rcup -fv \
   -x README.md \
   -x LICENSE \
@@ -10,4 +12,5 @@ rcup -fv \
   -x script \
   -S git_template \
   -S vim \
-  -S config/nvim
+  -S config/nvim \
+  -t $OS
