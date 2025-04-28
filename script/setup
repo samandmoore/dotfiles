@@ -57,7 +57,7 @@ function setup_terminal() {
 
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
-  env RCRC=rcrc rcup -fv
+  source "$DOTFILES/bin/rcs"
 }
 
 cd "$(dirname "$0")/.." || exit

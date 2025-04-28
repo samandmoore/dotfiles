@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Linking dotfiles..."
+
+rcup -fv \
+  -x README.md \
+  -x LICENSE \
+  -x etc \
+  -x script \
+  -S git_template \
+  -S vim \
+  -S config/nvim
