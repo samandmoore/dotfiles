@@ -1,0 +1,4 @@
+[font]
+# normal = { family = "Intel One Mono", style = "Regular" }
+normal = { family = "IntoneMono Nerd Font", style = "Regular" }
+offset = { x = 0, y = 5 }
