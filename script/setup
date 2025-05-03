@@ -1,41 +1,18 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
+HERE=$(dirname "$0")
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 DOTFILES=~/.dotfiles
 
-function setup_shell() {
-  chsh -s /bin/bash
-}
-
-function setup_shell_after_homebrew() {
-  if grep -q '/opt/homebrew/bin/bash' /etc/shells; then
-    echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
-  fi
-  chsh -s /opt/homebrew/bin/bash
-}
-
-function setup_homebrew() {
-  if ! type brew 2>/dev/null; then
-    echo 'Installing brew'
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
-  if [ -f ~/.Brewfile ]; then
-    echo 'Installing brew dependencies'
-    brew update
-    brew bundle --global
-  elif [ -f "$DOTFILES/Brewfile" ]; then
-    echo 'Installing brew dependencies'
-    # on first run, rcup hasn't run yet, so
-    # let's brew bundle from a special location
-    brew update
-    brew bundle --file="$DOTFILES/Brewfile" || true
-  fi
+function setup_dotfiles() {
+  echo 'Setting up dotfiles'
+  source "$DOTFILES/bin/rcs"
 }
 
 function setup_tools() {
   echo 'Installing tools'
-  mise install --install-missing
+  # mise install --install-missing
 }
 
 function setup_terminal() {
@@ -55,16 +32,22 @@ function setup_terminal() {
   fi
 }
 
-function setup_dotfiles() {
-  echo 'Setting up dotfiles'
-  env RCRC=rcrc rcup -fv
+function setup_os() {
+  if [[ $OS = 'linux' ]]; then
+    echo 'Linux detected'
+    source "$HERE/setup_linux"
+  elif [[ $OS = 'darwin' ]]; then
+    echo 'macOS detected'
+    source "$HERE/setup_macos"
+  else
+    echo "Unsupported OS: '$OS'"
+    exit 1
+  fi
 }
 
-cd "$(dirname "$0")/.." || exit
+cd "$HERE/.." || exit
 
-setup_shell
-setup_homebrew
-setup_shell_after_homebrew
+setup_os
 setup_dotfiles
 setup_tools
 setup_terminal

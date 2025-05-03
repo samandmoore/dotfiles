@@ -10,6 +10,10 @@ Local customizations supported
 * `~/.gitconfig.local`
 * `~/.tmux.conf.local`
 
+## linux things
+
+run `etc/linux/setup`
+
 ## macOS things
 
 Run `etc/macos` to customize common OS settings. It's a good idea to log

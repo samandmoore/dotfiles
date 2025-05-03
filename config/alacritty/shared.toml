@@ -1,0 +1,26 @@
+[general]
+live_config_reload = true
+
+[terminal.shell]
+# program = "/opt/homebrew/bin/tmux"
+program = "tmux"
+args = ["new", "-A", "-s", "work"]
+
+[window]
+decorations = "None"
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+startup_mode = "Maximized"
+option_as_alt = "Both"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style.shape = "Block"
+style.blinking = "On"
+
+[bell]
+animation = "EaseOutSine"
+color = "#b59b9c"
+duration = 300

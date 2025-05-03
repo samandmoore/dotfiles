@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+source etc/linux/setup.sh

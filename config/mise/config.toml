@@ -3,11 +3,11 @@
 "21" = "temurin-21.0.6+7.0.LTS"
 
 [tools]
-deno = "2.0.3"
+deno = "latest"
 flutter = "3.19.3"
-go = "1.23.1"
+go = "latest"
 java = "21"
-node = "18.16.0"
+node = "latest"
 python = "3.12.1"
-ruby = "3.2.3"
-rust = "stable"
+ruby = "latest"
+rust = "latest"
