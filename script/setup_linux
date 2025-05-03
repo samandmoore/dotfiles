@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euo pipefail
 
-echo 'TODO: setup linux here...'
+source etc/linux/setup.sh
