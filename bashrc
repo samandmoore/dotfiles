@@ -35,13 +35,13 @@ if [ -f /opt/homebrew/bin/brew ]; then
   # If possible, add tab completion for many more commands
   brewery=$(brew --prefix)
   [[ -s "$brewery/etc/bash_completion" ]] && source "$brewery/etc/bash_completion"
-  [[ -s "$brewery/etc/autojump.sh" ]] && source "$brewery/etc/autojump.sh"
   [[ -s "$brewery/opt/fzf/shell/completion.bash" ]] && source "$brewery/opt/fzf/shell/completion.bash"
   [[ -s "$brewery/opt/fzf/shell/key-bindings.bash" ]] && source "$brewery/opt/fzf/shell/key-bindings.bash"
 fi
 
-# Add tab completion for `aws` if installed
-type aws &>/dev/null && complete -C "$(which aws_completer)" aws
+if type aws &>/dev/null; then
+  complete -C "$(which aws_completer)" aws
+fi
 
 if type mise &>/dev/null; then
   eval "$(mise activate bash)"
@@ -52,7 +52,7 @@ if type starship &>/dev/null; then
 fi
 
 if command -v zoxide &>/dev/null; then
-  eval "$(zoxide init bash)"
+  eval "$(zoxide init --cmd j bash)"
 fi
 
 # Set terminal title to something reasonable
