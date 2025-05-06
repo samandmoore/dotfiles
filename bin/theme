@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+THEME=$1
+
+ln -sf \
+  "../../etc/alacritty/themes/$THEME.toml" \
+  "$DOTFILES/config/alacritty/theme.toml"
+
+# TODO
+# configure tmux theme
+# configure neovim theme
+# configure vscode theme
+# configure gnome theme
