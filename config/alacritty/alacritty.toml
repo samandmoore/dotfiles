@@ -1,13 +1,6 @@
 [general]
 import = [
-  # theme
-  # font
-  # font-size
-  # shared
-  # "~/.config/alacritty/themes/themes/afterglow.toml",
-  # "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
-  # "~/.dotfiles/etc/alacritty/themes/tokyonight_moon.toml",
-  "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
+  "~/.config/alacritty/theme.toml",
   "~/.config/alacritty/font.toml",
   "~/.config/alacritty/font-size.toml",
   "~/.config/alacritty/shared.toml",
