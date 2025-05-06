@@ -13,5 +13,16 @@ sudo apt install -y luarocks tree-sitter-cli
 # Replace desktop launcher with one running inside Alacritty
 if [[ -d ~/.local/share/applications ]]; then
   sudo rm -rf /usr/share/applications/nvim.desktop
-  source ~/.dotfiles/etc/linux/applications/Neovim.desktop.sh
+  cat <<EOF >~/.local/share/applications/Neovim.desktop
+[Desktop Entry]
+Version=1.0
+Name=Neovim
+Comment=Edit text files
+Exec=alacritty --config-file /home/$USER/.config/alacritty/pane.toml --class=Neovim --title=Neovim -e nvim %F
+Terminal=false
+Type=Application
+Icon=nvim
+Categories=Utilities;TextEditor;
+StartupNotify=false
+EOF
 fi
