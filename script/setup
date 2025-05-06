@@ -12,16 +12,10 @@ function setup_dotfiles() {
 
 function setup_tools() {
   echo 'Installing tools'
-  # mise install --install-missing
+  mise install --install-missing
 }
 
 function setup_terminal() {
-  if [ ! -d ~/.config/alacritty/themes ]; then
-    echo 'Installing alacritty tools'
-    mkdir -p ~/.config/alacritty/themes
-    git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-  fi
-
   if [ ! -d ~/.tmux/plugins/tpm ]; then
     echo 'Installing tmux tools'
     mkdir -p ~/.tmux/plugins/tpm
