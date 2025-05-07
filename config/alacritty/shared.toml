@@ -2,7 +2,6 @@
 live_config_reload = true
 
 [terminal.shell]
-# program = "/opt/homebrew/bin/tmux"
 program = "tmux"
 args = ["new", "-A", "-s", "work"]
 

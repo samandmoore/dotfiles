@@ -4,4 +4,6 @@ import = [
   "~/.config/alacritty/font.toml",
   "~/.config/alacritty/font-size.toml",
   "~/.config/alacritty/shared.toml",
+  "~/.config/alacritty/darwin.toml",
+  "~/.config/alacritty/linux.toml",
 ]
