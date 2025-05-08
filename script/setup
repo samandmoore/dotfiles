@@ -7,7 +7,7 @@ DOTFILES=~/.dotfiles
 
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
-  source "$DOTFILES/bin/rcs"
+  "$DOTFILES"/bin/rcs --up
 }
 
 function setup_tools() {

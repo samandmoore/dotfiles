@@ -1,16 +1,44 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Linking dotfiles..."
-
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
-rcup -fv \
-  -x README.md \
-  -x LICENSE \
-  -x etc \
-  -x script \
-  -S git_template \
-  -S vim \
-  -S config/nvim \
-  -t $OS
+function update_rc_files() {
+  rcup -fv \
+    -x README.md \
+    -x LICENSE \
+    -x etc \
+    -x script \
+    -S git_template \
+    -S vim \
+    -S config/nvim \
+    -t "$OS"
+}
+
+function list_rc_files() {
+  lsrc -v \
+    -x README.md \
+    -x LICENSE \
+    -x etc \
+    -x script \
+    -S git_template \
+    -S vim \
+    -S config/nvim \
+    -t "$OS"
+}
+
+case "${1:-}" in
+--list)
+  list_rc_files
+  exit 0
+  ;;
+--up)
+  echo "Linking dotfiles..."
+  update_rc_files
+  ;;
+*)
+  echo "Manage RC files"
+  echo "Usage: $0 [--list | --up]"
+  exit 1
+  ;;
+esac
