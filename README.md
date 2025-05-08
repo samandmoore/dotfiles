@@ -12,12 +12,11 @@ Local customizations supported
 
 ## linux things
 
-run `etc/linux/setup`
+customizations are in `etc/linux`
 
 ## macOS things
 
-Run `etc/macos` to customize common OS settings. It's a good idea to log
-out and log back in afterward.
+customizations are in `etc/macos`
 
 Change your computer name and network sharing name with this script if
 you want.
