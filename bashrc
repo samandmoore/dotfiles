@@ -1,5 +1,5 @@
 # Load the shell dotfiles, and then some:
-for file in ~/.{bash_prompt,exports,functions}; do
+for file in ~/.config/bash/{prompt,exports,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -63,8 +63,8 @@ trap '__set_terminal_title' DEBUG
 
 # load aliases, this comes after we've fiddled with the PATH to make sure
 # that we can properly check for commands when defining aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
+if [ -f ~/.config/bash/aliases ]; then
+  source ~/.config/bash/aliases
 fi
 
 # ~/.bashrc.local can be used for other settings you don’t want to commit.
