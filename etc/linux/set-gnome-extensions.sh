@@ -24,7 +24,7 @@ gsettings set org.gnome.shell.extensions.tactile col-2 1
 gsettings set org.gnome.shell.extensions.tactile col-3 0
 gsettings set org.gnome.shell.extensions.tactile row-0 1
 gsettings set org.gnome.shell.extensions.tactile row-1 1
-gsettings set org.gnome.shell.extensions.tactile gap-size 8
+gsettings set org.gnome.shell.extensions.tactile gap-size 0
 gsettings set org.gnome.shell.extensions.tactile show-tiles "['<Control><Super>t']"
 
 # Configure TopHat
