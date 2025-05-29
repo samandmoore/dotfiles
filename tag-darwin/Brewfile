@@ -1,4 +1,3 @@
-tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'thoughtbot/formulae'
 tap 'samandmoore/git-up', 'https://github.com/samandmoore/git-up'
