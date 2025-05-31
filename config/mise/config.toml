@@ -4,6 +4,7 @@
 
 [tools]
 "cargo:https://github.com/samandmoore/git-up" = "tag:v0.2.0"
+"cargo:presenterm" = "latest"
 deno = "latest"
 flutter = "3.19.3"
 go = "latest"
