@@ -85,7 +85,6 @@
   smudge = git-lfs smudge %f
   required = true
 [init]
-  templatedir = ~/.git_template
   defaultBranch = main
 [include]
   path = ~/.gitconfig.local
