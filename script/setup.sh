@@ -4,27 +4,6 @@ set -euo pipefail
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 DOTFILES=~/.dotfiles
 
-function setup_dotfiles() {
-  echo 'Setting up dotfiles'
-  "$DOTFILES"/bin/rcs --up
-}
-
-function setup_tools() {
-  echo 'Installing tools'
-  mise install --install-missing
-}
-
-function setup_terminal() {
-  if [ ! -d ~/.tmux/plugins/tpm ]; then
-    echo 'Installing tmux tools'
-    mkdir -p ~/.tmux/plugins/tpm
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    tmux start-server
-    tmux new-session -d
-    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
-  fi
-}
-
 function setup_os() {
   if [[ $OS = 'linux' ]]; then
     echo 'Linux detected'
@@ -38,7 +17,21 @@ function setup_os() {
   fi
 }
 
+function setup_dotfiles() {
+  echo 'Setting up dotfiles'
+  "$DOTFILES"/bin/rcs --up
+}
+
+function setup_tools() {
+  echo 'Installing tools'
+  mise install --install-missing
+}
+
+function setup_theme() {
+  "$DOTFILES"/bin/theme --change catppuccin-macchiato
+}
+
 setup_os
 setup_dotfiles
 setup_tools
-setup_terminal
+setup_theme
