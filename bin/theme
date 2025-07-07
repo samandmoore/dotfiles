@@ -5,7 +5,7 @@ DOTFILES=~/.dotfiles
 THEME=$1
 
 ln -sf \
-  "../../etc/alacritty/themes/$THEME.toml" \
+  "../../etc/themes/$THEME/alacritty.toml" \
   "$DOTFILES/config/alacritty/theme.toml"
 
 # TODO
