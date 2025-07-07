@@ -9,8 +9,6 @@ function update_rc_files() {
     -x LICENSE \
     -x etc \
     -x script \
-    -S git_template \
-    -S vim \
     -S config/nvim \
     -t "$OS"
 }
@@ -21,8 +19,6 @@ function list_rc_files() {
     -x LICENSE \
     -x etc \
     -x script \
-    -S git_template \
-    -S vim \
     -S config/nvim \
     -t "$OS"
 }
