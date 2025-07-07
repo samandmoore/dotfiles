@@ -1,9 +1,1 @@
-return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      -- colorscheme = "tokyonight-moon",
-      colorscheme = "catppuccin-macchiato",
-    },
-  },
-}
+/home/sam/.dotfiles/etc/current/theme/nvim.lua

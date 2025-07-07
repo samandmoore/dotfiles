@@ -35,6 +35,7 @@ case "${1:-}" in
 --up)
   echo "Linking dotfiles..."
   update_rc_files
+  exit 0
   ;;
 *)
   echo "Manage RC files"

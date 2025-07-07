@@ -2,14 +2,41 @@
 set -euo pipefail
 
 DOTFILES=~/.dotfiles
-THEME=$1
 
-ln -sf \
-  "../../etc/themes/$THEME/alacritty.toml" \
-  "$DOTFILES/config/alacritty/theme.toml"
+function list_themes() {
+  echo "Available themes:"
+  echo ""
+  ls -1 "$DOTFILES/etc/themes"
+}
+
+function change_theme() {
+  local theme="$1"
+  if [[ ! -d "$DOTFILES/etc/themes/$theme" ]]; then
+    echo "Theme '$theme' does not exist."
+    exit 1
+  fi
+
+  echo "Changing theme to '$theme'..."
+  ln -snf "$DOTFILES/etc/themes/$theme" "$DOTFILES/etc/current/theme"
+  touch "$DOTFILES/config/nvim/lua/plugins/colorscheme.lua"
+}
+
+case "${1:-}" in
+--list)
+  list_themes
+  exit 0
+  ;;
+--change)
+  change_theme "$2"
+  exit 0
+  ;;
+*)
+  echo "Manage themes"
+  echo "Usage: $0 [--list | --change THEME]"
+  exit 1
+  ;;
+esac
 
 # TODO
-# configure tmux theme
-# configure neovim theme
 # configure vscode theme
 # configure gnome theme
