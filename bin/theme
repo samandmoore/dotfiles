@@ -18,7 +18,10 @@ function change_theme() {
 
   echo "Changing theme to '$theme'..."
   ln -snf "$DOTFILES/etc/themes/$theme" "$DOTFILES/etc/current/theme"
+  # reload neovim
   touch "$DOTFILES/config/nvim/lua/plugins/colorscheme.lua"
+  # reload kitty
+  kitty @ load-config
 }
 
 case "${1:-}" in
