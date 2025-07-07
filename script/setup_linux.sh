@@ -7,8 +7,9 @@ if [[ $DISTRO = 'ubuntu' ]]; then
   echo 'Ubuntu detected'
   source "$DOTFILES/etc/ubuntu/setup.sh"
 elif [[ $OS = 'arch' ]]; then
+  echo 'Arch detected'
   source "$DOTFILES/etc/arch/setup.sh"
 else
-  echo "Unsupported OS: '$OS'"
+  echo "Unsupported OS: '$DISTRO'"
   exit 1
 fi

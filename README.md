@@ -1,14 +1,18 @@
-dotfiles
-========
+# dotfiles
 
-To install, run `./script/setup.sh`.
+To get started run
 
-Local customizations supported
-----------------------------
+```bash
+wget -qO- https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
+```
 
-* `~/.bashrc.local`
-* `~/.gitconfig.local`
-* `~/.tmux.conf.local`
+From there, use `./script/setup.sh` to apply updates.
+
+## Local customizations supported
+
+- `~/.bashrc.local`
+- `~/.gitconfig.local`
+- `~/.tmux.conf.local`
 
 ## linux things
 
