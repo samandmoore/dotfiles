@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-To install, run `./script/setup`.
+To install, run `./script/setup.sh`.
 
 Local customizations supported
 ----------------------------

@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-HERE=$(dirname "$0")
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 DOTFILES=~/.dotfiles
 
@@ -29,17 +28,15 @@ function setup_terminal() {
 function setup_os() {
   if [[ $OS = 'linux' ]]; then
     echo 'Linux detected'
-    source "$HERE/setup_linux"
+    source "$DOTFILES/script/setup_linux.sh"
   elif [[ $OS = 'darwin' ]]; then
     echo 'macOS detected'
-    source "$HERE/setup_macos"
+    source "$DOTFILES/script/setup_macos.sh"
   else
     echo "Unsupported OS: '$OS'"
     exit 1
   fi
 }
-
-cd "$HERE/.." || exit
 
 setup_os
 setup_dotfiles

@@ -31,6 +31,10 @@ function setup_homebrew() {
   fi
 }
 
+function setup_defaults() {
+  source "$DOTFILES/etc/macos/defaults.sh"
+}
+
 setup_shell
 setup_homebrew
 setup_shell_after_homebrew
