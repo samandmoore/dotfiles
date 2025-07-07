@@ -21,9 +21,9 @@ function change_theme() {
 
   # (re)set up theme link files since we don't want to commit these (to remain username agnostic)
   # could also use releative symlinks but that's a pain in the butt to maintain
-  ln -snf "$DOTFILES/config/alacritty/theme.toml" "$DOTFILES/etc/current/theme/alacritty.toml"
-  ln -snf "$DOTFILES/config/nvim/lua/plugins/colorscheme.lua" "$DOTFILES/etc/current/theme/nvim.lua"
-  ln -snf "$DOTFILES/config/btop/themes/current.theme" "$DOTFILES/etc/current/theme/btop.theme"
+  ln -snf "$DOTFILES/etc/current/theme/alacritty.toml" "$DOTFILES/config/alacritty/theme.toml"
+  ln -snf "$DOTFILES/etc/current/theme/nvim.lua" "$DOTFILES/config/nvim/lua/plugins/colorscheme.lua"
+  ln -snf "$DOTFILES/etc/current/theme/btop.theme" "$DOTFILES/config/btop/themes/current.theme"
 
   # reload kitty to get latest theme
   kitty @ load-config
