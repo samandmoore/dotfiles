@@ -1,5 +1,13 @@
 .DS_Store
+
+# old vim stuff, probably could remove, but whatever
 vim/plugged/*
 vim/autoload/*
 vim/swaps/*
 vim/.netrwhist
+
+# ignore symlinks for theme references
+config/alacritty/theme.toml
+config/nvim/lua/plugins/colorscheme.lua
+config/btop/themes/current.theme
+etc/current/theme
