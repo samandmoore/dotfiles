@@ -9,7 +9,7 @@ function setup_git() {
 
     if [[ $DISTRO = 'ubuntu' ]]; then
       sudo apt install -y git
-    elif [[ $OS = 'arch' ]]; then
+    elif [[ $DISTRO = 'arch' ]]; then
       pacman -Q git &>/dev/null || sudo pacman -S --noconfirm --needed git
     else
       echo "Unsupported OS: '$DISTRO'"
