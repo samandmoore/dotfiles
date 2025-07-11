@@ -53,7 +53,7 @@ fi
 # mgmt things
 paru -S --noconfirm --needed \
   brightnessctl playerctl power-profiles-daemon \
-  wl-clip-persist
+  wl-clip-persist clipse
 
 # set up power profiles
 if ls /sys/class/power_supply/BAT* &>/dev/null; then
