@@ -20,7 +20,7 @@ paru -S --noconfirm --needed \
   wl-clipboard fastfetch btop \
   man tldr less whois plocate bash-completion \
   mise github-cli lazygit \
-  starship rcm \
+  starship rcm yazi \
   kitty
 
 # editor things
@@ -53,7 +53,12 @@ fi
 # mgmt things
 paru -S --noconfirm --needed \
   brightnessctl playerctl power-profiles-daemon \
+  blueberry \
+  pamixer pavucontrol wireplumber \
   wl-clip-persist clipse
+
+# setup bluetooth right away
+sudo systemctl enable --now bluetooth.service
 
 # set up power profiles
 if ls /sys/class/power_supply/BAT* &>/dev/null; then
