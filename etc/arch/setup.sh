@@ -79,10 +79,16 @@ paru -S --noconfirm --needed \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 # desktop things
-# paru -S --noconfirm --needed \
-#   signal-desktop \
-#   spotify \
-#   zoom \
-#   obsidian-bin \
-#   1password-beta 1password-cli gnome-keyring \
-#   pinta
+paru -S --noconfirm --needed \
+  chromium \
+  signal-desktop \
+  spotify \
+  zoom \
+  obsidian-bin \
+  1password-beta 1password-cli gnome-keyring \
+  pinta
+
+mkdir -p ~/.local/share/applications
+cp ~/.dotfiles/etc/arch/applications/*.desktop ~/.local/share/applications/
+# cp ~/.dotfiles/etc/arch/applications/hidden/*.desktop ~/.local/share/applications/
+update-desktop-database ~/.local/share/applications
