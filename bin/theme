@@ -2,10 +2,13 @@
 set -euo pipefail
 
 DOTFILES=~/.dotfiles
+CURRENT=~/.config/dotfiles/current
+
+mkdir -p "$CURRENT"
 
 function list_themes() {
   echo "🖌️ Current theme:"
-  basename "$(readlink "$DOTFILES/etc/current/theme")"
+  basename "$(readlink "$CURRENT/theme")"
   echo ""
   echo "🎨 Available themes:"
   ls -1 "$DOTFILES/etc/themes"
@@ -19,13 +22,13 @@ function change_theme() {
   fi
 
   echo "Changing theme to '$theme'..."
-  ln -snf "$DOTFILES/etc/themes/$theme" "$DOTFILES/etc/current/theme"
+  ln -snf "$DOTFILES/etc/themes/$theme" "$CURRENT/theme"
 
   # (re)set up theme link files since we don't want to commit these (to remain username agnostic)
-  # could also use releative symlinks but that's a pain in the butt to maintain
-  ln -snf "$DOTFILES/etc/current/theme/alacritty.toml" "$DOTFILES/config/alacritty/theme.toml"
-  ln -snf "$DOTFILES/etc/current/theme/nvim.lua" "$DOTFILES/config/nvim/lua/plugins/colorscheme.lua"
-  ln -snf "$DOTFILES/etc/current/theme/btop.theme" "$DOTFILES/config/btop/themes/current.theme"
+  # these are actually going directly in ~/.config and not getting there through ~/.dotfiles rcs --up
+  ln -snf "$CURRENT/theme/alacritty.toml" "$HOME/.config/alacritty/theme.toml"
+  ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
+  ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
   # reload kitty to get latest theme
   kitty @ load-config

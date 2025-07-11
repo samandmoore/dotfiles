@@ -6,8 +6,5 @@ vim/autoload/*
 vim/swaps/*
 vim/.netrwhist
 
-# ignore symlinks for theme references
-config/alacritty/theme.toml
+# have to ignore this file because we symlink the whole nvim directory to ~
 config/nvim/lua/plugins/colorscheme.lua
-config/btop/themes/current.theme
-etc/current/theme
