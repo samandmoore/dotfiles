@@ -16,6 +16,12 @@ function list_themes() {
 
 function change_theme() {
   local theme="$1"
+
+  if [[ -z "$theme" ]]; then
+    # shellcheck disable=SC2046
+    theme=$(gum choose $(find etc/themes/ -depth 1 -exec basename {} \; | xargs -0))
+  fi
+
   if [[ ! -d "$DOTFILES/etc/themes/$theme" ]]; then
     echo "Theme '$theme' does not exist."
     exit 1
@@ -40,12 +46,12 @@ case "${1:-}" in
   exit 0
   ;;
 --change)
-  change_theme "$2"
+  change_theme "${2:-}"
   exit 0
   ;;
 *)
   echo "Manage themes"
-  echo "Usage: $0 [--list | --change THEME]"
+  echo "Usage: $0 [--list | --change [THEME]]"
   exit 1
   ;;
 esac
