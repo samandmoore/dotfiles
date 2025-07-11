@@ -1,5 +1,5 @@
 # Load the shell dotfiles, and then some:
-for file in ~/.config/bash/{prompt,exports,functions}; do
+for file in ~/.config/bash/{exports,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
