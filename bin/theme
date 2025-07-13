@@ -40,7 +40,7 @@ function change_theme() {
   ln -snf "$background" "$CURRENT/background"
 
   # reload kitty to get latest theme
-  type kitty &>/dev/null && kitty @ load-config
+  kitty @ load-config
 
   # Relaunch waybar
   type waybar &>/dev/null && pkill -SIGUSR2 waybar
