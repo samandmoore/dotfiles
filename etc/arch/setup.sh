@@ -77,11 +77,18 @@ ExecStart=
 ExecStart=-/usr/bin/agetty --autologin $USER --noclear %I \$TERM
 EOF
 
+tee -a ~/.bash_profile.local >/dev/null <<EOF
+if uwsm check may-start; then
+  exec uwsm start hyprland-uwsm.desktop
+fi
+EOF
+
 # gui / wm things
 paru -S --noconfirm --needed \
   hyprland hyprshot hyprpicker hyprlock hypridle polkit-gnome hyprland-qtutils \
   wofi waybar mako swaybg \
-  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+  uwsm
 
 # desktop things
 paru -S --noconfirm --needed \
