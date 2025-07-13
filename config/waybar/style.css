@@ -39,4 +39,4 @@ tooltip label {
   padding: 2px;
 }
 
-/* @import "../dotfiles/current/theme/waybar.css"; */
+@import "../dotfiles/current/theme/waybar.css";

@@ -40,11 +40,16 @@ function change_theme() {
   ln -snf "$background" "$CURRENT/background"
 
   # reload kitty to get latest theme
-  kitty @ load-config
+  type kitty &>/dev/null && kitty @ load-config
+
+  # Relaunch waybar
+  type waybar &>/dev/null && pkill -SIGUSR2 waybar
 
   # Relaunch swaybg
-  pkill -x swaybg
-  setsid swaybg -i "$CURRENT/background" -m fill >/dev/null 2>&2 &
+  if type swaybg &>/dev/null; then
+    pkill -x swaybg
+    setsid swaybg -i "$CURRENT/background" -m fill >/dev/null 2>&2 &
+  fi
 }
 
 case "${1:-}" in
