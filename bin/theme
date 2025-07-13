@@ -48,8 +48,11 @@ function change_theme() {
   # Relaunch swaybg
   if type swaybg &>/dev/null; then
     pkill -x swaybg
-    setsid swaybg -i "$CURRENT/background" -m fill >/dev/null 2>&2 &
+    setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
   fi
+
+  # Notify of the new theme
+  type notify-send &>/dev/null && notify-send "Theme changed to $theme" -t 2000
 }
 
 case "${1:-}" in
