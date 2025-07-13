@@ -19,7 +19,7 @@ function change_theme() {
 
   if [[ -z "$theme" ]]; then
     # shellcheck disable=SC2046
-    theme=$(gum choose $(find etc/themes/ -depth 1 -exec basename {} \; | xargs -0))
+    theme=$(gum choose $(ls -1 "$DOTFILES/etc/themes" | xargs -0))
   fi
 
   if [[ ! -d "$DOTFILES/etc/themes/$theme" ]]; then
@@ -36,8 +36,15 @@ function change_theme() {
   ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
+  local background=$(ls $CURRENT/theme/background.*)
+  ln -snf "$background" "$CURRENT/background"
+
   # reload kitty to get latest theme
   kitty @ load-config
+
+  # Relaunch swaybg
+  pkill -x swaybg
+  setsid swaybg -i "$CURRENT/background" -m fill >/dev/null 2>&2 &
 }
 
 case "${1:-}" in
