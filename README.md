@@ -10,6 +10,7 @@ From there, use `./script/setup.sh` to apply updates.
 
 ## Local customizations supported
 
+- `~/.bash_profile.local`
 - `~/.bashrc.local`
 - `~/.gitconfig.local`
 - `~/.tmux.conf.local`
