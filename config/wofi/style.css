@@ -1,4 +1,4 @@
-@import "../dotfiles/current/theme/wofi.css";
+@import "~/.config/dotfiles/current/theme/wofi.css";
 
 * {
   font-family: 'CaskaydiaMono Nerd Font', monospace;
