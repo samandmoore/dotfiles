@@ -1,4 +1,4 @@
-@import "~/.config/wofi/style.css";
+@import ".config/wofi/style.css";
 
 #input {
     display: none;
