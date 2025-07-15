@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 DOTFILES=~/.dotfiles
 CURRENT=~/.config/dotfiles/current
 
@@ -18,7 +19,7 @@ function change_theme() {
   local theme="$1"
 
   if [[ -z "$theme" ]]; then
-    # shellcheck disable=SC2046
+    # shellcheck disable=SC2046,SC2011
     theme=$(gum choose $(ls -1 "$DOTFILES/etc/themes" | xargs -0))
   fi
 
@@ -36,12 +37,19 @@ function change_theme() {
   ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
-  local background=$(ls $CURRENT/theme/background.*)
+  local background
+  # shellcheck disable=SC2012
+  background=$(ls $CURRENT/theme/background.* | head -n1)
   ln -snf "$background" "$CURRENT/background"
 
   # reload kitty to get latest theme
   kitty @ load-config
 
+  [[ $OS = 'linux' ]] && change_theme_arch
+  [[ $OS = 'darwin' ]] && change_theme_macos
+}
+
+function change_theme_arch() {
   # Relaunch waybar
   type waybar &>/dev/null && pkill -SIGUSR2 waybar
 
@@ -53,6 +61,10 @@ function change_theme() {
 
   # Notify of the new theme
   type notify-send &>/dev/null && notify-send "Theme changed to $theme" -t 2000
+}
+
+function change_theme_macos() {
+  m wallpaper "$CURRENT/background"
 }
 
 case "${1:-}" in
