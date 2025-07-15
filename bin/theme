@@ -42,6 +42,11 @@ function change_theme() {
   background=$(ls $CURRENT/theme/background.* | head -n1)
   ln -snf "$background" "$CURRENT/background"
 
+  if type gsettings &>/dev/null; then
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  fi
+
   # reload kitty to get latest theme
   kitty @ load-config
 
