@@ -88,7 +88,8 @@ paru -S --noconfirm --needed \
   hyprland hyprshot hyprpicker hyprlock hypridle polkit-gnome hyprland-qtutils \
   wofi waybar mako swaybg \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-  uwsm
+  uwsm \
+  gnome-themes-extra kvantum-qt5
 
 # desktop things
 paru -S --noconfirm --needed \
