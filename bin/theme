@@ -42,11 +42,6 @@ function change_theme() {
   background=$(ls $CURRENT/theme/background.* | head -n1)
   ln -snf "$background" "$CURRENT/background"
 
-  if type gsettings &>/dev/null; then
-    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-  fi
-
   # reload kitty to get latest theme
   kitty @ load-config
 
@@ -55,17 +50,18 @@ function change_theme() {
 }
 
 function change_theme_arch() {
+  gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+
   # Relaunch waybar
-  type waybar &>/dev/null && pkill -SIGUSR2 waybar
+  pkill -SIGUSR2 waybar
 
   # Relaunch swaybg
-  if type swaybg &>/dev/null; then
-    pkill -x swaybg
-    setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
-  fi
+  pkill -x swaybg
+  setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
 
   # Notify of the new theme
-  type notify-send &>/dev/null && notify-send "Theme changed to $theme" -t 2000
+  notify-send "Theme changed to $theme" -t 2000
 }
 
 function change_theme_macos() {
