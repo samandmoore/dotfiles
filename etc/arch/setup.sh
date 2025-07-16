@@ -103,5 +103,5 @@ paru -S --noconfirm --needed \
 
 mkdir -p ~/.local/share/applications
 cp ~/.dotfiles/etc/arch/applications/*.desktop ~/.local/share/applications/
-# cp ~/.dotfiles/etc/arch/applications/hidden/*.desktop ~/.local/share/applications/
+cp ~/.dotfiles/etc/arch/applications/hidden/*.desktop ~/.local/share/applications/
 update-desktop-database ~/.local/share/applications
