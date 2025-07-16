@@ -37,9 +37,6 @@ function change_theme() {
   ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
-  mkdir -p "$HOME/.config/mako"
-  ln -snf "$CURRENT/theme/mako.ini" "$HOME/.config/mako/config"
-
   local background
   # shellcheck disable=SC2012
   background=$(ls $CURRENT/theme/background.* | head -n1)
