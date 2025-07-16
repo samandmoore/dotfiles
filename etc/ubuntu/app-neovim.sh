@@ -18,7 +18,7 @@ if [[ -d ~/.local/share/applications ]]; then
 Version=1.0
 Name=Neovim
 Comment=Edit text files
-Exec=alacritty --config-file /home/$USER/.config/alacritty/pane.toml --class=Neovim --title=Neovim -e nvim %F
+Exec=kitty --class=Neovim --title=Neovim nvim %F
 Terminal=false
 Type=Application
 Icon=nvim

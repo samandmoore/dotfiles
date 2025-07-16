@@ -33,7 +33,6 @@ function change_theme() {
 
   # (re)set up theme link files since we don't want to commit these (to remain username agnostic)
   # these are actually going directly in ~/.config and not getting there through ~/.dotfiles rcs --up
-  ln -snf "$CURRENT/theme/alacritty.toml" "$HOME/.config/alacritty/theme.toml"
   ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
   ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
