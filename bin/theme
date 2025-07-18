@@ -49,8 +49,13 @@ function change_theme() {
 }
 
 function change_theme_arch() {
-  gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  if [[ -f "$CURRENT/theme/light.mode" ]]; then
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+  else
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  fi
 
   # Relaunch waybar
   pkill -SIGUSR2 waybar
@@ -70,6 +75,12 @@ function change_theme_arch() {
 }
 
 function change_theme_macos() {
+  if [[ -f "$CURRENT/theme/light.mode" ]]; then
+    m appearance darkmode NO >/dev/null
+  else
+    m appearance darkmode YES >/dev/null
+  fi
+
   m wallpaper "$CURRENT/background"
 }
 

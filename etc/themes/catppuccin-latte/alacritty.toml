@@ -1,76 +1,67 @@
-# Default colors
-[colors.primary]
-background = '#EFF1F5' # base
-foreground = '#4C4F69' # text
-# Bright and dim foreground colors
-dim_foreground = '#4C4F69' # text
-bright_foreground = '#4C4F69' # text
+# https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-latte.toml
 
-# Cursor colors
+[colors.primary]
+background = "#eff1f5"
+foreground = "#4c4f69"
+dim_foreground = "#8c8fa1"
+bright_foreground = "#4c4f69"
+
 [colors.cursor]
-text = '#EFF1F5' # base
-cursor = '#DC8A78' # rosewater
+text = "#eff1f5"
+cursor = "#dc8a78"
 
 [colors.vi_mode_cursor]
-text = '#EFF1F5' # base
-cursor = '#7287FD' # lavender
+text = "#eff1f5"
+cursor = "#7287fd"
 
-# Search colors
 [colors.search.matches]
-foreground = '#EFF1F5' # base
-background = '#6C6F85' # subtext0
+foreground = "#eff1f5"
+background = "#6c6f85"
 
 [colors.search.focused_match]
-foreground = '#EFF1F5' # base
-background = '#40A02B' # green
+foreground = "#eff1f5"
+background = "#40a02b"
 
 [colors.footer_bar]
-foreground = '#EFF1F5' # base
-background = '#6C6F85' # subtext0
+foreground = "#eff1f5"
+background = "#6c6f85"
 
-# Keyboard regex hints
 [colors.hints.start]
-foreground = '#EFF1F5' # base
-background = '#DF8E1D' # yellow
+foreground = "#eff1f5"
+background = "#df8e1d"
 
 [colors.hints.end]
-foreground = '#EFF1F5' # base
-background = '#6C6F85' # subtext0
+foreground = "#eff1f5"
+background = "#6c6f85"
 
-# Selection colors
 [colors.selection]
-text = '#EFF1F5' # base
-background = '#DC8A78' # rosewater
+text = "#eff1f5"
+background = "#dc8a78"
 
-# Normal colors
 [colors.normal]
-black = '#5C5F77' # subtext1
-red = '#D20F39' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
-cyan = '#179299' # teal
-white = '#ACB0BE' # surface2
+black = "#bcc0cc"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#5c5f77"
 
-# Bright colors
 [colors.bright]
-black = '#6C6F85' # subtext0
-red = '#D20F39' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
-cyan = '#179299' # teal
-white = '#BCC0CC' # surface1
+black = "#acb0be"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#6c6f85"
 
-# Dim colors
-[colors.dim]
-black = '#5C5F77' # subtext1
-red = '#D20F39' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
-cyan = '#179299' # teal
-white = '#ACB0BE' # surface2
+[[colors.indexed_colors]]
+index = 16
+color = "#fe640b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#dc8a78"
