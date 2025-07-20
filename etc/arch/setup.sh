@@ -28,6 +28,11 @@ paru -S --noconfirm --needed \
   nvim luarocks tree-sitter-cli
 
 # fonts and such
+# emoji support
+paru -Sy --noconfirm --needed \
+  ttf-font-awesome \
+  noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
+
 mkdir -p ~/.local/share/fonts
 
 if ! fc-list | grep -qi "CaskaydiaMono Nerd Font"; then
