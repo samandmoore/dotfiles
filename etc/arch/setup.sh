@@ -55,7 +55,8 @@ paru -S --noconfirm --needed \
   brightnessctl playerctl power-profiles-daemon \
   blueberry \
   pamixer pavucontrol wireplumber \
-  wl-clip-persist clipse
+  wl-clip-persist clipse \
+  slurp satty
 
 # setup bluetooth right away
 sudo systemctl enable --now bluetooth.service
