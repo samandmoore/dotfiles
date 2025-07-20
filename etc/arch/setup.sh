@@ -54,7 +54,7 @@ fi
 paru -S --noconfirm --needed \
   brightnessctl playerctl power-profiles-daemon \
   blueberry \
-  pamixer pavucontrol wireplumber \
+  pamixer pavucontrol wireplumber wiremix \
   wl-clip-persist clipse \
   slurp satty
 

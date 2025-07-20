@@ -121,7 +121,7 @@
     "format": "",
     "format-muted": "󰝟",
     "scroll-step": 5,
-    "on-click": "pavucontrol",
+    "on-click": "kitty --class=Wiremix wiremix",
     "tooltip-format": "Playing at {volume}%",
     "on-click-right": "pamixer -t",
     "ignored-sinks": [
