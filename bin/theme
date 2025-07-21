@@ -81,7 +81,7 @@ function change_theme_macos() {
     m appearance darkmode YES >/dev/null
   fi
 
-  m wallpaper "$CURRENT/background"
+  m wallpaper "$(readlink $CURRENT/background)"
 }
 
 case "${1:-}" in
