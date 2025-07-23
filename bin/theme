@@ -70,6 +70,10 @@ function change_theme_arch() {
   pkill -x swaybg
   setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
 
+  # Relaunch walker
+  pkill walker
+  setsid walker --gapplication-service &
+
   # Notify of the new theme
   notify-send "Theme changed to $theme" -t 2000
 }

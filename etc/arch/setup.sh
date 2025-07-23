@@ -92,7 +92,7 @@ EOF
 # gui / wm things
 paru -S --noconfirm --needed \
   hyprland hyprshot hyprpicker hyprlock hypridle polkit-gnome hyprland-qtutils \
-  wofi waybar mako swaybg swayosd \
+  walker-bin libqalculate waybar mako swaybg swayosd \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
   uwsm \
   gnome-themes-extra kvantum-qt5
