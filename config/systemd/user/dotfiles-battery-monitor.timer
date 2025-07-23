@@ -1,0 +1,11 @@
+[Unit]
+Description=Dotfiles Battery Monitor Timer
+Requires=dotfiles-battery-monitor.service
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=30sec
+AccuracySec=10sec
+
+[Install]
+WantedBy=timers.target
