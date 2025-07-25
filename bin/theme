@@ -70,6 +70,10 @@ function change_theme_arch() {
   pkill -x swaybg
   setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
 
+  # Relaunch swayosd
+  pkill swayosd-server
+  setsid swayosd-server &>/dev/null &
+
   # Relaunch walker
   pkill walker
   setsid walker --gapplication-service &
