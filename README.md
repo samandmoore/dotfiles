@@ -13,7 +13,6 @@ From there, use `./script/setup.sh` to apply updates.
 - `~/.bash_profile.local`
 - `~/.bashrc.local`
 - `~/.gitconfig.local`
-- `~/.tmux.conf.local`
 
 ## Theme things
 
