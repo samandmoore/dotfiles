@@ -17,18 +17,19 @@ From there, use `./script/setup.sh` to apply updates.
 
 ## Theme things
 
-There is some support for theming across applications. 
+There is some support for theming across applications.
 
 Files live in `etc/themes` and theme swapping is done
 with `theme`
 
 The current theme and background are linked into
+
 - `~/.config/dotfiles/current/theme`
 - `~/.config/dotfiles/current/background`
 
 ## linux things
 
-customizations are in `etc/ubuntu` or `etc/arch`
+customizations are in `etc/arch`
 
 ## macOS things
 
