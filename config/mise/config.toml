@@ -16,3 +16,6 @@ rust = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
+
+[settings.status]
+missing_tools = "never"
