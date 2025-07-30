@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 sudo pacman -S --needed --noconfirm base-devel
 
 if ! command -v paru &>/dev/null; then
@@ -31,19 +34,10 @@ paru -S --noconfirm --needed \
 # emoji support
 paru -Sy --noconfirm --needed \
   ttf-font-awesome \
-  noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
+  noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra \
+  ttf-cascadia-mono-nerd
 
 mkdir -p ~/.local/share/fonts
-
-if ! fc-list | grep -qi "CaskaydiaMono Nerd Font"; then
-  cd /tmp
-  wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip
-  unzip CascadiaMono.zip -d CascadiaFont
-  cp CascadiaFont/*.ttf ~/.local/share/fonts
-  rm -rf CascadiaMono.zip CascadiaFont
-  fc-cache
-  cd -
-fi
 
 if ! fc-list | grep -qi "IntoneMono Nerd Font"; then
   cd /tmp
