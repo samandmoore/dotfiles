@@ -84,3 +84,7 @@ source ~/.dotfiles/etc/arch/setup_applications.sh
 
 # enable user services
 source ~/.dotfiles/etc/arch/setup_services.sh
+
+# disable power key off behavior in favor of menu binding
+sudo sed -i 's/^#HandlePowerKey=poweroff$/HandlePowerKey=ignore/' /etc/systemd/logind.conf
+sudo sed -i 's/^#PowerKeyIgnoreInhibited=no$/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
