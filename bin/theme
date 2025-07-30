@@ -57,26 +57,23 @@ function change_theme_arch() {
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
   fi
 
-  # Relaunch waybar
-  pkill -SIGUSR2 waybar
+  # Reload waybar
+  systemctl --user reload waybar.service
 
   # Reload mako
-  makoctl reload
+  systemctl --user reload mako.service
 
   # Reload hypr config
   hyprctl reload
 
   # Relaunch swaybg
-  pkill -x swaybg
-  setsid swaybg -i "$CURRENT/background" -m fill &>/dev/null &
+  systemctl --user restart swaybg.service
 
   # Relaunch swayosd
-  pkill swayosd-server
-  setsid swayosd-server &>/dev/null &
+  systemctl --user restart waybar.service
 
   # Relaunch walker
-  pkill walker
-  setsid walker --gapplication-service &
+  systemctl --user restart walker.service
 
   # Notify of the new theme
   notify-send "Theme changed to $theme" -t 2000

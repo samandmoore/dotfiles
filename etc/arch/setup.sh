@@ -82,3 +82,5 @@ source ~/.dotfiles/etc/arch/setup_firewall.sh
 # setup applications
 source ~/.dotfiles/etc/arch/setup_applications.sh
 
+# enable user services
+source ~/.dotfiles/etc/arch/setup_services.sh
