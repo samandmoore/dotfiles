@@ -1,5 +1,5 @@
 [Unit]
-Description=A lightweight Wayland statusbar
+Description=Waybar status bar
 Documentation=man:waybar(1)
 PartOf=hyprland-session.target
 

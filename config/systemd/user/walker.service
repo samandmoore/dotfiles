@@ -1,5 +1,5 @@
 [Unit]
-Description=A launcher for wayland
+Description=Walker Launcher
 PartOf=hyprland-session.target
 
 [Service]

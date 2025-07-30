@@ -1,5 +1,5 @@
 [Unit]
-Description=Lightweight Wayland notification daemon
+Description=Mako: Lightweight Wayland notification daemon
 Documentation=man:mako(1)
 PartOf=hyprland-session.target
 After=hyprland-session.target

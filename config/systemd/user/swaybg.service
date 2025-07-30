@@ -1,5 +1,5 @@
 [Unit]
-Description=A background manager for Wayland
+Description=Sway Background Service
 PartOf=hyprland-session.target
 
 [Service]

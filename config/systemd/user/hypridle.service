@@ -1,5 +1,5 @@
 [Unit]
-Description=An idle manager for Hyprland
+Description=Hypridle
 PartOf=hyprland-session.target
 
 [Service]

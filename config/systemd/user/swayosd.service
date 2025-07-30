@@ -1,5 +1,5 @@
 [Unit]
-Description=An on-screen display server for Wayland
+Description=SwayOSD Server
 PartOf=hyprland-session.target
 
 [Service]
