@@ -1,17 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo pacman -S --needed --noconfirm base-devel
-
-if ! command -v paru &>/dev/null; then
-  cd /tmp
-  git clone https://aur.archlinux.org/paru-bin.git
-  cd paru-bin
-  makepkg -si --noconfirm
-  cd -
-  rm -rf paru-bin
-  cd ~
-fi
+source ~/.dotfiles/etc/arch/setup_paru.sh
 
 # useful for adding confirms and collecting input
 paru -S --noconfirm --needed gum
@@ -30,24 +20,8 @@ paru -S --noconfirm --needed \
 paru -S --noconfirm --needed \
   nvim luarocks tree-sitter-cli
 
-# fonts and such
-# emoji support
-paru -Sy --noconfirm --needed \
-  ttf-font-awesome \
-  noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra \
-  ttf-cascadia-mono-nerd
-
-mkdir -p ~/.local/share/fonts
-
-if ! fc-list | grep -qi "IntoneMono Nerd Font"; then
-  cd /tmp
-  wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/IntelOneMono.zip
-  unzip IntelOneMono.zip -d IntelOneMono
-  cp IntelOneMono/*.ttf ~/.local/share/fonts
-  rm -rf IntelOneMono.zip IntelOneMono
-  fc-cache
-  cd -
-fi
+# setup fonts
+source ~/.dotfiles/etc/arch/setup_fonts.sh
 
 # mgmt things
 paru -S --noconfirm --needed \
@@ -103,36 +77,8 @@ paru -S --noconfirm --needed \
   pinta
 
 # firewall stuff
-if ! command -v ufw &>/dev/null; then
-  paru -S --noconfirm --needed ufw ufw-docker
+source ~/.dotfiles/etc/arch/setup_firewall.sh
 
-  # Allow nothing in, everything out
-  sudo ufw default deny incoming
-  sudo ufw default allow outgoing
+# setup applications
+source ~/.dotfiles/etc/arch/setup_applications.sh
 
-  # Allow ports for LocalSend
-  sudo ufw allow 53317/udp
-  sudo ufw allow 53317/tcp
-
-  # Allow SSH in
-  sudo ufw allow 22/tcp
-
-  # Allow Docker containers to use DNS on host
-  sudo ufw allow in on docker0 to any port 53
-
-  # Turn on the firewall
-  sudo ufw enable
-
-  # Turn on Docker protections
-  sudo ufw-docker install
-  sudo ufw reload
-fi
-
-mkdir -p ~/.local/share/applications
-cp ~/.dotfiles/etc/arch/applications/*.desktop ~/.local/share/applications/
-cp ~/.dotfiles/etc/arch/applications/hidden/*.desktop ~/.local/share/applications/
-update-desktop-database ~/.local/share/applications
-
-source ~/.dotfiles/config/bash/functions
-web2app "YouTube" https://youtube.com/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/youtube.png
-web2app "GitHub" https://github.com/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/github-light.png
