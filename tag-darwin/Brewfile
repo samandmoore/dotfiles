@@ -20,6 +20,7 @@ brew 'mise'
 brew 'neovim'
 brew 'rcm'
 brew 'ripgrep'
+brew 'spotify_player'
 brew 'starship'
 brew 'zoxide'
 

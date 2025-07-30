@@ -102,6 +102,7 @@ paru -S --noconfirm --needed \
   chromium \
   signal-desktop \
   spotify \
+  spotify-player \
   zoom \
   obsidian-bin \
   1password-beta 1password-cli gnome-keyring \

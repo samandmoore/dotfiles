@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Spotify TUI
+Comment=Using spotify_player
+Exec=kitty --class=Spotify --title=Spotify spotify_player
+Icon=spotify-client
+Type=Application
+Terminal=false
+
+# [Desktop Entry]
+# Type=Application
+# Name=Spotify
+# GenericName=Music Player
+# Icon=spotify-client
+# TryExec=spotify
+# Exec=spotify --uri=%u
+# Terminal=false
+# MimeType=x-scheme-handler/spotify;
+# Categories=Audio;Music;Player;AudioVideo;
+# StartupWMClass=spotify
