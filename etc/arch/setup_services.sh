@@ -8,4 +8,3 @@ systemctl --user enable --now mako.service
 systemctl --user enable --now swaybg.service
 systemctl --user enable --now swayosd.service
 systemctl --user enable --now polkit-gnome.service
-systemctl --user enable --now clipboard.service
