@@ -42,7 +42,9 @@ function change_theme() {
   ln -snf "$background" "$CURRENT/background"
 
   # reload kitty to get latest theme
-  kitty @ load-config
+  # need to use this instead of the cuter kitty @ load-config
+  # because this works when run _outside_ of a kitty session
+  killall -SIGUSR1 kitty
 
   [[ $OS = 'linux' ]] && change_theme_arch
   [[ $OS = 'darwin' ]] && change_theme_macos
@@ -73,7 +75,7 @@ function change_theme_arch() {
   systemctl --user restart waybar.service
 
   # Relaunch walker
-  systemctl --user restart walker.service
+  # systemctl --user restart walker.service
 
   # Notify of the new theme
   notify-send "Theme changed to $theme" -t 2000
