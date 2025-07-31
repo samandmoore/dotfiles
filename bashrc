@@ -1,8 +1,5 @@
-# Load the shell dotfiles, and then some:
-for file in ~/.config/bash/{exports,functions}; do
-  [ -r "$file" ] && source "$file"
-done
-unset file
+source ~/.config/bash/exports
+source ~/.config/bash/functions
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -63,9 +60,7 @@ trap '__set_terminal_title' DEBUG
 
 # load aliases, this comes after we've fiddled with the PATH to make sure
 # that we can properly check for commands when defining aliases
-if [ -f ~/.config/bash/aliases ]; then
-  source ~/.config/bash/aliases
-fi
+source ~/.config/bash/aliases
 
 # ~/.bashrc.local can be used for other settings you don’t want to commit.
 if [ -f ~/.bashrc.local ]; then
