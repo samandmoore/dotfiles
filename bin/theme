@@ -104,7 +104,3 @@ case "${1:-}" in
   exit 1
   ;;
 esac
-
-# TODO
-# configure vscode theme
-# configure gnome theme
