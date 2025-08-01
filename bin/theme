@@ -74,9 +74,6 @@ function change_theme_arch() {
   # Relaunch swayosd
   systemctl --user restart waybar.service
 
-  # Relaunch walker
-  # systemctl --user restart walker.service
-
   # Notify of the new theme
   notify-send "Theme changed to $theme" -t 2000
 }
