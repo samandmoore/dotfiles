@@ -44,7 +44,7 @@ function change_theme() {
   # reload kitty to get latest theme
   # need to use this instead of the cuter kitty @ load-config
   # because this works when run _outside_ of a kitty session
-  killall -SIGUSR1 kitty
+  killall -SIGUSR1 kitty 2>/dev/null || true
 
   [[ $OS = 'linux' ]] && change_theme_arch
   [[ $OS = 'darwin' ]] && change_theme_macos
