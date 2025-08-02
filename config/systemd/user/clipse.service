@@ -1,0 +1,15 @@
+[Unit]
+Description=Clipse: clipboard manager
+Documentation=https://github.com/savedra1/clipse
+PartOf=hyprland-session.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/clipse -listen
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=hyprland-session.target
