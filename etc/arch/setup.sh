@@ -43,19 +43,23 @@ else
   powerprofilesctl set performance || true
 fi
 
-# Login directly as user, rely on disk encryption + hyprlock for security
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null <<EOF
-[Service]
-ExecStart=
-ExecStart=-/usr/bin/agetty --autologin $USER --noclear %I \$TERM
-EOF
+# login stuff
+source ~/.dotfiles/etc/arch/setup_plymouth.sh
 
-tee -a ~/.bash_profile.local >/dev/null <<EOF
-if uwsm check may-start; then
-  exec uwsm start hyprland-uwsm.desktop
-fi
-EOF
+# Superseded by Plymouth configuration 
+# Login directly as user, rely on disk encryption + hyprlock for security
+# sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+# sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null <<EOF
+# [Service]
+# ExecStart=
+# ExecStart=-/usr/bin/agetty --autologin $USER --noclear %I \$TERM
+# EOF
+
+# tee -a ~/.bash_profile.local >/dev/null <<EOF
+# if uwsm check may-start; then
+#   exec uwsm start hyprland-uwsm.desktop
+# fi
+# EOF
 
 # gui / wm things
 paru -S --noconfirm --needed \
