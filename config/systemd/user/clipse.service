@@ -2,6 +2,7 @@
 Description=Clipse: clipboard manager
 Documentation=https://github.com/savedra1/clipse
 PartOf=hyprland-session.target
+Wants=wl-clip-persist.service
 
 [Service]
 Type=oneshot
