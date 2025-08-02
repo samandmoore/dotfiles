@@ -24,6 +24,9 @@ export GREP_OPTIONS="--color=auto"
 # FZF search command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 
+# Attempt to have bat use terminal theme
+export BAT_THEME=ansi
+
 # Add `~/.bin` and `~/.local/bin` to the `$PATH`
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
