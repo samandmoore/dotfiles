@@ -1,5 +1,6 @@
 [Unit]
 Description=Wayland Clipboard Persistence
+Documentation=https://github.com/Linus789/wl-clip-persist
 PartOf=hyprland-session.target
 
 [Service]
