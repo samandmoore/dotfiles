@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+DOTFILES=~/.dotfiles
+CURRENT=~/.config/dotfiles/current
+
+mkdir -p "$CURRENT"
+
+function change_theme() {
+  theme="$1"
+  theme_filename=$(echo "$theme" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+
+  if [[ ! -d "$DOTFILES/etc/themes/$theme_filename" ]]; then
+    echo "Theme '$theme' does not exist."
+    exit 1
+  fi
+
+  echo "Changing theme to '$theme'..."
+  ln -snf "$DOTFILES/etc/themes/$theme_filename" "$CURRENT/theme"
+
+  # (re)set up theme link files since we don't want to commit these (to remain username agnostic)
+  # these are actually going directly in ~/.config and not getting there through ~/.dotfiles rcs --up
+  ln -snf "$CURRENT/theme/nvim.lua" "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
+  ln -snf "$CURRENT/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
+
+  local background
+  # shellcheck disable=SC2012
+  background=$(ls $CURRENT/theme/background.* | head -n1)
+  ln -snf "$background" "$CURRENT/background"
+
+  # reload kitty to get latest theme
+  # need to use this instead of the cuter kitty @ load-config
+  # because this works when run _outside_ of a kitty session
+  killall -SIGUSR1 kitty 2>/dev/null || true
+
+  [[ $OS = 'linux' ]] && change_theme_arch
+  [[ $OS = 'darwin' ]] && change_theme_macos
+}
+
+function change_theme_arch() {
+  if [[ -f "$CURRENT/theme/light.mode" ]]; then
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+  else
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  fi
+
+  # Reload waybar
+  systemctl --user reload waybar.service
+
+  # Reload mako
+  systemctl --user reload mako.service
+
+  # Reload hypr config
+  hyprctl reload
+
+  # Relaunch swaybg
+  systemctl --user restart swaybg.service
+
+  # Relaunch swayosd
+  systemctl --user restart waybar.service
+
+  # Notify of the new theme
+  notify-send "Theme changed to $theme" -t 2000
+}
+
+function change_theme_macos() {
+  if [[ -f "$CURRENT/theme/light.mode" ]]; then
+    m appearance darkmode NO >/dev/null
+  else
+    m appearance darkmode YES >/dev/null
+  fi
+
+  m wallpaper "$(readlink $CURRENT/background)"
+}
+
+change_theme "$1"

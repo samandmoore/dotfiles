@@ -3,7 +3,22 @@
 DOTFILES_BIN_PATH=~/.bin
 
 menu() {
-  echo -e "$2" | walker --dmenu --width 250 --placeholder "$1…" $3
+  local prompt="$1"
+  local options="$2"
+  local extra="$3"
+  local preselect="$4"
+
+  read -r -a args <<<"$extra"
+
+  if [[ -n "$preselect" ]]; then
+    local index
+    index=$(echo -e "$options" | grep -nxF "$preselect" | cut -d: -f1)
+    if [[ -n "$index" ]]; then
+      args+=("--active" "$index")
+    fi
+  fi
+
+  echo -e "$options" | walker --dmenu --width 250 --placeholder "$prompt…" "${args[@]}"
 }
 
 terminal() {
@@ -93,11 +108,11 @@ show_style_menu() {
 }
 
 show_theme_menu() {
-  theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/arch-theme-list)")
+  theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/theme-list)" "" "$(DOTFILES_BIN_PATH/theme-current)")
   if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
     show_main_menu
   else
-    $DOTFILES_BIN_PATH/theme --change "$theme"
+    $DOTFILES_BIN_PATH/theme-set "$theme"
   fi
 }
 

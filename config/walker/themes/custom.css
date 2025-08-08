@@ -99,6 +99,11 @@ child:hover {
   padding: 0;
 }
 
+/* Item active state */
+#item.active {
+  font-style: italic;
+}
+
 /* Icon */
 #icon {
   margin-right: 10px;
