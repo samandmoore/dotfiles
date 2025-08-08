@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Build themes list with pretty display names
+mapfile -t themes < <(
+  arch-font-list | while read -r font; do
+    if [[ "$font" == "$CURRENT_THEME_NAME" ]]; then
+      echo "<i>$font</i>"
+    else
+      echo "<span font_family='$font'>$font</span>"
+    fi
+  done
+)
+
+printf '%s\n' "${themes[@]}"

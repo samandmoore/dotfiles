@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if pgrep -x hypridle >/dev/null; then
+  systemctl --user stop hypridle.service >/dev/null 2>&1
+  notify-send "Stop locking computer when idle"
+else
+  systemctl --user start hypridle.service >/dev/null 2>&1
+  notify-send "Now locking computer when idle"
+fi

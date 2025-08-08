@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+DOTFILES_BIN_PATH=~/.bin
+
+menu() {
+  echo -e "$2" | walker --dmenu --width 250 --placeholder "$1…" $3
+}
+
+terminal() {
+  kitty --class DotfilesTui "$1"
+}
+
+install_and_launch() {
+  terminal "echo 'Installing $1...'; paru -Sy --noconfirm $2 && gtk-launch $3"
+}
+
+install_font() {
+  terminal "echo 'Installing $1...'; paru -Sy --noconfirm --needed $2"
+}
+
+show_install_menu() {
+  case $(menu "Install" "󰣇  Package\n  Web App\n  Editor\n  Font") in
+  *Package*) terminal $DOTFILES_BIN_PATH/arch-package-install ;;
+  *Web*) terminal $DOTFILES_BIN_PATH/arch-webapp-install ;;
+  *Editor*) show_install_editor_menu ;;
+  *Font*) show_install_font_menu ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_install_editor_menu() {
+  case $(menu "Install" "  VSCode\n  Cursor\n  Zed") in
+  *VSCode*) install_and_launch "VSCode" "visual-studio-code-bin" "code" ;;
+  *Cursor*) install_and_launch "Cursor" "cursor-bin" "cursor-cursor" ;;
+  *Zed*) install_and_launch "Zed" "zed" "dev.zed.Zed" ;;
+  *) show_install_menu ;;
+  esac
+}
+
+show_install_font_menu() {
+  case $(menu "Install" "  Meslo LG Mono\n  Fira Code\n  Victor Code\n  Bistream Vera Mono" "-w 350") in
+  *Meslo*) install_font "Meslo LG Mono" "ttf-meslo-nerd" "MesloLGL Nerd Font" ;;
+  *Fira*) install_font "Fira Code" "ttf-firacode-nerd" "FiraCode Nerd Font" ;;
+  *Victor*) install_font "Victor Code" "ttf-victor-mono-nerd" "VictorMono Nerd Font" ;;
+  *Bistream*) install_font "Bistream Vera Code" "ttf-bitstream-vera-mono-nerd" "BitstromWera Nerd Font" ;;
+  *) show_install_menu ;;
+  esac
+}
+
+show_remove_menu() {
+  case $(menu "Remove" "󰣇  Package\n  Web App\n󰈷  Fingerprint") in
+  *Package*) terminal $DOTFILES_BIN_PATH/arch-package-remove ;;
+  *Web*) terminal $DOTFILES_BIN_PATH/arch-webapp-remove ;;
+  *Fingerprint*) terminal "$DOTFILES_BIN_PATH/arch-setup-fingerprint --remove" ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_toggle_menu() {
+  case $(menu "Toggle" "󱫖  Idle Lock\n󰍜  Top Bar") in
+  *Idle*) $DOTFILES_BIN_PATH/arch-toggle-idle ;;
+  *Bar*) pkill -SIGUSR1 waybar ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_screenshot_menu() {
+  case $(menu "Screenshot" "  Region\n  Window\n  Display") in
+  *Region*) $DOTFILES_BIN_PATH/arch-screenshot ;;
+  *Window*) $DOTFILES_BIN_PATH/arch-screenshot window ;;
+  *Display*) $DOTFILES_BIN_PATH/arch-screenshot output ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_learn_menu() {
+  case $(menu "Learn" "  Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
+  *Keybindings*) $DOTFILES_BIN_PATH/arch-menu-keybindings ;;
+  *Hyprland*) setsid chromium --new-window --app="https://wiki.hypr.land/" & ;;
+  *Arch*) setsid chromium --new-window --app="https://wiki.archlinux.org/title/Main_page" & ;;
+  *Bash*) setsid chromium --new-window --app="https://devhints.io/bash" & ;;
+  *Neovim*) setsid chromium --new-window --app="https://www.lazyvim.org/keymaps" & ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_style_menu() {
+  case $(menu "Style" "󰸌  Theme\n  Font") in
+  *Theme*) show_theme_menu ;;
+  *Font*) show_font_menu ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_theme_menu() {
+  theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/arch-theme-list)")
+  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+    show_main_menu
+  else
+    $DOTFILES_BIN_PATH/theme --change "$theme"
+  fi
+}
+
+show_font_menu() {
+  theme=$(menu "Font" "$($DOTFILES_BIN_PATH/arch-font-list)" "--width 350")
+  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+    show_main_menu
+    # else
+    # $DOTFILES_BIN_PATH/arch-font-set "$theme"
+  fi
+}
+
+show_system_menu() {
+  case $(menu "System" "  Lock\n󰤄  Suspend\n  Relaunch\n󰜉  Restart\n󰐥  Shutdown") in
+  *Lock*) hyprlock ;;
+  *Suspend*) systemctl suspend ;;
+  *Relaunch*) uwsm stop ;;
+  *Restart*) systemctl reboot ;;
+  *Shutdown*) systemctl poweroff ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_main_menu() {
+  go_to_menu "$(menu "Go" "󰀻  Apps\n󰧑  Learn\n  Capture\n󰔎  Toggle\n  Style\n  Setup\n󰉉  Install\n󰭌  Remove\n  About\n  System")"
+}
+
+go_to_menu() {
+  case "${1,,}" in
+  *apps*) walker -p "Launch…" ;;
+  *learn*) show_learn_menu ;;
+  *capture*) show_screenshot_menu ;;
+  *toggle*) show_toggle_menu ;;
+  *style*) show_style_menu ;;
+  *setup*) show_setup_menu ;;
+  *install*) show_install_menu ;;
+  *remove*) show_remove_menu ;;
+  *theme*) show_theme_menu ;;
+  *system*) show_system_menu ;;
+  *about*) gtk-launch About.desktop ;;
+  esac
+}
+
+if [[ -n "$1" ]]; then
+  go_to_menu "$1"
+else
+  show_main_menu
+fi

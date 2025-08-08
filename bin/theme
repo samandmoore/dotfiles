@@ -16,7 +16,8 @@ function list_themes() {
 }
 
 function change_theme() {
-  local theme="$1"
+  local theme
+  theme=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
   if [[ -z "$theme" ]]; then
     # shellcheck disable=SC2046,SC2011
