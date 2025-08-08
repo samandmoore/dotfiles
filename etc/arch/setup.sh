@@ -26,7 +26,7 @@ source ~/.dotfiles/etc/arch/setup_fonts.sh
 # mgmt things
 paru -S --noconfirm --needed \
   brightnessctl playerctl power-profiles-daemon \
-  blueberry \
+  blueberry bluetui \
   pamixer pavucontrol wireplumber wiremix \
   wl-clip-persist clipse \
   slurp satty
