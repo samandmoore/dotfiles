@@ -11,7 +11,7 @@ function list_themes() {
   "$DOTFILES"/bin/theme-list
 }
 
-function change_theme() {
+function set_theme() {
   theme="$1"
 
   if [[ -z "$theme" ]]; then
@@ -22,17 +22,22 @@ function change_theme() {
 }
 
 case "${1:-}" in
---list)
+list)
   list_themes
   exit 0
   ;;
---change)
-  change_theme "${2:-}"
+set)
+  set_theme "${2:-}"
   exit 0
   ;;
 *)
-  echo "Manage themes"
-  echo "Usage: $0 [--list | --change [THEME]]"
+  echo "Theme manager"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m $(basename "$0") COMMAND"
+  echo ""
+  echo -e "\e[32mCommands:\e[0m"
+  echo -e "\e[34mlist\e[0m          List available themes"
+  echo -e "\e[34mset \e[33m[THEME]\e[0m   Change current theme to THEME"
   exit 1
   ;;
 esac
