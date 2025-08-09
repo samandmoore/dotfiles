@@ -131,7 +131,7 @@ show_style_menu() {
 }
 
 show_theme_menu() {
-  theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/theme-list)" "" "$(DOTFILES_BIN_PATH/theme-current)")
+  theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/theme-list)" "" "$($DOTFILES_BIN_PATH/theme-get)")
   if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
     show_main_menu
   else
