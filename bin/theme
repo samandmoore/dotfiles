@@ -4,10 +4,9 @@ set -euo pipefail
 DOTFILES=~/.dotfiles
 
 function list_themes() {
-  echo "🖌️ Current theme:"
-  "$DOTFILES"/bin/theme-get
+  echo -e "\e[32m🖌️ Current theme:\e[0m $("$DOTFILES"/bin/theme-get)"
   echo ""
-  echo "🎨 Available themes:"
+  echo -e "\e[32m🎨 Available themes:\e[0m"
   "$DOTFILES"/bin/theme-list
 }
 
