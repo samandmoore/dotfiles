@@ -30,7 +30,7 @@ alternate = "alt"
 clear_session = ["ctrl x"]
 copy_last_response = ["ctrl c"]
 resume_session = ["ctrl r"]
-run_last_responstruee = ["ctrl e"]
+run_last_response = ["ctrl e"]
 
 [events]
 on_activate = ""
