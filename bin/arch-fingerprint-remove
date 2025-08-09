@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+paru -Rns --noconfirm fprintd
+sudo rm -rf /etc/pam.d/polkit-1
+sudo sed -i '/pam_fprintd\.so/d' /etc/pam.d/sudo
+echo -e "\e[32mYou've successfully removed the fingerprint setup.\e[0m"

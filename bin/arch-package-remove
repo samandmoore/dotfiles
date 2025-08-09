@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+pkg_name=$(paru -Qqe | fzf --multi --preview 'paru -Qi {1}' --preview-window=down:75%)
+
+if [[ -n "$pkg_name" ]]; then
+  paru -Rns --noconfirm "$pkg_name"
+  sudo updatedb
+fi
