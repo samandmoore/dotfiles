@@ -140,11 +140,11 @@ show_theme_menu() {
 }
 
 show_font_menu() {
-  theme=$(menu "Font" "$($DOTFILES_BIN_PATH/arch-font-list)" "--width 350")
-  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+  font=$(menu "Font" "$($DOTFILES_BIN_PATH/arch-font-list)" "--width 350" "$($DOTFILES_BIN_PATH/arch-font-get)")
+  if [[ "$font" == "CNCLD" || -z "$font" ]]; then
     show_main_menu
     # else
-    # $DOTFILES_BIN_PATH/arch-font-set "$theme"
+    # $DOTFILES_BIN_PATH/arch-font-set "$font"
   fi
 }
 

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+grep -oP 'family\s*=\s*"\K[^"]+' ~/.config/kitty/kitty.conf | head -n1
