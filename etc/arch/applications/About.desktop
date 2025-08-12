@@ -2,7 +2,7 @@
 Version=1.0
 Name=About
 Comment=System information from Fastfetch
-Exec=kitty --class=About --title=About bash -c 'fastfetch; read -n 1 -s'
+Exec=kitty --class=About --title=About --override font_size=11 bash -c 'fastfetch; read -n 1 -s'
 Terminal=false
 Type=Application
 Icon=Arch
