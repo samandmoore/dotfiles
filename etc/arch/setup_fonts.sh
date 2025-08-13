@@ -3,7 +3,7 @@ set -euo pipefail
 
 # fonts and such
 # emoji support
-paru -Sy --noconfirm --needed \
+paru -Syu --noconfirm --needed \
   ttf-font-awesome \
   noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra \
   ttf-cascadia-mono-nerd
