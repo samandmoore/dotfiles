@@ -26,11 +26,11 @@ terminal() {
 }
 
 install_and_launch() {
-  terminal "echo 'Installing $1...'; paru -Sy --noconfirm $2 && gtk-launch $3"
+  terminal "echo 'Installing $1...'; paru -Syu --noconfirm $2 && gtk-launch $3"
 }
 
 install_font() {
-  terminal "echo 'Installing $1...'; paru -Sy --noconfirm --needed $2"
+  terminal "echo 'Installing $1...'; paru -Syu --noconfirm --needed $2"
 }
 
 show_install_menu() {
