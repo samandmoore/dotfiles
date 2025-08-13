@@ -115,7 +115,7 @@ show_setup_menu() {
 show_setup_power_menu() {
   profile=$(menu "Power Profile" "$($DOTFILES_BIN_PATH/arch-powerprofiles-list)" "" "$(powerprofilesctl get)")
 
-  if [[ "$profile" == "CNCLD" || -z "$profile" ]]; then
+  if [[ -z "$profile" ]]; then
     show_main_menu
   else
     powerprofilesctl set "$profile"
@@ -132,7 +132,7 @@ show_style_menu() {
 
 show_theme_menu() {
   theme=$(menu "Theme" "$($DOTFILES_BIN_PATH/theme-list)" "" "$($DOTFILES_BIN_PATH/theme-get)")
-  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+  if [[ -z "$theme" ]]; then
     show_main_menu
   else
     $DOTFILES_BIN_PATH/theme-set "$theme"
@@ -141,7 +141,7 @@ show_theme_menu() {
 
 show_font_menu() {
   font=$(menu "Font" "$($DOTFILES_BIN_PATH/arch-font-list)" "--width 350" "$($DOTFILES_BIN_PATH/arch-font-get)")
-  if [[ "$font" == "CNCLD" || -z "$font" ]]; then
+  if [[ -z "$font" ]]; then
     show_main_menu
     # else
     # $DOTFILES_BIN_PATH/arch-font-set "$font"
