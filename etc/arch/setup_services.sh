@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+sudo systemctl enable --now bluetooth.service
 systemctl --user enable --now waybar.service
 systemctl --user enable --now mako.service
 systemctl --user enable --now swaybg.service

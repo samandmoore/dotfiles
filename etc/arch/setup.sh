@@ -25,24 +25,13 @@ source ~/.dotfiles/etc/arch/setup_fonts.sh
 
 # mgmt things
 paru -S --noconfirm --needed \
-  brightnessctl playerctl power-profiles-daemon \
+  brightnessctl playerctl \
   blueberry bluetui \
   pamixer pavucontrol wireplumber wiremix \
   wl-clip-persist clipse \
   slurp satty
 
-# setup bluetooth right away
-sudo systemctl enable --now bluetooth.service
-
-# set up power profiles
-if ls /sys/class/power_supply/BAT* &>/dev/null; then
-  # This computer runs on a battery
-  powerprofilesctl set balanced || true
-else
-  # This computer runs on power outlet
-  powerprofilesctl set performance || true
-fi
-
+source ~/.dotfiles/etc/arch/setup_power.sh
 # login stuff
 source ~/.dotfiles/etc/arch/setup_login.sh
 
@@ -74,7 +63,3 @@ source ~/.dotfiles/etc/arch/setup_applications.sh
 
 # enable user services
 source ~/.dotfiles/etc/arch/setup_services.sh
-
-# disable power key off behavior in favor of menu binding
-sudo sed -i 's/^#HandlePowerKey=poweroff$/HandlePowerKey=ignore/' /etc/systemd/logind.conf
-sudo sed -i 's/^#PowerKeyIgnoreInhibited=no$/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
