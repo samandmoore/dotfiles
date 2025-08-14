@@ -1,5 +1,4 @@
 [alias.java.versions]
-"17.0.8" = "temurin-17.0.8+7"
 "21" = "temurin-21.0.6+7.0.LTS"
 
 [tools]
@@ -8,7 +7,8 @@
 deno = "latest"
 flutter = "3.19.3"
 go = "latest"
-java = "21"
+java = "24"
+kotlin = "latest"
 node = "latest"
 python = "latest"
 ruby = "latest"
