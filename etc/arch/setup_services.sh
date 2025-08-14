@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+sudo systemctl enable --now docker
 sudo systemctl enable --now bluetooth.service
 systemctl --user enable --now waybar.service
 systemctl --user enable --now mako.service
@@ -10,3 +11,5 @@ systemctl --user enable --now polkit-gnome.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now wl-clip-persist.service
 systemctl --user enable --now clipse.service
+
+sudo systemctl daemon-reload
