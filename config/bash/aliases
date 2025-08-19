@@ -9,6 +9,7 @@ if type eza > /dev/null 2>&1; then
   alias l="eza -l"
   alias la="eza -la"
   alias lt="eza -T"
+  alias tree="eza --tree --level=2"
 else
   # Detect which `ls` flavor is in use
   if ls --color > /dev/null 2>&1; then # GNU `ls`
