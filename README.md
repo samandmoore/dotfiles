@@ -6,6 +6,12 @@ To get started run
 wget -qO- https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
 ```
 
+or 
+
+```bash
+curl -s https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
+```
+
 From there, use `./script/setup.sh` to apply updates.
 
 ## Local customizations supported
