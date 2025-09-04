@@ -27,7 +27,7 @@ function setup_homebrew() {
     # on first run, rcup hasn't run yet, so
     # let's brew bundle from a special location
     brew update
-    brew bundle --file="$DOTFILES/Brewfile" || true
+    brew bundle --file="$DOTFILES/tag-darwin/Brewfile" || true
   fi
 }
 
