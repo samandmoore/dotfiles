@@ -22,7 +22,7 @@ function setup_homebrew() {
     echo 'Installing brew dependencies'
     brew update
     brew bundle --global
-  elif [[ -f "$DOTFILES/Brewfile" ]]; then
+  elif [[ -f "$DOTFILES/tag-darwin/Brewfile" ]]; then
     echo 'Installing brew dependencies'
     # on first run, rcup hasn't run yet, so
     # let's brew bundle from a special location
