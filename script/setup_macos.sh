@@ -13,16 +13,16 @@ function setup_shell_after_homebrew() {
 }
 
 function setup_homebrew() {
-  if ! type brew 2>/dev/null; then
+  if ! type brew >/dev/null 2>&1; then
     echo 'Installing brew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-  if [ -f ~/.Brewfile ]; then
+  if [[ -f ~/.Brewfile ]]; then
     echo 'Installing brew dependencies'
     brew update
     brew bundle --global
-  elif [ -f "$DOTFILES/Brewfile" ]; then
+  elif [[ -f "$DOTFILES/Brewfile" ]]; then
     echo 'Installing brew dependencies'
     # on first run, rcup hasn't run yet, so
     # let's brew bundle from a special location
