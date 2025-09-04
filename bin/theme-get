@@ -5,4 +5,4 @@ if [[ $(uname) == "Darwin" ]]; then
   SED="gsed"
 fi
 
-basename "$(realpath "$HOME/.config/dotfiles/current/theme")" | $SED -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g'
+basename "$(realpath "$HOME/.config/dotfiles/current/theme" 2>/dev/null)" | $SED -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g'
