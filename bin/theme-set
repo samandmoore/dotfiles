@@ -68,9 +68,9 @@ function change_theme_arch() {
 
 function change_theme_macos() {
   if [[ -f "$CURRENT/theme/light.mode" ]]; then
-    m appearance darkmode NO >/dev/null
+    m appearance --darkmode disable >/dev/null
   else
-    m appearance darkmode YES >/dev/null
+    m appearance --darkmode enable >/dev/null
   fi
 
   m wallpaper --set "$(readlink $CURRENT/background)"
