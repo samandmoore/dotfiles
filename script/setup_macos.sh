@@ -6,7 +6,7 @@ function setup_shell() {
 }
 
 function setup_shell_after_homebrew() {
-  if grep -q '/opt/homebrew/bin/bash' /etc/shells; then
+  if ! grep -q '/opt/homebrew/bin/bash' /etc/shells; then
     echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
   fi
   chsh -s /opt/homebrew/bin/bash
