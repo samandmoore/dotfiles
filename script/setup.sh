@@ -24,7 +24,7 @@ function setup_dotfiles() {
 
 function setup_tools() {
   echo 'Installing tools'
-  mise install --install-missing
+  mise install
 }
 
 function setup_theme() {
