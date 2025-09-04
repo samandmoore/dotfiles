@@ -29,7 +29,6 @@ brew 'zoxide'
 tap 'robotsandpencils/made'
 brew 'xcodes'
 
-tap 'homebrew/cask'
 cask_args appdir: '/Applications'
 cask '1password'
 cask 'alacritty'
