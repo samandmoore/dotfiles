@@ -4,6 +4,14 @@ set -euo pipefail
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 DOTFILES=~/.dotfiles
 
+trap on_script_error ERR
+
+function on_script_error() {
+  local exit_code="$?"
+  say_error "Command '$BASH_COMMAND' failed at ${BASH_SOURCE[1]}:${BASH_LINENO[0]}"
+  exit "$exit_code"
+}
+
 function setup_os() {
   if [[ $OS = 'linux' ]]; then
     echo 'Linux detected'
