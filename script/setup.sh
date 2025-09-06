@@ -36,7 +36,7 @@ function setup_tools() {
 }
 
 function setup_theme() {
-  "$DOTFILES"/bin/theme --change catppuccin-macchiato
+  "$DOTFILES"/bin/theme set "Catppuccin Macchiato"
 }
 
 setup_os
