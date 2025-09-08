@@ -56,7 +56,9 @@ fi
 
 # Set terminal title to something reasonable
 __set_terminal_title() {
-  echo -ne "\033]0;${PWD}  〉$BASH_COMMAND\007"
+  trimmed="~${PWD#"$HOME"}"
+  command="${BASH_COMMAND#starship_precmd}"
+  echo -ne "\033]0;${trimmed}  〉$command\007"
 }
 trap '__set_terminal_title' DEBUG
 
