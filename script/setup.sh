@@ -32,7 +32,21 @@ function setup_dotfiles() {
 
 function setup_tools() {
   echo 'Installing tools'
-  mise install
+  mise settings add idiomatic_version_file_enable_tools java
+  mise settings add idiomatic_version_file_enable_tools node
+  mise settings add idiomatic_version_file_enable_tools python
+  mise settings add idiomatic_version_file_enable_tools ruby
+
+  # prefer to use temurin jdk
+  mise alias add java 21 temurin-21.0.6+7.0.LTS
+
+  # install preferred tool versions
+  mise install --cd "$DOTFILES/etc"
+
+  # set up global versions of common languages
+  mise use --global node@latest
+  mise use --global python@latest
+  mise use --global ruby@latest
 }
 
 function setup_theme() {
