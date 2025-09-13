@@ -27,7 +27,7 @@ function setup_os() {
 
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
-  "$DOTFILES"/bin/rcs --up
+  "$DOTFILES"/bin/rcs up
 }
 
 function setup_tools() {
