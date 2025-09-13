@@ -47,6 +47,10 @@ function setup_tools() {
   mise use --global node@latest
   mise use --global python@latest
   mise use --global ruby@latest
+
+  # set up global versions of common tools
+  mise use --global cargo:https://github.com/samandmoore/git-up@tag:v0.2.0
+  mise use --global cargo:presenterm
 }
 
 function setup_theme() {
