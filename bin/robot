@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+
+function show_help() {
+  echo "Robot the computer manager"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m $(basename "$0") COMMAND"
+  echo ""
+  echo -e "\e[32mCommands:\e[0m"
+  echo -e "\e[34mtheme\e[0m         Theme manager"
+  echo -e "\e[34mdotfiles\e[0m      Dotfiles manager"
+  echo -e "\e[34march\e[0m          Arch Linux utilities"
+}
+
+if [ $# -eq 0 ]; then
+  show_help
+  exit 1
+fi
+SUBCOMMAND="$1"
+shift # remove subcommand from arguments
+
+case "$SUBCOMMAND" in
+theme)
+  $DOTFILES/bin/theme "$@"
+  ;;
+dotfiles)
+  $DOTFILES/bin/dotfiles "$@"
+  ;;
+arch)
+  $DOTFILES/bin/robot-arch "$@"
+  ;;
+*)
+  show_help
+  exit 1
+  ;;
+esac

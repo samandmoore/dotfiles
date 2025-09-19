@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+
+function show_help() {
+  echo "Robot arch screenshot commands"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m robot arch screenshot [OPTIONS]"
+  echo ""
+  echo -e "\e[32mDescription:\e[0m"
+  echo "  Take screenshots using the arch screenshot utility"
+}
+
+# Check for help flags
+for arg in "$@"; do
+  case "$arg" in
+  --help|-h|help)
+    show_help
+    exit 0
+    ;;
+  esac
+done
+
+# Just pass all arguments to arch-screenshot
+$DOTFILES/bin/arch-screenshot "$@"

@@ -4,13 +4,13 @@ set -euo pipefail
 DOTFILES=~/.dotfiles
 
 function show_help() {
-  echo "Robot arch menu commands"
+  echo "Robot arch package commands"
   echo ""
-  echo -e "\e[32mUsage:\e[0m robot arch menu [SUBCOMMAND] [OPTIONS]"
+  echo -e "\e[32mUsage:\e[0m robot arch package SUBCOMMAND [OPTIONS]"
   echo ""
   echo -e "\e[32mSubcommands:\e[0m"
-  echo -e "\e[34mkeybindings\e[0m    Show menu keybindings"
-  echo -e "\e[34mopen\e[0m           Open UI menu"
+  echo -e "\e[34minstall\e[0m        Install packages"
+  echo -e "\e[34mremove\e[0m         Remove packages"
 }
 
 if [ $# -eq 0 ]; then
@@ -22,14 +22,11 @@ SUBCOMMAND="$1"
 shift
 
 case "$SUBCOMMAND" in
-keybindings)
-  $DOTFILES/bin/arch-menu-keybindings "$@"
+install)
+  $DOTFILES/bin/arch-package-install "$@"
   ;;
-open)
-  $DOTFILES/bin/arch-menu-open "$@"
-  ;;
---help | -h | help)
-  show_help
+remove)
+  $DOTFILES/bin/arch-package-remove "$@"
   ;;
 *)
   echo -e "\e[31mError:\e[0m Unknown subcommand: $SUBCOMMAND"
@@ -38,3 +35,4 @@ open)
   exit 1
   ;;
 esac
+

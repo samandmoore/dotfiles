@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+
+function show_help() {
+  echo "Robot arch idle commands"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m robot arch idle SUBCOMMAND [OPTIONS]"
+  echo ""
+  echo -e "\e[32mSubcommands:\e[0m"
+  echo -e "\e[34mtoggle\e[0m         Toggle idle state"
+}
+
+if [ $# -eq 0 ]; then
+  show_help
+  exit 1
+fi
+
+SUBCOMMAND="$1"
+shift
+
+case "$SUBCOMMAND" in
+toggle)
+  $DOTFILES/bin/arch-idle-toggle "$@"
+  ;;
+*)
+  echo -e "\e[31mError:\e[0m Unknown subcommand: $SUBCOMMAND"
+  echo ""
+  show_help
+  exit 1
+  ;;
+esac

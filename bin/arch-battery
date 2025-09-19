@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+
+function show_help() {
+  echo "Robot arch battery commands"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m robot arch battery SUBCOMMAND [OPTIONS]"
+  echo ""
+  echo -e "\e[32mSubcommands:\e[0m"
+  echo -e "\e[34mmonitor\e[0m        Monitor battery status"
+}
+
+if [ $# -eq 0 ]; then
+  show_help
+  exit 1
+fi
+
+SUBCOMMAND="$1"
+shift
+
+case "$SUBCOMMAND" in
+monitor)
+  $DOTFILES/bin/arch-battery-monitor "$@"
+  ;;
+*)
+  echo -e "\e[31mError:\e[0m Unknown subcommand: $SUBCOMMAND"
+  echo ""
+  show_help
+  exit 1
+  ;;
+esac

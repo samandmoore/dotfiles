@@ -4,13 +4,13 @@ set -euo pipefail
 DOTFILES=~/.dotfiles
 
 function show_help() {
-  echo "Robot arch menu commands"
+  echo "Robot arch font commands"
   echo ""
-  echo -e "\e[32mUsage:\e[0m robot arch menu [SUBCOMMAND] [OPTIONS]"
+  echo -e "\e[32mUsage:\e[0m robot arch font SUBCOMMAND [OPTIONS]"
   echo ""
   echo -e "\e[32mSubcommands:\e[0m"
-  echo -e "\e[34mkeybindings\e[0m    Show menu keybindings"
-  echo -e "\e[34mopen\e[0m           Open UI menu"
+  echo -e "\e[34mlist\e[0m           List available fonts"
+  echo -e "\e[34mget\e[0m            Get font information"
 }
 
 if [ $# -eq 0 ]; then
@@ -22,13 +22,13 @@ SUBCOMMAND="$1"
 shift
 
 case "$SUBCOMMAND" in
-keybindings)
-  $DOTFILES/bin/arch-menu-keybindings "$@"
+list)
+  $DOTFILES/bin/arch-font-list "$@"
   ;;
-open)
-  $DOTFILES/bin/arch-menu-open "$@"
+get)
+  $DOTFILES/bin/arch-font-get "$@"
   ;;
---help | -h | help)
+--help|-h|help)
   show_help
   ;;
 *)

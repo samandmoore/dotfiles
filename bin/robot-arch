@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES=~/.dotfiles
+
+function show_help() {
+  echo "Robot arch commands"
+  echo ""
+  echo -e "\e[32mUsage:\e[0m robot arch COMMAND"
+  echo ""
+  echo -e "\e[32mCommands:\e[0m"
+  echo -e "\e[34mapplication\e[0m    Application management"
+  echo -e "\e[34mbattery\e[0m        Battery monitoring"
+  echo -e "\e[34mfingerprint\e[0m    Fingerprint management"
+  echo -e "\e[34mfont\e[0m           Font management"
+  echo -e "\e[34midle\e[0m           Idle management"
+  echo -e "\e[34mmenu\e[0m           Menu system"
+  echo -e "\e[34mpackage\e[0m        Package management"
+  echo -e "\e[34mpowerprofiles\e[0m  Power profile management"
+  echo -e "\e[34mscreenshot\e[0m     Take screenshots"
+  echo -e "\e[34mwebapp\e[0m         Web application management"
+}
+
+if [ $# -eq 0 ]; then
+  show_help
+  exit 1
+fi
+
+COMMAND="$1"
+shift # remove command from arguments
+
+case "$COMMAND" in
+application)
+  $DOTFILES/bin/arch-application "$@"
+  ;;
+battery)
+  $DOTFILES/bin/arch-battery "$@"
+  ;;
+fingerprint)
+  $DOTFILES/bin/arch-fingerprint "$@"
+  ;;
+font)
+  $DOTFILES/bin/arch-font "$@"
+  ;;
+idle)
+  $DOTFILES/bin/arch-idle "$@"
+  ;;
+menu)
+  $DOTFILES/bin/arch-menu "$@"
+  ;;
+package)
+  $DOTFILES/bin/arch-package "$@"
+  ;;
+powerprofiles)
+  $DOTFILES/bin/arch-powerprofiles "$@"
+  ;;
+screenshot)
+  $DOTFILES/bin/arch-screenshot-cmd "$@"
+  ;;
+webapp)
+  $DOTFILES/bin/arch-webapp "$@"
+  ;;
+*)
+  show_help
+  exit 1
+  ;;
+esac
