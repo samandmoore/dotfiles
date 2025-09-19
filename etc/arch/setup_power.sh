@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-paru -S --noconfirm --needed power-profiles-daemon
-
 # set up power profiles
 if ls /sys/class/power_supply/BAT* &>/dev/null; then
   # This computer runs on a battery

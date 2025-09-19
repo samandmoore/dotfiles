@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# fonts and such
-# emoji support
-paru -Syu --noconfirm --needed \
-  ttf-font-awesome \
-  noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra \
-  ttf-cascadia-mono-nerd
-
 mkdir -p ~/.local/share/fonts
 
 if ! fc-list | grep -qi "IntoneMono Nerd Font"; then
