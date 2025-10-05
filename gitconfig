@@ -27,6 +27,9 @@
   conflicted = diff --name-only --diff-filter=U
   # push and set upstream
   pu = "push -u origin HEAD"
+  # push and set upstream, force but safely
+  puf = "push -u origin HEAD --force-with-lease"
+  puff = "!git puf"
   # open in github web ui
   browse = "!gh browse"
   # open pr view in web ui
