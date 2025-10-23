@@ -5,7 +5,7 @@ DOTFILES=~/.dotfiles
 
 function list_themes() {
   local current=$("$DOTFILES"/bin/theme-get)
-  echo -e "\e[32m🖌️ Current theme:\e[0m ${CURRENT:-<none>}"
+  echo -e "\e[32m🖌️ Current theme:\e[0m ${current:-<none>}"
   echo ""
   echo -e "\e[32m🎨 Available themes:\e[0m"
   "$DOTFILES"/bin/theme-list
