@@ -30,7 +30,7 @@ brew 'starship'
 brew 'zoxide'
 
 # mobile dev things
-tap 'robotsandpencils/made'
+tap 'xcodesorg/made'
 brew 'xcodes'
 
 cask_args appdir: '/Applications'

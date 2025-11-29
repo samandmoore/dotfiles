@@ -2,14 +2,6 @@
 set -euo pipefail
 
 function setup_shell() {
-  # if the current shell isn't bash, swap to built-in bash
-  if [[ "$SHELL" != *"bash"* ]]; then
-    echo 'Current shell is not bash, switching...'
-    chsh -s /bin/bash
-  fi
-}
-
-function setup_shell_after_homebrew() {
   if [[ "$SHELL" != '/opt/homebrew/bin/bash' ]]; then
     echo 'Current shell is not homebrew bash, switching...'
     if ! grep -q '/opt/homebrew/bin/bash' /etc/shells; then
@@ -43,6 +35,5 @@ function setup_defaults() {
   source "$DOTFILES/etc/macos/defaults.sh"
 }
 
-setup_shell
 setup_homebrew
-setup_shell_after_homebrew
+setup_shell

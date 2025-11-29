@@ -27,7 +27,7 @@ function setup_os() {
 
 function setup_dotfiles() {
   echo 'Setting up dotfiles'
-  "$DOTFILES"/bin/rcs up
+  "$DOTFILES"/bin/robot dotfiles up
 }
 
 function setup_tools() {
@@ -51,7 +51,7 @@ function setup_tools() {
 }
 
 function setup_theme() {
-  "$DOTFILES"/bin/theme set "Catppuccin Macchiato"
+  "$DOTFILES"/bin/robot theme set "Catppuccin Macchiato"
 }
 
 setup_os
