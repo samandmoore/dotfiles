@@ -37,9 +37,6 @@ function setup_tools() {
   mise settings add idiomatic_version_file_enable_tools python
   mise settings add idiomatic_version_file_enable_tools ruby
 
-  # prefer to use temurin jdk
-  mise alias add java 21 temurin-21.0.6+7.0.LTS
-
   # install preferred tool versions
   mise install --cd "$DOTFILES/etc"
 
