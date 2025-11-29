@@ -6,7 +6,7 @@ To get started run
 wget -qO- https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
 ```
 
-or 
+or
 
 ```bash
 curl -s https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
@@ -32,13 +32,13 @@ The current theme and background are linked into
 - `~/.config/dotfiles/current/theme`
 - `~/.config/dotfiles/current/background`
 
-## linux things
+## Linux things
 
-customizations are in `etc/arch`
+Customizations are in `etc/arch`
 
 ## macOS things
 
-customizations are in `etc/macos`
+Customizations are in `etc/macos`
 
 Change your computer name and network sharing name with this script if
 you want.
