@@ -30,10 +30,11 @@ jobs:
         run: |
           mkdir static
           cp script/boot.sh static/
+          cp public/index.html static/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'static'
+          path: "static"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
