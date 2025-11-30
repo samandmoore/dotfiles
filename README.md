@@ -3,13 +3,13 @@
 To get started run
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
+wget -qO- https://dotfiles.samandmoore.com/boot.sh | bash
 ```
 
 or
 
 ```bash
-curl -s https://raw.githubusercontent.com/samandmoore/dotfiles/refs/heads/main/script/boot.sh | bash
+curl -s https://dotfiles.samandmoore.com/boot.sh | bash
 ```
 
 From there, use `./script/setup.sh` to apply updates.
