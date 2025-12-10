@@ -48,6 +48,7 @@ function setup_tools() {
   # set up global versions of common tools
   mise use --global cargo:https://github.com/samandmoore/git-up@tag:v0.2.0
   mise use --global cargo:presenterm
+  mise use --global npm:markdownlint-cli2
 }
 
 function setup_theme() {

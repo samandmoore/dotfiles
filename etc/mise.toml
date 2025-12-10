@@ -1,6 +1,4 @@
 [tools]
-"cargo:https://github.com/samandmoore/git-up" = "tag:v0.2.0"
-"cargo:presenterm" = "latest"
 node = "latest"
 python = "latest"
 ruby = "latest"
