@@ -9,6 +9,7 @@ function update_rc_files() {
     -x LICENSE \
     -x etc \
     -x script \
+    -x public \
     -S config/nvim \
     -t "$OS"
 }
@@ -19,6 +20,7 @@ function list_rc_files() {
     -x LICENSE \
     -x etc \
     -x script \
+    -x public \
     -S config/nvim \
     -t "$OS"
 }
