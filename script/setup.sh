@@ -38,17 +38,18 @@ function setup_tools() {
   mise settings add idiomatic_version_file_enable_tools ruby
 
   # install preferred tool versions
-  mise install --cd "$DOTFILES/etc"
-
-  # set up global versions of common languages
-  mise use --global node@latest
-  mise use --global python@latest
-  mise use --global ruby@latest
+  mise use --global \
+    node@latest \
+    python@latest \
+    ruby@latest \
+    rust@latest
 
   # set up global versions of common tools
-  mise use --global cargo:https://github.com/samandmoore/git-up@tag:v0.2.0
-  mise use --global cargo:presenterm
-  mise use --global npm:markdownlint-cli2
+  mise use --global \
+    cargo:https://github.com/samandmoore/git-up@tag:v0.2.0 \
+    cargo:presenterm \
+    cargo:wtt \
+    npm:markdownlint-cli2
 }
 
 function setup_theme() {
