@@ -2,12 +2,18 @@
 set -euo pipefail
 
 function setup_shell() {
+  if ! grep -q '/opt/homebrew/bin/bash' /etc/shells; then
+    echo 'Homebrew bash shell is not in shells list, adding...'
+    echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
+  fi
+
+  if ! grep -q '/opt/homebrew/bin/fish' /etc/shells; then
+    echo 'Homebrew fish shell is not in shells list, adding...'
+    echo '/opt/homebrew/bin/fish' | sudo tee -a /etc/shells
+  fi
+
   if [[ "$SHELL" != '/opt/homebrew/bin/bash' ]]; then
     echo 'Current shell is not homebrew bash, switching...'
-    if ! grep -q '/opt/homebrew/bin/bash' /etc/shells; then
-      echo 'Homebrew bash shell is not in shells list, adding...'
-      echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
-    fi
     chsh -s /opt/homebrew/bin/bash
   fi
 }
