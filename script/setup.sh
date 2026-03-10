@@ -39,6 +39,7 @@ function setup_tools() {
 
   # install preferred tool versions
   mise use --global \
+    usage@latest \
     node@latest \
     python@latest \
     ruby@latest \
