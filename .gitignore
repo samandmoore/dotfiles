@@ -8,3 +8,6 @@ vim/.netrwhist
 
 # have to ignore this file because we symlink the whole nvim directory to ~
 config/nvim/lua/plugins/colorscheme.lua
+
+# fish local overrides
+config/fish/local.fish

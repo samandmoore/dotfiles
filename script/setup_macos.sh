@@ -12,9 +12,9 @@ function setup_shell() {
     echo '/opt/homebrew/bin/fish' | sudo tee -a /etc/shells
   fi
 
-  if [[ "$SHELL" != '/opt/homebrew/bin/bash' ]]; then
-    echo 'Current shell is not homebrew bash, switching...'
-    chsh -s /opt/homebrew/bin/bash
+  if [[ "$SHELL" != '/opt/homebrew/bin/fish' ]]; then
+    echo 'Current shell is not homebrew fish, switching...'
+    chsh -s /opt/homebrew/bin/fish
   fi
 }
 
