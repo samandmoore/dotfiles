@@ -7,11 +7,11 @@ if test -f /opt/homebrew/bin/brew
     /opt/homebrew/bin/brew shellenv | source
 end
 
-if type --query mise
+if command --query mise
     mise activate fish | source
 end
 
-if type --query starship
+if command --query starship
     starship init fish | source
 end
 
@@ -19,12 +19,12 @@ if command --query zoxide
     zoxide init --cmd j fish | source
 end
 
-if type --query fzf
+if command --query fzf
     fzf --fish | source
 end
 
 # eza / ls
-if type --query eza
+if command --query eza
     alias ls eza
     alias l 'eza --long'
     alias la 'eza --long --all'
@@ -36,12 +36,12 @@ else
 end
 
 # fancy cat
-if type --query bat
+if command --query bat
     alias cat 'bat --paging=never --style=plain'
 end
 
 # lazier git
-if type --query lazygit
+if command --query lazygit
     abbr --add lg lazygit
 end
 
