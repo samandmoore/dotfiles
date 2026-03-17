@@ -18,6 +18,7 @@ From there, use `./script/setup.sh` to apply updates.
 
 - `~/.bash_profile.local`
 - `~/.bashrc.local`
+- `~/.config/fish/local.fish`
 - `~/.gitconfig.local`
 
 ## Theme things
@@ -39,14 +40,3 @@ Customizations are in `etc/arch`
 ## macOS things
 
 Customizations are in `etc/macos`
-
-Change your computer name and network sharing name with this script if
-you want.
-
-```
-export NEW_NAME="My-Cool-Mac"
-scutil --set ComputerName "$NEW_NAME"
-scutil --set LocalHostName "$NEW_NAME"
-scutil --set HostName "$NEW_NAME"
-unset NEW_NAME
-```
