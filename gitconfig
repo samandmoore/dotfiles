@@ -82,7 +82,7 @@
   name = Sam Moore
   email = samandmoore@gmail.com
 [github]
-  user = samandmoore
+	user = samandmoore
 [rerere]
   enabled = true
 [filter "lfs"]
@@ -91,10 +91,7 @@
   required = true
 [init]
   defaultBranch = main
-[include]
-  path = ~/.gitconfig.local
-[core]
-	excludesfile = ~/.gitignore_global
+	templatedir = ~/.git-templates
 [credential "https://github.com"]
 	helper = 
 	helper = !gh auth git-credential
