@@ -49,8 +49,7 @@ function setup_tools() {
   mise use --global \
     cargo:https://github.com/samandmoore/git-up@tag:v0.2.0 \
     cargo:presenterm \
-    cargo:wtt \
-    npm:markdownlint-cli2
+    cargo:wtt
 }
 
 function setup_theme() {
