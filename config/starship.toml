@@ -8,6 +8,7 @@ $git_branch\
 $git_state\
 $git_status\
 $line_break\
+$shell\
 $character"""
 
 [username]
@@ -25,3 +26,11 @@ style = "bold fg:1"
 [git_status]
 stashed = ""
 style = "bold fg:172"
+
+[shell]
+disabled = false
+fish_indicator = ''
+bash_indicator = 'bash'
+zsh_indicator = 'zsh'
+format = '[$indicator]($style) '
+style = 'bold fg:13'
