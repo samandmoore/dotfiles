@@ -77,3 +77,19 @@ launchMode:bind("", "t", function()
 	launchMode:exit()
 	terminal("btop")
 end)
+
+-- ctrl+s -> ?: show hotkeys
+launchMode:bind("shift", "/", function()
+	launchMode:exit()
+	hs.alert.show(
+		table.concat({
+			"ctrl+s → ?  show hotkeys",
+			"ctrl+s → r  reload hammerspoon",
+			"ctrl+s → m  fastmail",
+			"ctrl+s → c  calendar",
+			"ctrl+s → g  gmail",
+			"ctrl+s → t  btop",
+		}, "\n"),
+		4
+	)
+end)
