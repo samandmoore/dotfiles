@@ -3,8 +3,12 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "defaultMode": "auto",
-    "allow": ["Bash(bundle exec:*)", "Bash(git add:*)", "Bash(git commit:*)"]
+    "allow": [
+      "Bash(bundle exec:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "defaultMode": "auto"
   },
   "model": "opus[1m]",
   "hooks": {
@@ -41,19 +45,39 @@
     "slack@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "betterment-tools": {
+      "source": {
+        "source": "github",
+        "repo": "Betterment/claude-plugins"
+      }
+    }
+  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
-      "allowedDomains": ["github.com"]
+      "allowedDomains": [
+        "github.com"
+      ]
     },
     "filesystem": {
-      "allowWrite": ["~/.local/share/wtt/bare"]
+      "allowWrite": [
+        "~/.local/share/wtt/bare"
+      ]
     },
     "enableWeakerNetworkIsolation": true,
-    "excludedCommands": ["bundle", "git", "gh", "docker"]
+    "excludedCommands": [
+      "bundle",
+      "git",
+      "gh",
+      "docker"
+    ]
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "editorMode": "vim",
+  "preferredNotifChannel": "kitty",
+  "autoCompactEnabled": false
 }
