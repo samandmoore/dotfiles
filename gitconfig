@@ -1,3 +1,22 @@
+[user]
+  name = Sam Moore
+  email = samandmoore@gmail.com
+[github]
+	user = samandmoore
+[include]
+  path = ~/.gitconfig.local
+
+[help]
+  # Autocorrect mistyped commands.
+	autocorrect = 1
+
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential
+
 [alias]
   # View the current working tree status using the short format
   s = status -s
@@ -37,6 +56,63 @@
   # open pr view in web ui
   compare = "!gh pr create --web"
 
+	## Codebase Audit Commands
+	# Show the 20 most-changed files in the last year.
+	churn = !git log --format=format: --name-only --since='1 year ago' \
+	      | sort | uniq -c | sort -nr | head -20
+	# Show contributors ranked by commit count.
+	bus-factor = shortlog -sn --no-merges
+	# Show files most associated with bug-fix commits.
+	bug-hotspots = !git log -i -E --grep='fix|bug|broken' \
+	             --name-only --format='' \
+	             | sort | uniq -c | sort -nr | head -20
+	# Show commit count by month for the entire history.
+	commit-velocity = !git log --format='%ad' --date=format:'%Y-%m' \
+	                | sort | uniq -c
+	# Show reverts, hotfixes, and emergency commits in the last year.
+	firefighting = !git log --oneline --since='1 year ago' \
+	             | grep -iE 'revert|hotfix|emergency|rollback'
+
+[init]
+	# Use same default branch name as GitHub.
+	defaultBranch = main
+[checkout]
+	# If in doubt about the branch to checkout, pick origin.
+	defaultRemote = origin
+[fetch]
+  prune = true
+	# Write commit graph to speed up some repositories.
+	writeCommitGraph = true
+[pull]
+  ff = only
+[push]
+  default = simple
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+	# Use 3-way diffs.
+	conflictstyle = diff3
+[rebase]
+	# Run `git stash` if needed before a `git rebase`
+	autoStash = true
+	# Auto-add `--autosquash` to `git rebase`
+	autoSquash = true
+[rerere]
+	# Store and re-use manual conflict resolution changes.
+  enabled = true
+	# Automatically re-apply resolutions if seen again
+	autoupdate = true
+[diff]
+	# Use the better histogram diff algorithm
+	algorithm = histogram
+	# Use new diff algorithm to make e.g. function diffs look better.
+	compactionheuristic = true
+	# Use a different colour for moved lines than added/modified ones
+	colorMoved = true
+	# Use more Git-internals specific prefixes for diff hunks
+	mnemonicPrefix = true
+	# Detect if a file has been renamed
+	renames = true
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
   ui = auto
@@ -53,11 +129,11 @@
   added = yellow
   changed = green
   untracked = cyan
-[merge]
-  # Include summaries of merged commits in newly created merge commit messages
-  log = true
-[fetch]
-  prune = true
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 
 # URL shorthands
 [url "git@github.com:"]
@@ -73,30 +149,3 @@
   pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
-
-[push]
-  default = simple
-[pull]
-  ff = only
-[user]
-  name = Sam Moore
-  email = samandmoore@gmail.com
-[github]
-	user = samandmoore
-[rerere]
-  enabled = true
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
-[init]
-  defaultBranch = main
-	templatedir = ~/.git-templates
-[credential "https://github.com"]
-	helper = 
-	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !gh auth git-credential
-[include]
-  path = ~/.gitconfig.local
