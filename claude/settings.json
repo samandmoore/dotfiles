@@ -76,8 +76,9 @@
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
-  "skipAutoPermissionPrompt": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
-  "autoCompactEnabled": false
+  "autoCompactEnabled": false,
+  "skipAutoPermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }
