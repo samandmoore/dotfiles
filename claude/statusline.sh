@@ -1,7 +1,7 @@
 #!/bin/bash
 input=$(cat)
 
-MODEL=$(echo "$input" | jq -r '.model.display_name')
+MODEL=$(echo "$input" | jq -r '.model.id')
 DIR=$(echo "$input" | jq -r '.workspace.current_dir')
 COST=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
@@ -24,4 +24,4 @@ git rev-parse --git-dir >/dev/null 2>&1 && BRANCH=" | 🌿 $(git branch --show-c
 
 COST_FMT=$(printf '$%.2f' "$COST")
 
-echo -e "${CYAN}[$MODEL]${RESET} 🧠 ${PCT}% | 💰 ${YELLOW}${COST_FMT}${RESET} | 📁 ${DIR##*/}$BRANCH "
+echo -e "${CYAN}$MODEL${RESET} | 🧠 ${BAR_COLOR}${PCT}%${RESET} | 💰 ${YELLOW}${COST_FMT}${RESET} | 📁 ${DIR##*/}$BRANCH "
