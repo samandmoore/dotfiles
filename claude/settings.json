@@ -3,11 +3,7 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "allow": [
-      "Bash(bundle exec:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)"
-    ],
+    "allow": ["Bash(bundle exec:*)", "Bash(git add:*)", "Bash(git commit:*)"],
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
@@ -20,6 +16,30 @@
             "type": "command",
             "command": "mise env -s zsh >> \"$CLAUDE_ENV_FILE\"",
             "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh",
+            "timeout": 5
           }
         ]
       }
@@ -56,23 +76,17 @@
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
     "network": {
-      "allowedDomains": [
-        "github.com"
-      ]
+      "allowedDomains": ["github.com"],
+      "allowLocalBinding": true,
+      "allowUnixSockets": ["~/.colima/default/docker.sock"]
     },
     "filesystem": {
-      "allowWrite": [
-        "~/.local/share/wtt/bare"
-      ]
+      "allowWrite": ["~/.local/share/wtt/bare"]
     },
     "enableWeakerNetworkIsolation": true,
-    "excludedCommands": [
-      "bundle",
-      "git",
-      "gh",
-      "docker"
-    ]
+    "excludedCommands": ["bundle *", "git *", "gh *", "docker *"]
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
