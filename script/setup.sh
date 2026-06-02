@@ -52,6 +52,17 @@ function setup_tools() {
     cargo:wtt
 }
 
+function setup_wtt() {
+  echo 'Configuring wtt'
+  # wtt does not expand ~ or $HOME, so generate an absolute-path config
+  # per-machine while keeping the layout version controlled here
+  mkdir -p ~/.config
+  cat > ~/.config/wtt.toml <<EOF
+bare_clone_dir = "$HOME/dev/.wtt"
+worktree_dir = "$HOME/dev/worktrees"
+EOF
+}
+
 function setup_theme() {
   "$DOTFILES"/bin/robot theme set "Catppuccin Macchiato"
 }
@@ -59,4 +70,5 @@ function setup_theme() {
 setup_os
 setup_dotfiles
 setup_tools
+setup_wtt
 setup_theme
