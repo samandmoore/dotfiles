@@ -29,6 +29,7 @@ brew 'rcm'
 brew 'ripgrep'
 brew 'rumdl'
 brew 'starship'
+brew 'tldr'
 brew 'tree-sitter-cli'
 brew 'zoxide'
 
