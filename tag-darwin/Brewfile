@@ -25,7 +25,7 @@ brew 'libyaml'
 brew 'm-cli'
 brew 'mise'
 brew 'neovim'
-brew 'rcm'
+brew 'thoughtbot/formulae/rcm', trusted: true
 brew 'ripgrep'
 brew 'rumdl'
 brew 'starship'
@@ -34,7 +34,7 @@ brew 'zoxide'
 
 # mobile dev things
 tap 'xcodesorg/made'
-brew 'xcodes'
+brew 'xcodesorg/made/xcodes', trusted: true
 
 cask_args appdir: '/Applications'
 cask '1password'
