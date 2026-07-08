@@ -3,6 +3,22 @@ set -euo pipefail
 
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
+# resolve the rcm tag: darwin, or the specific linux distro (arch/ubuntu)
+case "$OS" in
+darwin)
+  TAG='darwin'
+  ;;
+linux)
+  TAG='unknown'
+  if [[ -r /etc/os-release ]]; then
+    TAG=$(. /etc/os-release && echo "$ID")
+  fi
+  ;;
+*)
+  TAG="$OS"
+  ;;
+esac
+
 function update_rc_files() {
   rcup -fv \
     -x README.md \
@@ -11,7 +27,7 @@ function update_rc_files() {
     -x script \
     -x public \
     -S config/nvim \
-    -t "$OS"
+    -t "$TAG"
 }
 
 function list_rc_files() {
@@ -22,7 +38,7 @@ function list_rc_files() {
     -x script \
     -x public \
     -S config/nvim \
-    -t "$OS"
+    -t "$TAG"
 }
 
 case "${1:-}" in
