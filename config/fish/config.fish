@@ -3,8 +3,12 @@ status is-interactive; or return
 
 set --global fish_greeting ""
 
-if test -f /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
+# Setup homebrew (macOS /opt/homebrew or Linux /home/linuxbrew)
+for brew_path in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew
+    if test -x $brew_path
+        $brew_path shellenv | source
+        break
+    end
 end
 
 if command --query mise

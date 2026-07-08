@@ -26,17 +26,19 @@ if type defaults &>/dev/null; then
   complete -W "NSGlobalDomain" defaults
 fi
 
-# Setup homebrew
-if [ -f /opt/homebrew/bin/brew ]; then
-  export PATH="/opt/homebrew/bin:$PATH"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+# Setup homebrew (macOS /opt/homebrew or Linux /home/linuxbrew)
+for brew_path in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  if [ -x "$brew_path" ]; then
+    eval "$("$brew_path" shellenv)"
 
-  # If possible, add tab completion for many more commands
-  brewery=$(brew --prefix)
-  [[ -s "$brewery/etc/bash_completion" ]] && source "$brewery/etc/bash_completion"
-  [[ -s "$brewery/opt/fzf/shell/completion.bash" ]] && source "$brewery/opt/fzf/shell/completion.bash"
-  [[ -s "$brewery/opt/fzf/shell/key-bindings.bash" ]] && source "$brewery/opt/fzf/shell/key-bindings.bash"
-fi
+    # If possible, add tab completion for many more commands
+    brewery=$(brew --prefix)
+    [[ -s "$brewery/etc/bash_completion" ]] && source "$brewery/etc/bash_completion"
+    [[ -s "$brewery/opt/fzf/shell/completion.bash" ]] && source "$brewery/opt/fzf/shell/completion.bash"
+    [[ -s "$brewery/opt/fzf/shell/key-bindings.bash" ]] && source "$brewery/opt/fzf/shell/key-bindings.bash"
+    break
+  fi
+done
 
 if type aws &>/dev/null; then
   complete -C "$(which aws_completer)" aws
