@@ -1,7 +1,4 @@
 {
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  },
   "permissions": {
     "allow": ["Bash(bundle exec:*)", "Bash(git add:*)", "Bash(git commit:*)"],
     "defaultMode": "auto"
@@ -65,34 +62,26 @@
     "slack@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true
   },
-  "extraKnownMarketplaces": {
-    "betterment-tools": {
-      "source": {
-        "source": "github",
-        "repo": "Betterment/claude-plugins"
-      }
-    }
-  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowedDomains": ["github.com"],
-      "allowLocalBinding": true,
-      "allowUnixSockets": ["~/.colima/default/docker.sock"]
+      "allowUnixSockets": ["~/.colima/default/docker.sock"],
+      "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.local/share/wtt/bare"]
+      "allowWrite": ["~/.dev/.worktrees"]
     },
     "enableWeakerNetworkIsolation": true,
     "excludedCommands": ["bundle *", "git *", "gh *", "docker *"]
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
   "autoCompactEnabled": false,
-  "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }

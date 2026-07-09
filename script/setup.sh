@@ -30,6 +30,11 @@ function setup_dotfiles() {
   "$DOTFILES"/bin/robot dotfiles up
 }
 
+function setup_claude() {
+  echo 'Setting up Claude'
+  "$DOTFILES"/bin/claude-setup
+}
+
 function setup_tools() {
   echo 'Installing tools'
   mise settings add idiomatic_version_file_enable_tools java
@@ -57,5 +62,6 @@ function setup_theme() {
 
 setup_os
 setup_dotfiles
+setup_claude
 setup_tools
 setup_theme

@@ -26,7 +26,9 @@ function update_rc_files() {
     -x etc \
     -x script \
     -x public \
+    -x claude/settings.json \
     -S config/nvim \
+    -S docs \
     -t "$TAG"
 }
 
@@ -37,7 +39,9 @@ function list_rc_files() {
     -x etc \
     -x script \
     -x public \
+    -x claude/settings.json \
     -S config/nvim \
+    -S docs \
     -t "$TAG"
 }
 

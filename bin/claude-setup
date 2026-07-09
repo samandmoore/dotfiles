@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Set up Claude Code from the dotfiles repo.
+#
+# We can't symlink ~/.claude/settings.json because work tooling
+# (aicodemetricsd, runlayer aiwatch) rewrites it in place, clobbering the
+# link. Instead we merge our tracked settings on top of whatever is live,
+# preserving the injected hooks. Safe to re-run whenever the live file drifts.
+
+require "json"
+require "fileutils"
+
+REPO_SETTINGS = File.expand_path("../claude/settings.json", __dir__)
+LIVE_SETTINGS = File.expand_path("~/.claude/settings.json")
+
+# Deep merge with the repo winning scalar/array conflicts, live-only keys
+# preserved, and hook arrays unioned so both our hooks and the injected ones
+# run.
+def deep_merge(live, repo)
+  return repo unless live.is_a?(Hash) && repo.is_a?(Hash)
+
+  live.merge(repo) do |key, live_val, repo_val|
+    if key == "hooks"
+      merge_hooks(live_val, repo_val)
+    else
+      deep_merge(live_val, repo_val)
+    end
+  end
+end
+
+def merge_hooks(live, repo)
+  live ||= {}
+  repo ||= {}
+  (live.keys | repo.keys).each_with_object({}) do |event, merged|
+    merged[event] = ((live[event] || []) + (repo[event] || [])).uniq
+  end
+end
+
+repo = JSON.parse(File.read(REPO_SETTINGS))
+live = File.exist?(LIVE_SETTINGS) ? JSON.parse(File.read(LIVE_SETTINGS)) : {}
+
+# Snapshot the live file before rewriting it so a bad merge is easy to revert.
+if File.exist?(LIVE_SETTINGS)
+  backup = "#{LIVE_SETTINGS}.#{Time.now.strftime('%Y%m%d%H%M%S')}"
+  FileUtils.cp(LIVE_SETTINGS, backup)
+  puts "Backed up existing settings to #{backup}"
+end
+
+FileUtils.mkdir_p(File.dirname(LIVE_SETTINGS))
+File.write(LIVE_SETTINGS, "#{JSON.pretty_generate(deep_merge(live, repo))}\n")
+
+puts "Merged dotfiles Claude settings into #{LIVE_SETTINGS}"
