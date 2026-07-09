@@ -1,0 +1,6 @@
+# Worktrunk (wt) user configuration.
+# Docs: https://worktrunk.dev/config/
+#
+# Centralized worktree layout: ~/dev/.worktrees/<owner>/<repo>/<branch>
+# `~` expands to $HOME; slashes in branch names become hyphens via `sanitize`.
+worktree-path = "~/dev/.worktrees/{{ owner }}/{{ repo }}/{{ branch | sanitize }}"

@@ -48,19 +48,7 @@ function setup_tools() {
   # set up global versions of common tools
   mise use --global \
     cargo:https://github.com/samandmoore/git-up@tag:v0.2.0 \
-    cargo:presenterm \
-    cargo:wtt
-}
-
-function setup_wtt() {
-  echo 'Configuring wtt'
-  # wtt does not expand ~ or $HOME, so generate an absolute-path config
-  # per-machine while keeping the layout version controlled here
-  mkdir -p ~/.config
-  cat > ~/.config/wtt.toml <<EOF
-bare_clone_dir = "$HOME/dev/.wtt"
-worktree_dir = "$HOME/dev/worktrees"
-EOF
+    cargo:presenterm
 }
 
 function setup_theme() {
@@ -70,5 +58,4 @@ function setup_theme() {
 setup_os
 setup_dotfiles
 setup_tools
-setup_wtt
 setup_theme

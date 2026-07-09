@@ -30,6 +30,7 @@ brew 'ripgrep'
 brew 'rumdl'
 brew 'starship'
 brew 'tree-sitter-cli'
+brew 'worktrunk'
 brew 'zoxide'
 
 # mobile dev things

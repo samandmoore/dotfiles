@@ -56,6 +56,10 @@ if command -v zoxide &>/dev/null; then
   eval "$(zoxide init --cmd j bash)"
 fi
 
+if command -v wt &>/dev/null; then
+  eval "$(command wt config shell init bash)"
+fi
+
 # Set terminal title to something reasonable
 __set_terminal_title() {
   trimmed="~${PWD#"$HOME"}"
