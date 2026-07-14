@@ -7,6 +7,17 @@
 - For connection to Jira, Confluence, Figma, etc, prefer the configured MCP
   connections
 
+## Designs & plans
+
+- Design docs — the **what/why** (goals, approach) — go in `docs/designs/` and
+  are **committed**. Superpowers' `brainstorming` skill calls this a "spec" and
+  defaults to `docs/superpowers/specs/`; write it to `docs/designs/` instead.
+- Implementation plans — the **how** (task-by-task detail, code, TDD steps) —
+  go in `docs/.plans/`, **git-ignored** (globally) as local-only working docs.
+  This is Superpowers' `writing-plans` output (default
+  `docs/superpowers/plans/`); write it to `docs/.plans/` instead.
+- Note: Superpowers' "spec" = the what/why (our design); its "plan" = the how.
+
 ## Coding
 
 - Inline new variables and functions used only once
