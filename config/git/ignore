@@ -1,0 +1,13 @@
+log
+tags
+tmp
+vendor/cache/
+vendor/gems/
+.git/
+bower_components/
+node_modules/
+coverage/
+*.tfstate
+*.backup
+.superpowers
+.lavish
