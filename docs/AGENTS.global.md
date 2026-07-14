@@ -54,6 +54,10 @@
   - if committing fails unexpectedly, fail fast and ask for help with the exact
     command, exit status, and stderr instead of papering over it
 
+## GitHub
+
+- Never add Generated with Claude/Codex/Agent lines to pull requests
+
 ## Bash Efficiency
 
 `set -Eeuo pipefail` is always on via BASH_ENV. Commands fail fast by default;
