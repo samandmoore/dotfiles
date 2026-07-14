@@ -71,7 +71,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.dev/.worktrees"]
+      "allowWrite": ["~/.dev/.worktrees", "~/go", "~/.cache"]
     },
     "enableWeakerNetworkIsolation": true,
     "excludedCommands": ["bundle *", "git *", "gh *", "docker *"]
