@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+# Split the commits on a branch into a gh-stack, one PR per commit.
+#
+# Usage: gh-stackify.sh [-b base] [-B branch] [-f] [--submit] [--open] <prefix>
+#
+# Creates branches <prefix>/stack/1 .. <prefix>/stack/N, one per commit
+# between <base> and <branch> (oldest first), adopts them into a gh-stack,
+# and optionally pushes + creates the PRs.
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: gh-stackify.sh [options] <prefix>
+
+Options:
+  --base BRANCH      Base branch to stack onto (default: repo default branch)
+  --branch BRANCH    Branch whose commits to split (default: current branch)
+  --force            Delete pre-existing <prefix>/stack/N branches before recreating
+  --submit           Run `gh stack submit --auto` after building the stack
+  --open             Mark PRs ready for review (only meaningful with --submit)
+  --help             Show this help
+
+Example:
+  gh-stackify.sh --submit --open sam-doc-rules/stack
+EOF
+}
+
+base=""
+branch=""
+force=0
+submit=0
+open=0
+prefix=""
+
+while [[ $# -gt 0 ]]
+do
+  case "$1" in
+    --base)
+      base="$2"
+      shift 2
+      ;;
+    --branch)
+      branch="$2"
+      shift 2
+      ;;
+    --force)
+      force=1
+      shift
+      ;;
+    --submit)
+      submit=1
+      shift
+      ;;
+    --open)
+      open=1
+      shift
+      ;;
+    --help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      echo "Unknown option: $1" >&2
+      usage >&2
+      exit 1
+      ;;
+    *)
+      prefix="$1"
+      shift
+      ;;
+  esac
+done
+
+if [[ -z "$prefix" ]]
+then
+  echo "error: missing <prefix> argument" >&2
+  usage >&2
+  exit 1
+fi
+
+if ! gh extension list 2>/dev/null | grep --quiet 'github/gh-stack'
+then
+  echo "error: gh-stack extension not installed (gh extension install github/gh-stack)" >&2
+  exit 1
+fi
+
+if [[ -z "$branch" ]]
+then
+  branch="$(git rev-parse --abbrev-ref HEAD)"
+fi
+
+if [[ -z "$base" ]]
+then
+  base="$(gh repo view --json defaultBranchRef --jq .defaultBranchRef.name 2>/dev/null || true)"
+  base="${base:-main}"
+fi
+
+if [[ -n "$(git status --porcelain)" ]]
+then
+  echo "error: working tree is not clean, commit or stash first" >&2
+  exit 1
+fi
+
+commits=()
+while read -r sha
+do
+  commits+=("$sha")
+done < <(git log --reverse --format=%H "${base}..${branch}")
+
+if [[ ${#commits[@]} -eq 0 ]]
+then
+  echo "error: no commits found between ${base} and ${branch}" >&2
+  exit 1
+fi
+
+echo "Splitting ${#commits[@]} commit(s) on ${branch} (base: ${base}) into ${prefix}/stack/*"
+
+branches=()
+for i in "${!commits[@]}"
+do
+  n=$((i + 1))
+  sha="${commits[$i]}"
+  name="${prefix}/stack/${n}"
+
+  if git show-ref --verify --quiet "refs/heads/${name}"
+  then
+    if [[ "$force" -eq 1 ]]
+    then
+      git branch --delete --force "$name" >/dev/null
+    else
+      echo "error: branch ${name} already exists (pass --force to recreate)" >&2
+      exit 1
+    fi
+  fi
+
+  git branch "$name" "$sha"
+  branches+=("$name")
+  echo "  ${n}. ${name} -> ${sha:0:7} $(git log -1 --format=%s "$sha")"
+done
+
+gh stack init "${branches[@]}" --base "$base"
+
+if [[ "$submit" -eq 1 ]]
+then
+  submit_args=(--auto)
+  [[ "$open" -eq 1 ]] && submit_args+=(--open)
+  gh stack submit "${submit_args[@]}"
+fi
