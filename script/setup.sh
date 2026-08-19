@@ -60,8 +60,16 @@ function setup_theme() {
   "$DOTFILES"/bin/robot theme set "Catppuccin Macchiato"
 }
 
+function setup_gh_extensions() {
+  echo 'Installing gh extensions'
+  if ! gh extension list | grep --quiet 'github/gh-stack'; then
+    gh extension install github/gh-stack
+  fi
+}
+
 setup_os
 setup_dotfiles
 setup_claude
 setup_tools
 setup_theme
+setup_gh_extensions
