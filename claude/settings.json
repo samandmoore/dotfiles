@@ -83,5 +83,6 @@
   "preferredNotifChannel": "kitty",
   "autoCompactEnabled": false,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "outputStyle": "concrete"
 }
