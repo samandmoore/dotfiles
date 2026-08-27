@@ -67,6 +67,7 @@
 
 ## GitHub
 
+- Default to opening draft PRs unless explicitly specified.
 - Never add Generated with Claude/Codex/Agent lines to pull requests
 
 ## Bash Efficiency
