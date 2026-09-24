@@ -12,3 +12,8 @@ coverage/
 .superpowers
 .lavish
 docs/.plans/
+.docs/
+
+**/.claude/.cc-writes/
+
+**/.claude/settings.local.json
