@@ -9,13 +9,15 @@
 
 ## Designs & plans
 
-- Design docs — the **what/why** (goals, approach) — go in `docs/designs/` and
-  are **committed**. Superpowers' `brainstorming` skill calls this a "spec" and
-  defaults to `docs/superpowers/specs/`; write it to `docs/designs/` instead.
+- Design docs and implementation plans are **not committed.**
+- Design docs — the **what/why** (goals, approach) — go in `.docs/designs/`
+  Superpowers' `brainstorming` skill calls this a "spec" and defaults to
+  `docs/superpowers/specs/`; write it to `.docs/designs/` instead,
+  **git-ignored** (globally) as local-only working docs.
 - Implementation plans — the **how** (task-by-task detail, code, TDD steps) —
-  go in `docs/.plans/`, **git-ignored** (globally) as local-only working docs.
+  go in `.docs/plans/`, **git-ignored** (globally) as local-only working docs.
   This is Superpowers' `writing-plans` output (default
-  `docs/superpowers/plans/`); write it to `docs/.plans/` instead.
+  `docs/superpowers/plans/`); write it to `.docs/plans/` instead.
 - Note: Superpowers' "spec" = the what/why (our design); its "plan" = the how.
 
 ## Coding
@@ -51,7 +53,6 @@
   - use real newlines in commit messages instead of `\n`
   - focus more on `why` than `how` or `what`
   - wrap filenames, code snippets, variables, and identifiers in backticks
-  - never add Claude/Codex/Agent Co-Authored-By lines
   - never embed literal `\n` in `-m` arguments
   - when a body is needed, write the message with real newlines using `git
     commit -F - <<'EOF' ... EOF` or a temporary message file
