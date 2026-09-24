@@ -3,7 +3,7 @@
     "allow": ["Bash(bundle exec:*)", "Bash(git add:*)", "Bash(git commit:*)"],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-opus-5-5",
   "hooks": {
     "SessionStart": [
       {
@@ -48,19 +48,9 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true,
-    "lua-lsp@claude-plugins-official": true,
-    "slack@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true
+    "pr-tools@fin-2x": true,
+    "code-review-tools@fin-2x": true
   },
   "sandbox": {
     "enabled": true,
@@ -71,7 +61,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["~/.dev/.worktrees", "~/go", "~/.cache"]
+      "allowWrite": ["~/dev/.worktrees", "~/go", "~/.cache", "~/Library/Caches"]
     },
     "enableWeakerNetworkIsolation": true,
     "excludedCommands": ["bundle *", "git *", "gh *", "docker *"]
