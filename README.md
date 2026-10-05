@@ -19,7 +19,7 @@ From there, use `./script/setup.sh` to apply updates.
 - `~/.bash_profile.local`
 - `~/.bashrc.local`
 - `~/.config/fish/local.fish`
-- `~/.gitconfig.local`
+- `~/.gitconfig` (untracked; shared config lives in `config/git/config`)
 
 ## Theme things
 

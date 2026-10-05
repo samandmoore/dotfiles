@@ -30,6 +30,28 @@ function setup_dotfiles() {
   "$DOTFILES"/bin/robot dotfiles up
 }
 
+# Shared git config lives in config/git/config (linked to ~/.config/git/config).
+# ~/.gitconfig is a plain, untracked file for machine-specific settings; git
+# reads it after the XDG config (so it wins) and `git config --global` writes
+# to it, keeping tool-driven edits out of this repo.
+function setup_gitconfig() {
+  # remove the legacy symlink into this repo
+  if [[ -L ~/.gitconfig ]]; then
+    echo 'Removing legacy ~/.gitconfig symlink'
+    rm ~/.gitconfig
+  fi
+
+  if [[ ! -e ~/.gitconfig ]]; then
+    if [[ -f ~/.gitconfig.local ]]; then
+      echo 'Migrating ~/.gitconfig.local to ~/.gitconfig'
+      mv ~/.gitconfig.local ~/.gitconfig
+    else
+      echo 'Creating empty ~/.gitconfig'
+      touch ~/.gitconfig
+    fi
+  fi
+}
+
 function setup_claude() {
   echo 'Setting up Claude'
   "$DOTFILES"/bin/claude-setup
@@ -69,6 +91,7 @@ function setup_gh_extensions() {
 
 setup_os
 setup_dotfiles
+setup_gitconfig
 setup_claude
 setup_tools
 setup_theme

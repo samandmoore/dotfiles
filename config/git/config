@@ -3,9 +3,6 @@
   email = samandmoore@gmail.com
 [github]
 	user = samandmoore
-[include]
-  path = ~/.gitconfig.local
-
 [help]
   # Autocorrect mistyped commands.
 	autocorrect = 1
