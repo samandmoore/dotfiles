@@ -70,6 +70,8 @@
 
 - Default to opening draft PRs unless explicitly specified.
 - Never add Generated with Claude/Codex/Agent lines to pull requests
+- Always include `<sub>:robot: AI-assisted</sub>` when
+  posting comments as my identity.
 
 ## Bash Efficiency
 
