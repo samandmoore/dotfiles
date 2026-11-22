@@ -1,0 +1,47 @@
+font-family = CaskaydiaMono Nerd Font
+font-size = 12
+adjust-cell-height = 5%
+
+bell-features = no-audio,border
+cursor-style = block
+
+macos-titlebar-style = tabs
+gtk-tabs-location = bottom
+window-padding-x = 5
+window-padding-y = 5,0
+
+copy-on-select = clipboard
+confirm-close-surface = false
+
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>s=new_split:down
+
+keybind = ctrl+a>h=resize_split:left,50
+keybind = ctrl+a>j=resize_split:down,50
+keybind = ctrl+a>k=resize_split:up,50
+keybind = ctrl+a>l=resize_split:right,50
+
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+keybind = ctrl+a>1=goto_tab:1
+keybind = ctrl+a>2=goto_tab:2
+keybind = ctrl+a>3=goto_tab:3
+keybind = ctrl+a>4=goto_tab:4
+keybind = ctrl+a>5=goto_tab:5
+keybind = ctrl+a>6=goto_tab:6
+keybind = ctrl+a>7=goto_tab:7
+keybind = ctrl+a>8=goto_tab:8
+keybind = ctrl+a>9=goto_tab:9
+keybind = ctrl+a>t=prompt_tab_title
+
+keybind = ctrl+a>z=toggle_split_zoom
+keybind = ctrl+a>r=reload_config
+
+keybind = ctrl+a>/=start_search
+
+config-file = ?~/.config/dotfiles/current/theme/ghostty.conf
+config-file = ?~/.config/ghostty/os.ghostty
