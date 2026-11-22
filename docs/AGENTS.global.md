@@ -30,6 +30,11 @@
 - Re-read files after each new prompt and keep user edits
 - Use red-green TDD for bug fixes and regressions
 - Prefer self-documenting code to explanatory comments
+- Don't write tests asserting that removed code is gone (e.g.
+  `not.toHaveProperty('oldField')`); test current behavior, and assert absence
+  only when absence is the behavior
+- Don't write comments about removed code or past behavior (e.g. "no longer
+  uses X"); comments describe the code as it is
 
 ## Git worktrees
 
